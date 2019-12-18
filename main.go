@@ -11,7 +11,7 @@ func checkError(err error) {
 	}
 }
 
-func readFile2String(ch chan string, path string) {
+func readFile2String(ch chan<- string, path string) {
 	data, err := ioutil.ReadFile(path)
 	checkError(err)
 	ch <- string(data)
@@ -20,7 +20,7 @@ func readFile2String(ch chan string, path string) {
 func main() {
 
 	chWelcomeMsg := make(chan string)
-	go readFile2String(chWelcomeMsg, "welcome_message.tx")
+	go readFile2String(chWelcomeMsg, "welcome_message.txt")
 	var data string
 	data = <- chWelcomeMsg
 	fmt.Print(string(data))
