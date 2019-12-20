@@ -1,3 +1,3 @@
-module github.com/kostmetallist/heuristics-classifier
+module github.com/kostmetallist/heuclassifier
 
 go 1.12
