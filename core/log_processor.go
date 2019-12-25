@@ -5,12 +5,6 @@ import (
 	"io/ioutil"
 )
 
-func checkError(err error) { 
-	if err != nil {
-		panic(err)
-	}
-}
-
 func readFile2String(ch chan<- string, path string) {
 	data, err := ioutil.ReadFile(path)
 	checkError(err)
@@ -24,4 +18,6 @@ func ProcessLogData() {
 	var data string
 	data = <- chWelcomeMsg
 	fmt.Print(string(data))
+
+	getGoogleSheetData()
 }
