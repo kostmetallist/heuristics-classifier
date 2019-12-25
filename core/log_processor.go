@@ -1,4 +1,4 @@
-	package core
+package core
 
 import (
 	"fmt"
@@ -17,12 +17,11 @@ func readFile2String(ch chan<- string, path string) {
 	ch <- string(data)
 }
 
-func main() {
+func ProcessLogData() {
 
 	chWelcomeMsg := make(chan string)
 	go readFile2String(chWelcomeMsg, "welcome_message.txt")
 	var data string
 	data = <- chWelcomeMsg
 	fmt.Print(string(data))
-	SomeFunc()
 }
