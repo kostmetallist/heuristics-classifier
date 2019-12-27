@@ -36,14 +36,13 @@ func getGoogleSheetData(secretFile string, sheetParameters string) {
 	// params, err := ioutil.ReadFile(sheetParameters)
 	jsonParameters, err := os.Open(sheetParameters)
 	checkError(err)
+	defer jsonParameters.Close()
 
 	bytes, err := ioutil.ReadAll(jsonParameters)
 	checkError(err)
 	var params SheetParameters
 	err = json.Unmarshal(bytes, &params)
 	checkError(err)
-
-	defer jsonParameters.Close()
 
 	// spreadsheetId := "1cGgy7ecfZe-7Mcj_GKqi1AWr_HuiKrbWZRkDICCbL-Q"
 	// readRange := "A2:D5"
