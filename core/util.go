@@ -2,6 +2,8 @@ package core
 
 import (
 	"fmt"
+	"golang.org/x/net/context"
+	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
 	"io/ioutil"
 )
@@ -24,7 +26,8 @@ func getGoogleSheetData() {
 	checkError(err)
 
 	spreadsheetID := "1cGgy7ecfZe-7Mcj_GKqi1AWr_HuiKrbWZRkDICCbL-Q"
-	readRange := "Class Data!A2:D"
+	// readRange := "Class Data!A2:D"
+	readRange := "A2:D5"
 	resp, err := srv.Spreadsheets.Values.Get(spreadsheetID, readRange).Do()
 	checkError(err)
 
