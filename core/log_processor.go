@@ -19,5 +19,5 @@ func ProcessLogData() {
 	data = <- chWelcomeMsg
 	fmt.Print(string(data))
 
-	getGoogleSheetData()
+	getGoogleSheetData("google_sheets/secret.json", "google_sheets/params.json")
 }
