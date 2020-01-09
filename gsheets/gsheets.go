@@ -1,4 +1,4 @@
-package core
+package gsheets
 
 import (
 	"encoding/json"
@@ -8,40 +8,35 @@ import (
 	"google.golang.org/api/sheets/v4"
 	"io/ioutil"
 	"os"
+	"github.com/kostmetallist/heuclassifier/error"
 )
 
-func checkError(err error) { 
-	if err != nil {
-		panic(err)
-	}
-}
-
-func getGoogleSheetData(secretFile string, sheetParameters string) {
+func GetGoogleSheetData(secretFile string, sheetParameters string) {
 
 	privateKey, err := ioutil.ReadFile(secretFile)
-	checkError(err)
+	error.CheckError(err)
 	conf, err := google.JWTConfigFromJSON(privateKey, sheets.SpreadsheetsScope)
-	checkError(err)
+	error.CheckError(err)
 
 	client := conf.Client(context.TODO())
 	srv, err := sheets.New(client)
-	checkError(err)
+	error.CheckError(err)
 
 	jsonParameters, err := os.Open(sheetParameters)
-	checkError(err)
+	error.CheckError(err)
 	defer jsonParameters.Close()
 
 	bytes, err := ioutil.ReadAll(jsonParameters)
-	checkError(err)
+	error.CheckError(err)
 	// params := SheetParameters{}
 	var params map[string]interface{}
 	err = json.Unmarshal(bytes, &params)
-	checkError(err)
+	error.CheckError(err)
 
 	paramsId := params["spreadsheetId"].(string)
 	paramsRange := params["range"].(string)
 	resp, err := srv.Spreadsheets.Values.Get(paramsId, paramsRange).Do()
-	checkError(err)
+	error.CheckError(err)
 
 	if len(resp.Values) == 0 {
 		fmt.Println("getGoogleSheetData: empty table")

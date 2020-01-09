@@ -3,11 +3,13 @@ package core
 import (
 	"fmt"
 	"io/ioutil"
+	"github.com/kostmetallist/heuclassifier/error"
+	"github.com/kostmetallist/heuclassifier/gsheets"
 )
 
 func readFile2String(ch chan<- string, path string) {
 	data, err := ioutil.ReadFile(path)
-	checkError(err)
+	error.CheckError(err)
 	ch <- string(data)
 }
 
@@ -19,5 +21,5 @@ func ProcessLogData() {
 	data = <- chWelcomeMsg
 	fmt.Print(string(data))
 
-	getGoogleSheetData("google_sheets/secret.json", "google_sheets/params.json")
+	gsheets.GetGoogleSheetData("gsheets/secret.json", "gsheets/params.json")
 }
