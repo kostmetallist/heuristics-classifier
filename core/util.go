@@ -10,12 +10,6 @@ import (
 	"os"
 )
 
-
-type SheetParameters struct {
-	id 	       string `json:"spreadsheetId"`
-	cell_range string `json:"range"`
-}
-
 func checkError(err error) { 
 	if err != nil {
 		panic(err)
@@ -24,35 +18,29 @@ func checkError(err error) {
 
 func getGoogleSheetData(secretFile string, sheetParameters string) {
 
-	private_key, err := ioutil.ReadFile(secretFile)
+	privateKey, err := ioutil.ReadFile(secretFile)
 	checkError(err)
-	conf, err := google.JWTConfigFromJSON(private_key, sheets.SpreadsheetsScope)
+	conf, err := google.JWTConfigFromJSON(privateKey, sheets.SpreadsheetsScope)
 	checkError(err)
 
 	client := conf.Client(context.TODO())
 	srv, err := sheets.New(client)
 	checkError(err)
 
-	// params, err := ioutil.ReadFile(sheetParameters)
 	jsonParameters, err := os.Open(sheetParameters)
 	checkError(err)
 	defer jsonParameters.Close()
 
 	bytes, err := ioutil.ReadAll(jsonParameters)
 	checkError(err)
-	var params SheetParameters
+	// params := SheetParameters{}
+	var params map[string]interface{}
 	err = json.Unmarshal(bytes, &params)
 	checkError(err)
 
-	// spreadsheetId := "1cGgy7ecfZe-7Mcj_GKqi1AWr_HuiKrbWZRkDICCbL-Q"
-	// readRange := "A2:D5"
-
-	// resp, err := srv.Spreadsheets.Values.Get(spreadsheetId, readRange).Do()
-
-	fmt.Println(params.id)
-
-
-	resp, err := srv.Spreadsheets.Values.Get(params.id, params.cell_range).Do()
+	paramsId := params["spreadsheetId"].(string)
+	paramsRange := params["range"].(string)
+	resp, err := srv.Spreadsheets.Values.Get(paramsId, paramsRange).Do()
 	checkError(err)
 
 	if len(resp.Values) == 0 {
