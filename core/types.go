@@ -5,3 +5,5 @@ type Event struct {
 	activity string
 	extra map[string]string
 }
+
+type EventSequence []Event
