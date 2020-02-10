@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"github.com/kostmetallist/heuclassifier/error"
 	"github.com/kostmetallist/heuclassifier/gsheets"
+	"github.com/tealeg/xlsx"
 	"os"
 )
 
@@ -47,7 +48,25 @@ func ProcessLogData() {
 		chosenDataSource = dataSources[chosenDataSourceIdx]
 	}
 
-	if (chosenDataSource == "google spreadsheets") {
+	switch chosenDataSource {
+	case "google spreadsheets": 
 		gsheets.GetGoogleSheetData("gsheets/secret.json", "gsheets/params.json")
+	case "local XLSX":
+		fmt.Println("Reading XLSX file resource/xlsx/sample_data.xlsx...")
+		xlsxFile, err := xlsx.OpenFile("resource/xlsx/sample_data.xlsx")
+		if err != nil {
+			panic(err)
+		}
+
+		for _, sheet := range xlsxFile.Sheets {
+			for _, row := range sheet.Rows {
+				for _, cell := range row.Cells {
+					cellContent := cell.String()
+					fmt.Print(cellContent, " ")
+				}
+
+				fmt.Println()
+			}
+		}
 	}
 }
