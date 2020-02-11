@@ -23,7 +23,7 @@ func ProcessLogData() {
 
 	fmt.Println("Initializing a logger instance...")
 	logging.InitLogger()
-	logging.HCLogger.Println("configured to use the following flags:", 
+	logging.HCLogger.Println("logger is configured to use the following flags:", 
 		logging.HCLogger.Flags)
 
 	chWelcomeMsg := make(chan string)

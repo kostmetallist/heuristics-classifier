@@ -9,14 +9,14 @@ import (
 
 func GetXlsxData(configFilePath string) [][]string {
 
-	logging.HCLogger.Println("Fetching configuration from", configFilePath)
+	logging.HCLogger.Println("fetching configuration from", configFilePath)
 	params := json.RetrieveJsonData(configFilePath)
 	xlsxFilePath := params["xlsxFileLocation"].(string)
 
 	// limitation is applied when the value is non negative
 	// readLinesLimitation := params["limitReadLinesTo"].(int)
 	// TODO implement read lines limitation
-	logging.HCLogger.Println("Loading XLSX file", xlsxFilePath)
+	logging.HCLogger.Println("loading XLSX file", xlsxFilePath)
 	xlsxFile, err := xlsx.OpenFile(xlsxFilePath)
 	error.CheckError(err)
 
@@ -33,5 +33,6 @@ func GetXlsxData(configFilePath string) [][]string {
 		}
 	}
 
+	logging.HCLogger.Println("returning preprocessed XLSX data")
 	return result 
 }
