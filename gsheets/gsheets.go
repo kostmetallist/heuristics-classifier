@@ -10,7 +10,8 @@ import (
 	"io/ioutil"
 )
 
-func GetGoogleSheetData(secretFilePath string, sheetConfigPath string) {
+func GetGoogleSheetData(secretFilePath string, 
+	sheetConfigPath string) [][]interface{} {
 
 	logging.HCLogger.Println("getting credentials from secret file", 
 		secretFilePath)
@@ -34,12 +35,9 @@ func GetGoogleSheetData(secretFilePath string, sheetConfigPath string) {
 
 	if len(resp.Values) == 0 {
 		logging.HCLogger.Println("got an empty table")
+		return make([][]interface{}, 0)
 	} else {
-		logging.HCLogger.Println("data retrieved: ")
-		for _, row := range resp.Values {
-			logging.HCLogger.Println(row[0], row[1], row[2])
-		}
+		logging.HCLogger.Println("returning preprocessed google sheets data")
+		return resp.Values
 	}
-
-	logging.HCLogger.Println("returning preprocessed google sheets data")
 }

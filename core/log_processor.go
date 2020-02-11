@@ -56,7 +56,14 @@ func ProcessLogData() {
 
 	switch chosenDataSource {
 	case "google spreadsheets": 
-		gsheets.GetGoogleSheetData("gsheets/secret.json", "gsheets/params.json")
+		gsheetsData := gsheets.GetGoogleSheetData("gsheets/secret.json", 
+			"gsheets/params.json")
+		for _, row := range gsheetsData {
+			for _, elem := range row {
+				fmt.Print(elem, " ")
+			}
+			fmt.Println()
+		}
 	case "local XLSX":
 		xlsxData := xlsx.GetXlsxData("xlsx/params.json")
 		for _, row := range xlsxData {
