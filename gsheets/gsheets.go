@@ -12,7 +12,7 @@ import (
 
 func GetGoogleSheetData(secretFilePath string, sheetConfigPath string) {
 
-	privateKey, err := ioutil.ReadFile(secretFile)
+	privateKey, err := ioutil.ReadFile(secretFilePath)
 	error.CheckError(err)
 	conf, err := google.JWTConfigFromJSON(privateKey, sheets.SpreadsheetsScope)
 	error.CheckError(err)
