@@ -1,0 +1,4 @@
+{
+    "xlsxFileLocation": "resource/xlsx/sample_data.xlsx",
+    "limitReadLinesTo": -1
+}

@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"github.com/kostmetallist/heuclassifier/error"
 	"github.com/kostmetallist/heuclassifier/gsheets"
-	"github.com/tealeg/xlsx"
+	"github.com/kostmetallist/heuclassifier/xlsx"
 	"os"
 )
 
@@ -52,21 +52,12 @@ func ProcessLogData() {
 	case "google spreadsheets": 
 		gsheets.GetGoogleSheetData("gsheets/secret.json", "gsheets/params.json")
 	case "local XLSX":
-		fmt.Println("Reading XLSX file resource/xlsx/sample_data.xlsx...")
-		xlsxFile, err := xlsx.OpenFile("resource/xlsx/sample_data.xlsx")
-		if err != nil {
-			panic(err)
-		}
-
-		for _, sheet := range xlsxFile.Sheets {
-			for _, row := range sheet.Rows {
-				for _, cell := range row.Cells {
-					cellContent := cell.String()
-					fmt.Print(cellContent, " ")
-				}
-
-				fmt.Println()
+		xlsxData := xlsx.GetXlsxData("xlsx/params.json")
+		for _, row := range xlsxData {
+			for _, elem := range row {
+				fmt.Print(elem, " ")
 			}
+			fmt.Println()
 		}
 	}
 }
