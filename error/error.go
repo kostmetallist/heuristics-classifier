@@ -1,7 +1,11 @@
 package error
 
+import (
+	"github.com/kostmetallist/heuclassifier/logging"
+)
+
 func CheckError(err error) { 
 	if err != nil {
-		panic(err)
+		logging.HCLogger.Panic(err)
 	}
 }
