@@ -1,17 +1,16 @@
 package gsheets
 
 import (
-	"encoding/json"
 	"fmt"
+	"github.com/kostmetallist/heuclassifier/error"
+	"github.com/kostmetallist/heuclassifier/json"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
 	"io/ioutil"
-	"os"
-	"github.com/kostmetallist/heuclassifier/error"
 )
 
-func GetGoogleSheetData(secretFile string, sheetParameters string) {
+func GetGoogleSheetData(secretFilePath string, sheetConfigPath string) {
 
 	privateKey, err := ioutil.ReadFile(secretFile)
 	error.CheckError(err)
@@ -22,17 +21,7 @@ func GetGoogleSheetData(secretFile string, sheetParameters string) {
 	srv, err := sheets.New(client)
 	error.CheckError(err)
 
-	jsonParameters, err := os.Open(sheetParameters)
-	error.CheckError(err)
-	defer jsonParameters.Close()
-
-	bytes, err := ioutil.ReadAll(jsonParameters)
-	error.CheckError(err)
-	// params := SheetParameters{}
-	var params map[string]interface{}
-	err = json.Unmarshal(bytes, &params)
-	error.CheckError(err)
-
+	params := json.RetrieveJsonData(sheetConfigPath)
 	paramsId := params["spreadsheetId"].(string)
 	paramsRange := params["range"].(string)
 	resp, err := srv.Spreadsheets.Values.Get(paramsId, paramsRange).Do()

@@ -1,27 +1,15 @@
 package xlsx
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"github.com/tealeg/xlsx"
 	"github.com/kostmetallist/heuclassifier/error"
-	"os"
+	"github.com/kostmetallist/heuclassifier/json"
 )
 
 func GetXlsxData(configFilePath string) [][]string {
 
-	configFile, err := os.Open(configFilePath)
-	error.CheckError(err)
-	defer configFile.Close()
-
-	bytes, err := ioutil.ReadAll(configFile)
-	error.CheckError(err)
-
-	var params map[string]interface{}
-	err = json.Unmarshal(bytes, &params)
-	error.CheckError(err)
-
+	params := json.RetrieveJsonData(configFilePath)
 	xlsxFilePath := params["xlsxFileLocation"].(string)
 
 	// limitation is applied when the value is non negative
