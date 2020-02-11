@@ -1,21 +1,22 @@
 package xlsx
 
 import (
-	"fmt"
 	"github.com/tealeg/xlsx"
 	"github.com/kostmetallist/heuclassifier/error"
 	"github.com/kostmetallist/heuclassifier/json"
+	"github.com/kostmetallist/heuclassifier/logging"
 )
 
 func GetXlsxData(configFilePath string) [][]string {
 
+	logging.HCLogger.Println("Fetching configuration from", configFilePath)
 	params := json.RetrieveJsonData(configFilePath)
 	xlsxFilePath := params["xlsxFileLocation"].(string)
 
 	// limitation is applied when the value is non negative
 	// readLinesLimitation := params["limitReadLinesTo"].(int)
 	// TODO implement read lines limitation
-	fmt.Println("Loading XLSX file", xlsxFilePath, "...")
+	logging.HCLogger.Println("Loading XLSX file", xlsxFilePath)
 	xlsxFile, err := xlsx.OpenFile(xlsxFilePath)
 	error.CheckError(err)
 

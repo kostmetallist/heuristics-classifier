@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"github.com/kostmetallist/heuclassifier/error"
 	"github.com/kostmetallist/heuclassifier/gsheets"
+	"github.com/kostmetallist/heuclassifier/logging"
 	"github.com/kostmetallist/heuclassifier/xlsx"
 	"os"
 )
@@ -19,6 +20,11 @@ func readFile2String(ch chan<- string, path string) {
 }
 
 func ProcessLogData() {
+
+	fmt.Println("Initializing a logger instance...")
+	logging.InitLogger()
+	logging.HCLogger.Println("configured to use the following flags:", 
+		logging.HCLogger.Flags)
 
 	chWelcomeMsg := make(chan string)
 	go readFile2String(chWelcomeMsg, "welcome_message.txt")
