@@ -25,7 +25,7 @@ func GetXlsxData(configFilePath string) [][]string {
 	for _, sheet := range xlsxFile.Sheets {
 		for _, row := range sheet.Rows {
 
-			if processedLines > readLimit {
+			if readLimit >= 0 && processedLines >= readLimit {
 				logging.HCLogger.Println("XLSX lines read limit exceeded:", 
 					"reached", readLimit, "lines")
 				continue
