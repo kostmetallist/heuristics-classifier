@@ -21,16 +21,16 @@ func readFile2String(ch chan<- string, path string) {
 
 func ProcessLogData() {
 
+	chWelcomeMsg := make(chan string)
+	go readFile2String(chWelcomeMsg, "welcome_message.txt")
+	var welcomeMessage string
+	welcomeMessage = <- chWelcomeMsg
+	fmt.Print(string(welcomeMessage))
+	
 	fmt.Println("Initializing a logger instance...")
 	logging.InitLogger()
 	logging.HCLogger.Println("logger is configured to use the following flags:", 
 		logging.HCLogger.Flags)
-
-	chWelcomeMsg := make(chan string)
-	go readFile2String(chWelcomeMsg, "welcome_message.txt")
-	var data string
-	data = <- chWelcomeMsg
-	fmt.Print(string(data))
 
 	fmt.Println("Please specify an event log data source.", 
 		"Possible choices are:")
