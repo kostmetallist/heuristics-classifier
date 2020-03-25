@@ -65,12 +65,9 @@ func ProcessLogData() {
 			fmt.Println()
 		}
 	case "local XLSX":
-		xlsxData := xlsx.GetXlsxData("xlsx/params.json")
-		for _, row := range xlsxData {
-			for _, elem := range row {
-				fmt.Print(elem, " ")
-			}
-			fmt.Println()
-		}
+		var rtd RawTableData = xlsx.GetXlsxData("xlsx/params.json")
+		eventSequence := rtd.ToEventSequence()
+		logging.HCLogger.Println(fmt.Sprintf(
+			"length of event sequence read: %d", len(eventSequence)))
 	}
 }
