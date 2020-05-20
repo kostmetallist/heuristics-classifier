@@ -3,6 +3,7 @@ package core
 import (
 	"fmt"
 	"io/ioutil"
+	"github.com/kostmetallist/heuclassifier/csv"
 	"github.com/kostmetallist/heuclassifier/error"
 	"github.com/kostmetallist/heuclassifier/gsheets"
 	"github.com/kostmetallist/heuclassifier/logging"
@@ -55,6 +56,16 @@ func ProcessLogData() {
 	}
 
 	switch chosenDataSource {
+	case "local CSV":
+		var rtd RawTableData = csv.GetCsvData("csv/params.json")
+		eventSequence := rtd.ToEventSequence()
+		logging.HCLogger.Println(fmt.Sprintf(
+			"length of event sequence retrieved: %d", len(eventSequence)))
+	case "local XLSX":
+		var rtd RawTableData = xlsx.GetXlsxData("xlsx/params.json")
+		eventSequence := rtd.ToEventSequence()
+		logging.HCLogger.Println(fmt.Sprintf(
+			"length of event sequence retrieved: %d", len(eventSequence)))
 	case "google spreadsheets": 
 		gsheetsData := gsheets.GetGoogleSheetData("gsheets/secret.json", 
 			"gsheets/params.json")
@@ -64,10 +75,5 @@ func ProcessLogData() {
 			}
 			fmt.Println()
 		}
-	case "local XLSX":
-		var rtd RawTableData = xlsx.GetXlsxData("xlsx/params.json")
-		eventSequence := rtd.ToEventSequence()
-		logging.HCLogger.Println(fmt.Sprintf(
-			"length of event sequence read: %d", len(eventSequence)))
 	}
 }
