@@ -3,11 +3,11 @@ package core
 import (
 	"fmt"
 	"io/ioutil"
-	"github.com/kostmetallist/heuclassifier/csv"
-	"github.com/kostmetallist/heuclassifier/error"
-	"github.com/kostmetallist/heuclassifier/gsheets"
-	"github.com/kostmetallist/heuclassifier/logging"
-	"github.com/kostmetallist/heuclassifier/xlsx"
+	"github.com/kostmetallist/heuclassifier/log_collector/csv"
+	"github.com/kostmetallist/heuclassifier/log_collector/error"
+	"github.com/kostmetallist/heuclassifier/log_collector/gsheets"
+	"github.com/kostmetallist/heuclassifier/log_collector/logging"
+	"github.com/kostmetallist/heuclassifier/log_collector/xlsx"
 	"os"
 )
 

@@ -2,7 +2,7 @@ package json
 
 import (
 	j "encoding/json"
-	"github.com/kostmetallist/heuclassifier/error"
+	"github.com/kostmetallist/heuclassifier/log_collector/error"
 	"io/ioutil"
 	"os"
 )

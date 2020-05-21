@@ -2,9 +2,9 @@ package xlsx
 
 import (
 	"github.com/tealeg/xlsx"
-	"github.com/kostmetallist/heuclassifier/error"
-	"github.com/kostmetallist/heuclassifier/json"
-	"github.com/kostmetallist/heuclassifier/logging"
+	"github.com/kostmetallist/heuclassifier/log_collector/error"
+	"github.com/kostmetallist/heuclassifier/log_collector/json"
+	"github.com/kostmetallist/heuclassifier/log_collector/logging"
 )
 
 func GetXlsxData(configFilePath string) [][]string {

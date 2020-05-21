@@ -1,9 +1,9 @@
 package gsheets
 
 import (
-	"github.com/kostmetallist/heuclassifier/error"
-	"github.com/kostmetallist/heuclassifier/json"
-	"github.com/kostmetallist/heuclassifier/logging"
+	"github.com/kostmetallist/heuclassifier/log_collector/error"
+	"github.com/kostmetallist/heuclassifier/log_collector/json"
+	"github.com/kostmetallist/heuclassifier/log_collector/logging"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"

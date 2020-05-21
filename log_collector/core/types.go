@@ -1,7 +1,7 @@
 package core 
 
 import (
-	heuError "github.com/kostmetallist/heuclassifier/error"
+	heuError "github.com/kostmetallist/heuclassifier/log_collector/error"
 	"strconv"
 )
 
