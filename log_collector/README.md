@@ -10,7 +10,7 @@ following formats:
 
 After the parsing and simple processing, data is exported into JSON format 
 and conveyed straight to the heuristics engine for further analysis. For the 
-exported data, a temporary folder is created, which will remain in the filesystem 
+exported data, a temporary file is created, which will remain in the filesystem 
 until all the processing is done.
 
 ### Building 

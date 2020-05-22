@@ -6,6 +6,7 @@ import (
 	"github.com/kostmetallist/heuclassifier/log_collector/csv"
 	"github.com/kostmetallist/heuclassifier/log_collector/error"
 	"github.com/kostmetallist/heuclassifier/log_collector/gsheets"
+	"github.com/kostmetallist/heuclassifier/log_collector/json"
 	"github.com/kostmetallist/heuclassifier/log_collector/logging"
 	"github.com/kostmetallist/heuclassifier/log_collector/xlsx"
 	"os"
@@ -55,17 +56,18 @@ func ProcessLogData() {
 		chosenDataSource = dataSources[chosenDataSourceIdx]
 	}
 
+	var eventSequence EventSequence
 	switch chosenDataSource {
 	case "local CSV":
 		var rtd RawTableData = csv.GetCsvData("csv/params.json")
-		eventSequence := rtd.ToEventSequence()
+		eventSequence = rtd.ToEventSequence()
 		logging.HCLogger.Println(fmt.Sprintf(
-			"length of event sequence retrieved: %d", len(eventSequence)))
+			"length of retrieved event sequence: %d", len(eventSequence)))
 	case "local XLSX":
 		var rtd RawTableData = xlsx.GetXlsxData("xlsx/params.json")
-		eventSequence := rtd.ToEventSequence()
+		eventSequence = rtd.ToEventSequence()
 		logging.HCLogger.Println(fmt.Sprintf(
-			"length of event sequence retrieved: %d", len(eventSequence)))
+			"length of retrieved event sequence: %d", len(eventSequence)))
 	case "google spreadsheets": 
 		gsheetsData := gsheets.GetGoogleSheetData("gsheets/secret.json", 
 			"gsheets/params.json")
@@ -76,4 +78,8 @@ func ProcessLogData() {
 			fmt.Println()
 		}
 	}
+
+	logging.HCLogger.Println("preparing log data to be converted to JSON...")
+	dumpFileLocation := "output/data.json"
+	json.DumpObjectToJson(dumpFileLocation, eventSequence)
 }

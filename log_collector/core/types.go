@@ -5,32 +5,30 @@ import (
 	"strconv"
 )
 
-
 type Event struct {
-	id int
-	activity string
-	extra map[string]string
+	Id int
+	Activity string
+	Extra map[string]string
 }
 
 type EventSequence []Event
 type RawTableData [][]string
 
-
 func (rtd RawTableData) ToEventSequence() EventSequence {
 	var result EventSequence
 	for _, row := range rtd {
 		var event Event
-		event.extra = make(map[string]string)
+		event.Extra = make(map[string]string)
 		for j, elem := range row {
 			switch j {
 			case 0:
 				var err error
-				event.id, err = strconv.Atoi(elem)
+				event.Id, err = strconv.Atoi(elem)
 				heuError.CheckError(err)
 			case 1:
-				event.activity = elem
+				event.Activity = elem
 			default:
-				event.extra[strconv.Itoa(j)] = elem
+				event.Extra[strconv.Itoa(j)] = elem
 			}
 		}
 		result = append(result, event)
