@@ -1,37 +1,50 @@
 package core 
 
-import (
-	heuError "github.com/kostmetallist/heuclassifier/log_collector/error"
-	"strconv"
-)
+import "strconv"
 
-type Event struct {
-	Id int
-	Activity string
-	Extra map[string]string
-}
-
-type EventSequence []Event
 type RawTableData [][]string
+type Event map[string]interface{}
+type EventSequence []Event
+
+func EmptyEvent() (Event, error) {
+	return make(Event), nil
+}
 
 func (rtd RawTableData) ToEventSequence() EventSequence {
 	var result EventSequence
-	for _, row := range rtd {
-		var event Event
-		event.Extra = make(map[string]string)
-		for j, elem := range row {
-			switch j {
-			case 0:
-				var err error
-				event.Id, err = strconv.Atoi(elem)
-				heuError.CheckError(err)
-			case 1:
-				event.Activity = elem
-			default:
-				event.Extra[strconv.Itoa(j)] = elem
+	var columnNames []string
+	for i, row := range rtd {
+		if i == 0 {
+			columnNames = make([]string, len(row))
+			for j, elem := range row {
+				columnNames[j] = elem
 			}
+
+		} else {
+			event, _ := EmptyEvent()
+			for j, elem := range row {
+				correspondingColumn := columnNames[j]
+				if intValue, err := strconv.ParseInt(elem, 10, 0); err == nil {
+					event[correspondingColumn] = intValue
+					continue
+				}
+				if floatValue, err := strconv.ParseFloat(elem, 64); err == nil {
+					event[correspondingColumn] = floatValue
+					continue
+				}
+				if boolValue, err := strconv.ParseBool(elem); err == nil {
+					event[correspondingColumn] = boolValue
+					continue
+				}
+				if elem == "null" {
+					event[correspondingColumn] = nil
+					continue
+				}
+				// string type
+				event[correspondingColumn] = elem
+			}
+			result = append(result, event)
 		}
-		result = append(result, event)
 	}
 	return result
 }

@@ -1,4 +1,5 @@
-18294, true, extra Foo, extra Bar
+id, activity, field A, field B
+18294, activity A, extra Foo, extra Bar
 18829, activity B, extra Bar, extra Baz
 19281, activity C, extra Baz, extra Qux
 20413, activity A, extra Qux, extra Foo
