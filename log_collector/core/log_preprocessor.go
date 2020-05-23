@@ -10,6 +10,7 @@ import (
 	"github.com/kostmetallist/heuclassifier/log_collector/logging"
 	"github.com/kostmetallist/heuclassifier/log_collector/xlsx"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
@@ -74,9 +75,20 @@ func ProcessLogData() {
 	logging.LCLogger.Println("preparing log data to be converted to JSON...")
 	json.DumpObjectToJson(dumpFileLocation, eventSequence)
 
-	absPath, err := filepath.Abs(dumpFileLocation)
+	inputLocation, err := filepath.Abs(dumpFileLocation)
 	error.CheckError(err)
 	logging.LCLogger.Println("passing control to the heuristics engine...")
+	if wd, err := os.Getwd(); err == nil {
+		scriptPath := filepath.Join(
+			filepath.Dir(wd), "heuristics_engine/dependency_finder.py")
+		command := exec.Command("python3", scriptPath, inputLocation)
+		command.Stdout = os.Stdout
+		command.Stderr = os.Stderr
+		if err := command.Run(); err != nil {
+			panic(err)
+		}
 
-	println(absPath)
+	} else {
+		error.CheckError(err)
+	}
 }
