@@ -1,6 +1,7 @@
 package gsheets
 
 import (
+	"fmt"
 	"github.com/kostmetallist/heuclassifier/log_collector/error"
 	"github.com/kostmetallist/heuclassifier/log_collector/json"
 	"github.com/kostmetallist/heuclassifier/log_collector/logging"
@@ -11,7 +12,7 @@ import (
 )
 
 func GetGoogleSheetData(secretFilePath string, 
-	sheetConfigPath string) [][]interface{} {
+	sheetConfigPath string) [][]string {
 
 	logging.HCLogger.Println("getting credentials from secret file", 
 		secretFilePath)
@@ -35,9 +36,17 @@ func GetGoogleSheetData(secretFilePath string,
 
 	if len(resp.Values) == 0 {
 		logging.HCLogger.Println("got an empty table")
-		return make([][]interface{}, 0)
+		return make([][]string, 0)
 	} else {
 		logging.HCLogger.Println("returning preprocessed google sheets data")
-		return resp.Values
+		result := make([][]string, len(resp.Values))
+		for i, row := range resp.Values {
+			entries := make([]string, len(row))
+			for j, entry := range row {
+				entries[j] = fmt.Sprintf("%s", entry)
+			}
+			result[i] = entries
+		}
+		return result
 	}
 }

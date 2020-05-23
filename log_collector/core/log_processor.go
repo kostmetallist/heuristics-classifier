@@ -56,29 +56,20 @@ func ProcessLogData() {
 		chosenDataSource = dataSources[chosenDataSourceIdx]
 	}
 
-	var eventSequence EventSequence
+	var rtd RawTableData
 	switch chosenDataSource {
 	case "local CSV":
-		var rtd RawTableData = csv.GetCsvData("csv/params.json")
-		eventSequence = rtd.ToEventSequence()
-		logging.HCLogger.Println(fmt.Sprintf(
-			"length of retrieved event sequence: %d", len(eventSequence)))
+		rtd = csv.GetCsvData("csv/params.json")
 	case "local XLSX":
-		var rtd RawTableData = xlsx.GetXlsxData("xlsx/params.json")
-		eventSequence = rtd.ToEventSequence()
-		logging.HCLogger.Println(fmt.Sprintf(
-			"length of retrieved event sequence: %d", len(eventSequence)))
+		rtd = xlsx.GetXlsxData("xlsx/params.json")
 	case "google spreadsheets": 
-		gsheetsData := gsheets.GetGoogleSheetData("gsheets/secret.json", 
+		rtd = gsheets.GetGoogleSheetData("gsheets/secret.json", 
 			"gsheets/params.json")
-		for _, row := range gsheetsData {
-			for _, elem := range row {
-				fmt.Print(elem, " ")
-			}
-			fmt.Println()
-		}
 	}
 
+	eventSequence := rtd.ToEventSequence()
+	logging.HCLogger.Println(fmt.Sprintf(
+			"length of retrieved event sequence: %d", len(eventSequence)))
 	logging.HCLogger.Println("preparing log data to be converted to JSON...")
 	dumpFileLocation := "output/data.json"
 	json.DumpObjectToJson(dumpFileLocation, eventSequence)
