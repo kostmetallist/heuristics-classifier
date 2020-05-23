@@ -10,9 +10,11 @@ import (
 	"github.com/kostmetallist/heuclassifier/log_collector/logging"
 	"github.com/kostmetallist/heuclassifier/log_collector/xlsx"
 	"os"
+	"path/filepath"
 )
 
 var dataSources = [...]string{"local CSV", "local XLSX", "google spreadsheets"}
+var dumpFileLocation = "output/data.json"
 var chosenDataSource string
 
 func readFile2String(ch chan<- string, path string) {
@@ -28,7 +30,6 @@ func ProcessLogData() {
 	var welcomeMessage string
 	welcomeMessage = <- chWelcomeMsg
 	fmt.Print(string(welcomeMessage))
-	
 	fmt.Println("Initializing a logger instance...")
 	logging.InitLogger()
 	logging.HCLogger.Println("logger is configured to use the following flags:", 
@@ -71,6 +72,9 @@ func ProcessLogData() {
 	logging.HCLogger.Println(fmt.Sprintf(
 			"length of retrieved event sequence: %d", len(eventSequence)))
 	logging.HCLogger.Println("preparing log data to be converted to JSON...")
-	dumpFileLocation := "output/data.json"
 	json.DumpObjectToJson(dumpFileLocation, eventSequence)
+
+	absPath, err := filepath.Abs(dumpFileLocation)
+	error.CheckError(err)
+	logging.HCLogger.Println("passing control to the heuristics engine...")
 }

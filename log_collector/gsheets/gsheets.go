@@ -18,11 +18,11 @@ func GetGoogleSheetData(secretFilePath string,
 		secretFilePath)
 	privateKey, err := ioutil.ReadFile(secretFilePath)
 	error.CheckError(err)
-	logging.HCLogger.Println("preparing the token instance")
+	logging.HCLogger.Println("preparing the token instance...")
 	conf, err := google.JWTConfigFromJSON(privateKey, sheets.SpreadsheetsScope)
 	error.CheckError(err)
 
-	logging.HCLogger.Println("retrieving sheet table itself")
+	logging.HCLogger.Println("retrieving sheet table itself...")
 	client := conf.Client(context.TODO())
 	srv, err := sheets.New(client)
 	error.CheckError(err)
@@ -38,7 +38,7 @@ func GetGoogleSheetData(secretFilePath string,
 		logging.HCLogger.Println("got an empty table")
 		return make([][]string, 0)
 	} else {
-		logging.HCLogger.Println("returning preprocessed google sheets data")
+		logging.HCLogger.Println("returning preprocessed google sheets data...")
 		result := make([][]string, len(resp.Values))
 		for i, row := range resp.Values {
 			entries := make([]string, len(row))

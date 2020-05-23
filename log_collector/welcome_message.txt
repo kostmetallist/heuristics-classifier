@@ -1,1 +1,1 @@
-Using heuristics classifier for event logs data, early-access.
+Running Log Collector, Go 1.12, refer to README.md for additional instructions

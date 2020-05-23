@@ -40,6 +40,6 @@ func GetXlsxData(configFilePath string) [][]string {
 		}
 	}
 
-	logging.HCLogger.Println("returning preprocessed XLSX data")
+	logging.HCLogger.Println("returning preprocessed XLSX data...")
 	return result 
 }
