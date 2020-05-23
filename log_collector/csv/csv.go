@@ -13,13 +13,13 @@ import (
 
 func GetCsvData(configFilePath string) [][]string {
 
-	logging.HCLogger.Println("fetching configuration from", configFilePath)
+	logging.LCLogger.Println("fetching configuration from", configFilePath)
 	params := json.RetrieveJsonData(configFilePath)
 	csvFilePath := params["csvFileLocation"].(string)
 	// limitation is applied when the value is non negative
 	//readLimit := int(params["limitReadLinesTo"].(float64))
 
-	logging.HCLogger.Println("loading CSV file", csvFilePath)
+	logging.LCLogger.Println("loading CSV file", csvFilePath)
 	csvFile, err := os.Open(csvFilePath)
 	error.CheckError(err)
 	defer csvFile.Close()
@@ -27,7 +27,7 @@ func GetCsvData(configFilePath string) [][]string {
 
 	entries, err := csvReader.ReadAll()
 	error.CheckError(err)
-	logging.HCLogger.Println(fmt.Sprintf("%d lines have been succesfully read", 
+	logging.LCLogger.Println(fmt.Sprintf("%d lines have been succesfully read", 
 		len(entries)))
 	for i, row := range entries {
 		for j, token := range row {

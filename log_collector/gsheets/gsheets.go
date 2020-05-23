@@ -14,20 +14,20 @@ import (
 func GetGoogleSheetData(secretFilePath string, 
 	sheetConfigPath string) [][]string {
 
-	logging.HCLogger.Println("getting credentials from secret file", 
+	logging.LCLogger.Println("getting credentials from secret file", 
 		secretFilePath)
 	privateKey, err := ioutil.ReadFile(secretFilePath)
 	error.CheckError(err)
-	logging.HCLogger.Println("preparing the token instance...")
+	logging.LCLogger.Println("preparing the token instance...")
 	conf, err := google.JWTConfigFromJSON(privateKey, sheets.SpreadsheetsScope)
 	error.CheckError(err)
 
-	logging.HCLogger.Println("retrieving sheet table itself...")
+	logging.LCLogger.Println("retrieving sheet table itself...")
 	client := conf.Client(context.TODO())
 	srv, err := sheets.New(client)
 	error.CheckError(err)
 
-	logging.HCLogger.Println("fetching configuration from", sheetConfigPath)
+	logging.LCLogger.Println("fetching configuration from", sheetConfigPath)
 	params := json.RetrieveJsonData(sheetConfigPath)
 	paramsId := params["spreadsheetId"].(string)
 	paramsRange := params["range"].(string)
@@ -35,10 +35,10 @@ func GetGoogleSheetData(secretFilePath string,
 	error.CheckError(err)
 
 	if len(resp.Values) == 0 {
-		logging.HCLogger.Println("got an empty table")
+		logging.LCLogger.Println("got an empty table")
 		return make([][]string, 0)
 	} else {
-		logging.HCLogger.Println("returning preprocessed google sheets data...")
+		logging.LCLogger.Println("returning preprocessed google sheets data...")
 		result := make([][]string, len(resp.Values))
 		for i, row := range resp.Values {
 			entries := make([]string, len(row))

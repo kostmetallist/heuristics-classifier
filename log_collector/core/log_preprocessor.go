@@ -32,8 +32,8 @@ func ProcessLogData() {
 	fmt.Print(string(welcomeMessage))
 	fmt.Println("Initializing a logger instance...")
 	logging.InitLogger()
-	logging.HCLogger.Println("logger is configured to use the following flags:", 
-		logging.HCLogger.Flags)
+	logging.LCLogger.Println("logger is configured to use the following flags:", 
+		logging.LCLogger.Flags)
 
 	fmt.Println("Please specify an event log data source.", 
 		"Possible choices are:")
@@ -69,12 +69,14 @@ func ProcessLogData() {
 	}
 
 	eventSequence := rtd.ToEventSequence()
-	logging.HCLogger.Println(fmt.Sprintf(
+	logging.LCLogger.Println(fmt.Sprintf(
 			"length of retrieved event sequence: %d", len(eventSequence)))
-	logging.HCLogger.Println("preparing log data to be converted to JSON...")
+	logging.LCLogger.Println("preparing log data to be converted to JSON...")
 	json.DumpObjectToJson(dumpFileLocation, eventSequence)
 
 	absPath, err := filepath.Abs(dumpFileLocation)
 	error.CheckError(err)
-	logging.HCLogger.Println("passing control to the heuristics engine...")
+	logging.LCLogger.Println("passing control to the heuristics engine...")
+
+	println(absPath)
 }

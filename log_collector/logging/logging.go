@@ -5,9 +5,9 @@ import (
 	"os"
 )
 
-var HCLogger *log.Logger
+var LCLogger *log.Logger
 
 func InitLogger() {
-	// stands for Heuristics Classifier Logger
-	HCLogger = log.New(os.Stdout, "[HCL] ", log.Ltime | log.Lshortfile)
+	// stands for Log Collector Logger
+	LCLogger = log.New(os.Stdout, "[LCL] ", log.Ltime | log.Lshortfile)
 }
