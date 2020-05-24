@@ -33,11 +33,13 @@ class HeuristicBase:
         export_file.close()
 
     def test_networkx(self):
-        G = nx.Graph()
-        G.add_edge(1, 2, weight=0.3)
-        G.add_edge(1, 3, weight=0.5)
-        G.add_edge(2, 4, weight=0.18)
-        G.add_edge(3, 4, weight=0.02)
+        G = nx.MultiDiGraph()
+        edges = [
+            [1, 2, {'label': 'foo'}],
+            [1, 3, {'label': 'bar'}],
+            [2, 4, {'label': 'baz'}],
+            [3, 4, {'label': 'qux'}]]
+        G.add_edges_from(edges)
         self.export_graph_to_dot(G)
 
 

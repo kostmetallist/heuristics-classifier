@@ -5,8 +5,8 @@ MMXX course work project (MSU CMC, ISP RAS).
 This project's goal is to provide implementation for heuristic-based dependency 
 inference mechanisms aimed at event log data. Specific procedures are presented 
 in order to analyze log information, generate a model of attributes' domains 
-representation, and build a graph data structure to detect possible event classes 
-and their correlations.
+classes representation, and build a graph data structure to detect possible 
+correlations between attributes in the log.
 
 ### Running the application
 `./run.sh` on Unix systems or `start.bat` on Windows.
