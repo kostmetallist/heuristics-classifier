@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import logger as lg
+from procedures.heuristic_base import HeuristicBase
 
-logger = lg.get_logger("HEL")
+logger = lg.get_logger('HEL')
 
 
 # argv[1] is the file location for the JSON event data
@@ -13,4 +14,8 @@ if __name__ == '__main__':
     with open(sys.argv[1]) as jsonDataStream:
         events = json.loads(jsonDataStream.readline())
         pprint(events, indent=2)
-    logger.info("shutting down heuristics engine...")
+        logger.info('calling heuristic_base.py...')
+        hb = HeuristicBase()
+        hb.test_networkx()
+
+    logger.info('shutting down heuristics engine...')

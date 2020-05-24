@@ -16,6 +16,7 @@ import (
 
 var dataSources = [...]string{"local CSV", "local XLSX", "google spreadsheets"}
 var dumpFileLocation = "output/data.json"
+var heuEngineEntryScript = "dependency_finder.py"
 var chosenDataSource string
 
 func readFile2String(ch chan<- string, path string) {
@@ -79,9 +80,10 @@ func ProcessLogData() {
 	error.CheckError(err)
 	logging.LCLogger.Println("passing control to the heuristics engine...")
 	if wd, err := os.Getwd(); err == nil {
-		scriptPath := filepath.Join(
-			filepath.Dir(wd), "heuristics_engine/dependency_finder.py")
-		command := exec.Command("python3", scriptPath, inputLocation)
+		err = os.Chdir(filepath.Join(filepath.Dir(wd), "heuristics_engine"))
+		error.CheckError(err)
+		command := exec.Command("pipenv", "run", "python3", 
+			heuEngineEntryScript, inputLocation)
 		command.Stdout = os.Stdout
 		command.Stderr = os.Stderr
 		if err := command.Run(); err != nil {
