@@ -10,12 +10,20 @@ EXPORT_FILE_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
 logger = lg.get_logger('HEL')
 
 
-# class HeuristicBase(ABC):
-class HeuristicBase:
+class HeuristicBase(ABC):
+
+    # log_data is not empty, which should be controlled before object instantiation
+    def __init__(self, log_data: list):
+        self.log_data = log_data
+        self.attr_names = list(log_data[0].keys())
+
+    @abstractmethod
+    def get_global_attribute_statement(self, attr_name):
+        raise NotImplementedError
 
     @abstractmethod
     def process_messages(self, data: dict):
-        pass
+        raise NotImplementedError
 
     @staticmethod
     def export_graph_to_dot(graph, export_file_path=''):
@@ -32,7 +40,8 @@ class HeuristicBase:
         nx.drawing.nx_pydot.write_dot(graph, export_file)
         export_file.close()
 
-    def test_networkx(self):
+    @staticmethod
+    def test_networkx():
         G = nx.MultiDiGraph()
         edges = [
             [1, 2, {'label': 'foo'}],
@@ -40,9 +49,9 @@ class HeuristicBase:
             [2, 4, {'label': 'baz'}],
             [3, 4, {'label': 'qux'}]]
         G.add_edges_from(edges)
-        self.export_graph_to_dot(G)
+        HeuristicBase.export_graph_to_dot(G)
 
 
 if __name__ == '__main__':
     logger.info('running test method...')
-    HeuristicBase().test_networkx()
+    HeuristicBase.test_networkx()
