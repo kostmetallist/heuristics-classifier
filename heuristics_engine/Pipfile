@@ -5,6 +5,7 @@ verify_ssl = true
 
 [packages]
 networkx = "*"
+pydot = "*"
 
 [requires]
 python_version = "3.6"

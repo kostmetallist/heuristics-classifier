@@ -2,6 +2,7 @@
 import logger as lg
 from procedures.heuristic_base import HeuristicBase
 
+# stands for Heuristics Engine Logger
 logger = lg.get_logger('HEL')
 
 
