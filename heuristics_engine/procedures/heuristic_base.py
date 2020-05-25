@@ -25,6 +25,33 @@ class HeuristicBase(ABC):
         INTEGER = auto()
         STRING = auto()
 
+    @staticmethod
+    def export_graph_to_dot(graph, export_file_path=''):
+        if not export_file_path:
+            export_file = open(
+                path.join(DEFAULT_EXPORT_DIR, 
+                    datetime.now().strftime(EXPORT_FILE_FORMAT)), 
+                mode='x', 
+                encoding='UTF-8')
+        else:
+            export_file = open(export_file_path, 'x', encoding='UTF-8')
+
+        logger.info(f'exporting graph to the {export_file.name}...')
+        nx.drawing.nx_pydot.write_dot(graph, export_file)
+        export_file.close()
+
+    @staticmethod
+    def test_networkx():
+        G = nx.MultiDiGraph()
+        edges = [
+            [1, 2, {'label': 'foo'}],
+            [1, 3, {'label': 'bar'}],
+            [2, 4, {'label': 'baz'}],
+            [3, 4, {'label': 'qux'}],
+        ]
+        G.add_edges_from(edges)
+        HeuristicBase.export_graph_to_dot(G)
+
     # log_data is not empty, which should be controlled before object instantiation
     def __init__(self, log_data: list):
         self.log_data = log_data
@@ -100,7 +127,10 @@ class HeuristicBase(ABC):
                 else:
                     current_type = self.TrivialDomain.STRING
 
-            return (current_type, suggested_clarifications)
+            return {
+                'type_assignment': current_type,
+                'suggested_clarifications': suggested_clarifications,
+            }
 
     @abstractmethod
     def get_global_attribute_statement(self, attr_name):
@@ -109,32 +139,6 @@ class HeuristicBase(ABC):
     @abstractmethod
     def process_messages(self, data: dict):
         raise NotImplementedError
-
-    @staticmethod
-    def export_graph_to_dot(graph, export_file_path=''):
-        if not export_file_path:
-            export_file = open(
-                path.join(DEFAULT_EXPORT_DIR, 
-                    datetime.now().strftime(EXPORT_FILE_FORMAT)), 
-                mode='x', 
-                encoding='UTF-8')
-        else:
-            export_file = open(export_file_path, 'x', encoding='UTF-8')
-
-        logger.info(f'exporting graph to the {export_file.name}...')
-        nx.drawing.nx_pydot.write_dot(graph, export_file)
-        export_file.close()
-
-    @staticmethod
-    def test_networkx():
-        G = nx.MultiDiGraph()
-        edges = [
-            [1, 2, {'label': 'foo'}],
-            [1, 3, {'label': 'bar'}],
-            [2, 4, {'label': 'baz'}],
-            [3, 4, {'label': 'qux'}]]
-        G.add_edges_from(edges)
-        HeuristicBase.export_graph_to_dot(G)
 
 
 if __name__ == '__main__':
