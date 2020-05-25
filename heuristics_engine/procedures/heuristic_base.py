@@ -1,5 +1,6 @@
 from os import path
 from datetime import datetime
+from enum import Enum, auto
 from abc import ABC, abstractmethod
 import networkx as nx
 
@@ -12,10 +13,94 @@ logger = lg.get_logger('HEL')
 
 class HeuristicBase(ABC):
 
+    STRING_BOOLEAN_REPRESENTATIONS = {
+        'true': ['true', 'True', 'TRUE', 'T'],
+        'false': ['false', 'False', 'FALSE', 'F']
+    }
+
+    class TrivialDomain(Enum):
+        NULLABLE = auto()
+        BOOLEAN = auto()
+        REAL = auto()
+        INTEGER = auto()
+        STRING = auto()
+
     # log_data is not empty, which should be controlled before object instantiation
     def __init__(self, log_data: list):
         self.log_data = log_data
         self.attr_names = list(log_data[0].keys())
+
+    def deduce_attribute_type(self, attr_name):
+        # Map for possible types conversions which is to cast values to ones
+        # of more appropriate type, i.e. "true" [str] -> True [Boolean];
+        # key: message index,
+        # value: proposed item value.
+        suggested_clarifications = dict()
+        values = [x[attr_name] for x in self.log_data]
+        current_type = self.TrivialDomain.NULLABLE
+        for index, elem in enumerate(values):
+
+            if not elem:
+                continue
+
+            if isinstance(elem, float):
+                # to meet type consistency, attribute won't be mapped to any 
+                # certain type if it comprise diverse values => leave NULLABLE
+                if (current_type == self.TrivialDomain.BOOLEAN or
+                    current_type == self.TrivialDomain.STRING):
+
+                    current_type = self.TrivialDomain.NULLABLE
+                    break;
+                current_type = self.TrivialDomain.REAL
+
+            elif isinstance(elem, int):
+                if current_type != self.TrivialDomain.REAL:
+                    if (current_type == self.TrivialDomain.BOOLEAN or
+                        current_type == self.TrivialDomain.STRING):
+
+                        current_type = self.TrivialDomain.NULLABLE
+                        break;
+                    current_type = self.TrivialDomain.INTEGER
+                else:
+                    suggested_clarifications[index] = float(elem)
+
+            elif isinstance(elem, bool):
+                if (current_type != self.TrivialDomain.NULLABLE and
+                    current_type != self.TrivialDomain.BOOLEAN):
+
+                        current_type = self.TrivialDomain.NULLABLE
+                        break;
+                current_type = self.TrivialDomain.BOOLEAN
+
+            elif isinstance(elem, str):
+                if current_type == self.TrivialDomain.BOOLEAN:
+                    if elem in self.STRING_BOOLEAN_REPRESENTATIONS['true']:
+                        suggested_clarifications[index] = True
+                    elif elem in self.STRING_BOOLEAN_REPRESENTATIONS['false']:
+                        suggested_clarifications[index] = False
+                    else:
+                        current_type = self.TrivialDomain.NULLABLE
+                        break;
+                elif (current_type == self.TrivialDomain.INTEGER or
+                      current_type == self.TrivialDomain.REAL):
+
+                    try:
+                        cast_result = int(elem)
+                    except ValueError:
+                        try:
+                            cast_result = float(elem)
+                        except ValueError:
+                            current_type = self.TrivialDomain.NULLABLE
+                            break;
+                        else:
+                            current_type = self.TrivialDomain.REAL
+                            suggested_clarifications[index] = cast_result
+                    else:
+                        suggested_clarifications[index] = cast_result
+                else:
+                    current_type = self.TrivialDomain.STRING
+
+            return (current_type, suggested_clarifications)
 
     @abstractmethod
     def get_global_attribute_statement(self, attr_name):

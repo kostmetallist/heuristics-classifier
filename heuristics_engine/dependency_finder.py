@@ -12,8 +12,8 @@ if __name__ == '__main__':
     import json
     import sys
     from pprint import pprint 
-    with open(sys.argv[1]) as jsonDataStream:
-        events = json.loads(jsonDataStream.readline())
+    with open(sys.argv[1]) as json_data_stream:
+        events = json.loads(json_data_stream.readline())
         pprint(events, indent=2)
         logger.info('calling heuristic_base.py...')
         hb = HeuristicBase()
