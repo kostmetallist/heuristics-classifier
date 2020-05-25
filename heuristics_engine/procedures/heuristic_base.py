@@ -26,6 +26,31 @@ class HeuristicBase(ABC):
         STRING = auto()
 
     @staticmethod
+    def _is_bool_convertable_string(value):
+        return (value in HeuristicBase.STRING_BOOLEAN_REPRESENTATIONS['true'] or
+                value in HeuristicBase.STRING_BOOLEAN_REPRESENTATIONS['false'])
+
+    @staticmethod
+    def _is_int_convertable_string(value):
+        result = True
+        try:
+            _ = int(value)
+        except ValueError:
+            result = False
+        finally: 
+            return result
+
+    @staticmethod
+    def _is_float_convertable_string(value):
+        result = True
+        try:
+            _ = float(value)
+        except ValueError:
+            result = False
+        finally: 
+            return result
+
+    @staticmethod
     def export_graph_to_dot(graph, export_file_path=''):
         if not export_file_path:
             export_file = open(
@@ -65,6 +90,7 @@ class HeuristicBase(ABC):
         suggested_clarifications = dict()
         values = [x[attr_name] for x in self.log_data]
         current_type = self.TrivialDomain.NULLABLE
+        logger.info(f'deducing trivial type for {attr_name}...')
         for index, elem in enumerate(values):
 
             if not elem:
@@ -101,36 +127,55 @@ class HeuristicBase(ABC):
 
             elif isinstance(elem, str):
                 if current_type == self.TrivialDomain.BOOLEAN:
-                    if elem in self.STRING_BOOLEAN_REPRESENTATIONS['true']:
-                        suggested_clarifications[index] = True
-                    elif elem in self.STRING_BOOLEAN_REPRESENTATIONS['false']:
-                        suggested_clarifications[index] = False
+                    if self._is_bool_convertable_string(elem):
+                        suggested_clarifications[index] = True \
+                            if elem in self.STRING_BOOLEAN_REPRESENTATIONS['true'] \
+                            else False
                     else:
                         current_type = self.TrivialDomain.NULLABLE
+                        suggested_clarifications.clear()
                         break;
-                elif (current_type == self.TrivialDomain.INTEGER or
-                      current_type == self.TrivialDomain.REAL):
 
-                    try:
-                        cast_result = int(elem)
-                    except ValueError:
-                        try:
-                            cast_result = float(elem)
-                        except ValueError:
-                            current_type = self.TrivialDomain.NULLABLE
-                            break;
-                        else:
-                            current_type = self.TrivialDomain.REAL
-                            suggested_clarifications[index] = cast_result
+                elif current_type == self.TrivialDomain.INTEGER:
+                    if self._is_int_convertable_string(elem):
+                        suggested_clarifications[index] = int(elem)
+                    elif self._is_float_convertable_string(elem):
+                        current_type = self.TrivialDomain.REAL
+                        suggested_clarifications = float(elem)
                     else:
-                        suggested_clarifications[index] = cast_result
-                else:
-                    current_type = self.TrivialDomain.STRING
+                        current_type = self.TrivialDomain.STRING
+                        suggested_clarifications = \
+                            {x: str(suggested_clarifications[x]) for x 
+                             in suggested_clarifications}
 
-            return {
-                'type_assignment': current_type,
-                'suggested_clarifications': suggested_clarifications,
-            }
+                elif current_type == self.TrivialDomain.REAL:
+                    if self._is_float_convertable_string(elem):
+                        suggested_clarifications = float(elem)
+                    else:
+                        current_type = self.TrivialDomain.STRING
+                        suggested_clarifications = \
+                            [{x: str(suggested_clarifications[x])} for x 
+                             in suggested_clarifications]
+
+                elif current_type == self.TrivialDomain.NULLABLE:
+                    if self._is_bool_convertable_string(elem):
+                        suggested_clarifications[index] = True \
+                            if elem in self.STRING_BOOLEAN_REPRESENTATIONS['true'] \
+                            else False
+                    elif self._is_int_convertable_string(elem):
+                        current_type = self.TrivialDomain.INTEGER
+                        suggested_clarifications[index] = int(elem)
+                    elif self._is_float_convertable_string(elem):
+                        current_type = self.TrivialDomain.REAL
+                        suggested_clarifications[index] = float(elem)
+                    else:
+                        current_type = self.TrivialDomain.STRING
+
+        logger.info(f'inferred trivial type as {current_type}')
+        return {
+            'type_assignment': current_type,
+            'suggested_clarifications': suggested_clarifications,
+        }
 
     @abstractmethod
     def get_global_attribute_statement(self, attr_name):

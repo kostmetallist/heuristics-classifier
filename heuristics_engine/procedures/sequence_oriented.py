@@ -7,7 +7,18 @@ logger = lg.get_logger('HEL')
 class SequenceOriented(HeuristicBase):
 
     def get_global_attribute_statement(self, attr_name):
-        return self.deduce_attribute_type(attr_name)['type_assignment']
+
+        deduce_result = self.deduce_attribute_type(attr_name)
+        # `refined_values` is a list of values for `attr_name` intended to be 
+        # repaired on suggested clarifications
+        refined_values = [x[attr_name] for x in self.log_data]
+        clarifications = deduce_result['suggested_clarifications']
+        # print(f'suggested_clarifications: {clarifications}')
+        type_assignment = deduce_result['type_assignment']
+        for index in clarifications:
+            refined_values[index] = clarifications[index]
+
+        return type_assignment
 
     def process_messages(self):
         labeled_attributes = [self.get_global_attribute_statement(attr)
