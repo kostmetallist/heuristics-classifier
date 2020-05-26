@@ -40,8 +40,12 @@ func (rtd RawTableData) ToEventSequence() EventSequence {
 					event[correspondingColumn] = nil
 					continue
 				}
-				// string type
-				event[correspondingColumn] = elem
+				// processing string type here
+				if len(elem) == 0 {
+					event[correspondingColumn] = nil
+				} else {
+					event[correspondingColumn] = elem
+				}
 			}
 			result = append(result, event)
 		}
