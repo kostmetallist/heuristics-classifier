@@ -17,6 +17,7 @@ class HeuristicBase(ABC):
         'true': ['true', 'True', 'TRUE', 'T'],
         'false': ['false', 'False', 'FALSE', 'F']
     }
+    DEFAULT_NO_STATEMENT_STRING = 'no valuable statements have been deduced'
 
     class TrivialDomain(Enum):
         NULLABLE = auto()
@@ -178,11 +179,68 @@ class HeuristicBase(ABC):
         }
 
     @abstractmethod
-    def get_global_attribute_statement(self, attr_name):
+    def infer_statement_for_integer(self, values):
         raise NotImplementedError
 
     @abstractmethod
+    def infer_statement_for_float(self, values):
+        raise NotImplementedError
+
+    @abstractmethod
+    def infer_statement_for_boolean(self, values):
+        raise NotImplementedError
+
+    @abstractmethod
+    def infer_statement_for_string(self, values):
+        raise NotImplementedError
+
+    def get_global_attribute_statement(self, attr_name):
+
+        deduce_result = self.deduce_attribute_type(attr_name)
+        # `refined_values` is a list of values for `attr_name` intended to be 
+        # repaired on suggested clarifications
+        refined_values = [x[attr_name] for x in self.log_data]
+        clarifications = deduce_result['suggested_clarifications']
+        type_assignment = deduce_result['type_assignment']
+        for index in clarifications:
+            refined_values[index] = clarifications[index]
+
+        statement = f'base type: {type_assignment.name}'
+        if type_assignment == self.TrivialDomain.INTEGER:
+            statement = '; '.join([
+                statement, 
+                self.infer_statement_for_integer(refined_values)
+            ])
+        elif type_assignment == self.TrivialDomain.REAL:
+            statement = '; '.join([
+                statement, 
+                self.infer_statement_for_float(refined_values)
+            ])
+        elif type_assignment == self.TrivialDomain.BOOLEAN:
+            statement = '; '.join([
+                statement, 
+                self.infer_statement_for_boolean(refined_values)
+            ])
+        elif type_assignment == self.TrivialDomain.STRING:
+            statement = '; '.join([
+                statement, 
+                self.infer_statement_for_string(refined_values)
+            ])
+        else:
+            statement = '; '.join([
+                statement, 
+                'no meaningful assessment for type-inconsistent data'
+            ])
+
+        return statement if statement else self.DEFAULT_NO_STATEMENT_STRING
+
+    @abstractmethod
     def process_messages(self, data: dict):
+        """
+        The most general method for particular heuristic. Commonly, it appears 
+        as an entrance point for analysis. Meant to be a caller for the rest of 
+        methods.
+        """
         raise NotImplementedError
 
 
