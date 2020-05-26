@@ -17,7 +17,9 @@ class HeuristicBase(ABC):
         'true': ['true', 'True', 'TRUE', 'T'],
         'false': ['false', 'False', 'FALSE', 'F']
     }
-    DEFAULT_NO_STATEMENT_STRING = 'no valuable statements have been deduced'
+    INTEGER_CARDINALITY_LIMIT = 5
+    STRING_CARDINALITY_LIMIT = 5
+    DEFAULT_NO_STATEMENT_STRING = 'no specific statements have been deduced'
 
     class TrivialDomain(Enum):
         NULLABLE = auto()
@@ -178,6 +180,54 @@ class HeuristicBase(ABC):
             'suggested_clarifications': suggested_clarifications,
         }
 
+    def infer_common_statements(self, values, type_assignment):
+        null_found = False
+        deferred_init_detected = not bool(values[0])
+        report_unique_entries = True
+        unique_entries = set()
+        statement = ''
+
+        def append_fragment(frag):
+            if frag:
+                statement += f'; {frag}'
+
+        for value in values:
+
+            if value:
+                unique_entries.add(value)
+            else:
+                null_found = True
+
+            if type_assignment == self.TrivialDomain.INTEGER:
+                if len(unique_entries) > self.INTEGER_CARDINALITY_LIMIT:
+                    report_unique_entries = False
+            elif type_assignment == self.TrivialDomain.STRING:
+                if len(unique_entries) > self.STRING_CARDINALITY_LIMIT:
+                    report_unique_entries = False
+
+            #TODO repetitive patterns detection
+
+        if null_found:
+            statement += '; nulls are found among values'
+
+        if deferred_init_detected and unique_entries:
+            statement += '; value is initialized afterwards'
+
+        if report_unique_entries and \
+           (type_assignment == self.TrivialDomain.INTEGER or
+            type_assignment == self.TrivialDomain.STRING):
+
+            prepared = [str(x) for x in unique_entries]
+            statement += f'; values are in set ({", ".join(prepared)})'
+
+        if len(unique_entries) == len(values):
+            statement += '; all the values are unique'
+
+        if len(unique_entries) == 1:
+            statement += '; values are static'
+
+        return statement
+
     @abstractmethod
     def infer_statement_for_integer(self, values):
         raise NotImplementedError
@@ -206,41 +256,31 @@ class HeuristicBase(ABC):
             refined_values[index] = clarifications[index]
 
         statement = f'base type: {type_assignment.name}'
-        if type_assignment == self.TrivialDomain.INTEGER:
-            statement = '; '.join([
-                statement, 
-                self.infer_statement_for_integer(refined_values)
-            ])
-        elif type_assignment == self.TrivialDomain.REAL:
-            statement = '; '.join([
-                statement, 
-                self.infer_statement_for_float(refined_values)
-            ])
-        elif type_assignment == self.TrivialDomain.BOOLEAN:
-            statement = '; '.join([
-                statement, 
-                self.infer_statement_for_boolean(refined_values)
-            ])
-        elif type_assignment == self.TrivialDomain.STRING:
-            statement = '; '.join([
-                statement, 
-                self.infer_statement_for_string(refined_values)
-            ])
-        else:
-            statement = '; '.join([
-                statement, 
-                'no meaningful assessment for type-inconsistent data'
-            ])
+        if type_assignment != self.TrivialDomain.NULLABLE:
+            statement += '; ' + \
+               f'{self.infer_common_statements(refined_values, type_assignment)}'
 
-        return statement if statement else self.DEFAULT_NO_STATEMENT_STRING
+        if type_assignment == self.TrivialDomain.INTEGER:
+            deduced = self.infer_statement_for_integer(refined_values)
+        elif type_assignment == self.TrivialDomain.REAL:
+            deduced = self.infer_statement_for_float(refined_values)
+        elif type_assignment == self.TrivialDomain.BOOLEAN:
+            deduced = self.infer_statement_for_boolean(refined_values)
+        elif type_assignment == self.TrivialDomain.STRING:
+            deduced = self.infer_statement_for_string(refined_values)
+        else:
+            deduced = 'no meaningful assessment for type-inconsistent data'
+
+        return '; '.join([statement, deduced if deduced 
+                                     else self.DEFAULT_NO_STATEMENT_STRING])
 
     @abstractmethod
     def process_messages(self, data: dict):
-        """
+        '''
         The most general method for particular heuristic. Commonly, it appears 
         as an entrance point for analysis. Meant to be a caller for the rest of 
         methods.
-        """
+        '''
         raise NotImplementedError
 
 

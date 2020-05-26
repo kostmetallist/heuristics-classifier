@@ -1,3 +1,5 @@
+from pprint import pformat
+
 import logger as lg
 from procedures.heuristic_base import HeuristicBase
 
@@ -21,8 +23,10 @@ class SequenceOriented(HeuristicBase):
     def process_messages(self):
         labeled_attributes = [self.get_global_attribute_statement(attr)
                               for attr in self.attr_names]
-        logger.info('retrieved the following statements: '
-                    + f'{[x for x in zip(self.attr_names, labeled_attributes)]}')
+        logger.info('retrieved the following statements:')
+        logger.info(pformat([x for x 
+                             in zip(self.attr_names, labeled_attributes)], 
+                            indent=2))
         return labeled_attributes
 
 
