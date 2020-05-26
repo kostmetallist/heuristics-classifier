@@ -21,7 +21,7 @@ between event log file and its origin:
 
 | Repository  | Files  |
 |---|---|
-| [Correlated and uncorrelated CSV Event Logs Figshare page](https://figshare.com/articles/Event_Logs_CSV/11342063/1) | <ul><li>`1.csv`</li><li>`2.csv`</li><li>...</li><li>`9.csv`</li></ul>> |
+| [Correlated and uncorrelated CSV Event Logs Figshare page](https://figshare.com/articles/Event_Logs_CSV/11342063/1) | <ul><li>`1.csv`</li><li>`2.csv`</li><li>...</li><li>`9.csv`</li></ul> |
 | [Rabobank Group ICT Service Desk logs collection](https://data.4tu.nl/repository/uuid:c3e5d162-0cfd-4bb0-bd82-af5268819c35) | <ul><li>`detail_change.csv`</li><li>`detail_incident.csv`</li></ul> |
 | [Online Judge (RUET OJ) Kaggle Server Log Dataset](https://www.kaggle.com/shawon10/web-log-dataset/data?select=weblog.csv) | <ul><li>`weblog.csv`</li></ul> |
 
