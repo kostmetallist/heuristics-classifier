@@ -1,0 +1,2611 @@
+case Id,activity,timestamp
+60_0,Loan application received,63566010000
+60_0,Check application form completeness,63566010743
+60_0,Check credit history,63566010879
+60_0,Appraise property,63566012846
+60_0,Assess loan risk,63566012928
+60_0,Assess eligibility,63566014648
+60_0,Added Activity,63566015391
+60_0,Loan application rejected,63566015391
+61_1,Loan application received,63566083800
+61_1,Check application form completeness,63566084256
+61_1,Appraise property,63566084717
+61_1,Check credit history,63566086233
+61_1,Assess loan risk,63566089066
+61_1,Assess eligibility,63566091410
+61_1,Added Activity,63566092935
+61_1,Loan application rejected,63566092935
+62_2,Loan application received,63566100000
+62_2,Check application form completeness,63566100381
+62_2,Check credit history,63566101123
+62_2,Appraise property,63566102012
+62_2,Assess loan risk,63566102838
+62_2,Assess eligibility,63566334788
+62_2,Prepare acceptance pack,63566335560
+62_2,Check if home insurance quote is requested,63566335667
+62_2,Send acceptance pack,63566336311
+62_2,Verify repayment agreement,63566336707
+62_2,Approve application,63566337714
+62_2,Loan application approved,63566337714
+140_3,Loan application received,63571453200
+140_3,Check application form completeness,63571453499
+140_3,Check credit history,63571454250
+140_3,Assess loan risk,63571455013
+140_3,Appraise property,63571457144
+140_3,Assess eligibility,63571518962
+140_3,Prepare acceptance pack,63571521395
+140_3,Check if home insurance quote is requested,63571526055
+140_3,Send home insurance quote,63571527798
+140_3,Verify repayment agreement,63571527837
+140_3,Cancel application,63571529093
+140_3,Loan application canceled,63571529093
+69_4,Loan application received,63566616600
+69_4,Check application form completeness,63566617404
+69_4,Appraise property,63566617948
+69_4,Check credit history,63566679647
+69_4,Assess loan risk,63566682842
+69_4,Assess eligibility,63566683500
+69_4,Added Activity,63566684206
+69_4,Loan application rejected,63566684206
+141_5,Loan application received,63571527000
+141_5,Check application form completeness,63571527148
+141_5,Check credit history,63571528864
+141_5,Appraise property,63571532709
+141_5,Assess loan risk,63571533202
+141_5,Assess eligibility,63571533388
+141_5,Added Activity,63571533844
+141_5,Loan application rejected,63571533844
+50_6,Loan application received,63565387200
+50_6,Check application form completeness,63565394043
+50_6,Appraise property,63565395176
+50_6,Check credit history,63565397015
+50_6,Assess loan risk,63565397316
+50_6,Assess eligibility,63565400323
+50_6,Prepare acceptance pack,63565403931
+50_6,Check if home insurance quote is requested,63565405349
+50_6,Send acceptance pack,63565405651
+50_6,Verify repayment agreement,63565406708
+50_6,Cancel application,63565409359
+50_6,Loan application canceled,63565409359
+70_7,Loan application received,63566690400
+70_7,Check application form completeness,63566692896
+70_7,Check credit history,63566693319
+70_7,Appraise property,63566694304
+70_7,Assess loan risk,63566696661
+70_7,Assess eligibility,63566696865
+70_7,Prepare acceptance pack,63566697217
+70_7,Check if home insurance quote is requested,63566697372
+70_7,Send acceptance pack,63566697982
+70_7,Verify repayment agreement,63566698692
+70_7,Cancel application,63566699002
+70_7,Loan application canceled,63566699002
+72_8,Loan application received,63566953200
+72_8,Check application form completeness,63566957616
+72_8,Return application back to applicant,63566958771
+72_8,Receive updated application,63566959127
+72_8,Check application form completeness,63566959207
+72_8,Check credit history,63566959540
+72_8,Assess loan risk,63566960152
+72_8,Appraise property,63566961842
+72_8,Assess eligibility,63566962937
+72_8,Prepare acceptance pack,63566964136
+72_8,Check if home insurance quote is requested,63566966566
+72_8,Send acceptance pack,63567026248
+72_8,Verify repayment agreement,63567029046
+72_8,Approve application,63567032010
+72_8,Loan application approved,63567032010
+51_9,Loan application received,63565403400
+51_9,Check application form completeness,63565411910
+51_9,Appraise property,63565471772
+51_9,Check credit history,63565471913
+51_9,Assess loan risk,63565476267
+51_9,Assess eligibility,63565485289
+51_9,Reject application,63565486063
+51_9,Added Activity,63565489527
+51_9,Loan application rejected,63565489527
+249_10,Loan application received,63579036600
+249_10,Check application form completeness,63579036956
+249_10,Appraise property,63579038171
+249_10,Check credit history,63579041190
+249_10,Assess loan risk,63579042337
+249_10,Assess eligibility,63579043729
+249_10,Prepare acceptance pack,63579044600
+249_10,Check if home insurance quote is requested,63579044877
+249_10,Send acceptance pack,63579045725
+249_10,Verify repayment agreement,63579045746
+249_10,Approve application,63579048107
+249_10,Loan application approved,63579048107
+73_11,Loan application received,63567027000
+73_11,Check application form completeness,63567028743
+73_11,Check credit history,63567028995
+73_11,Assess loan risk,63567029066
+73_11,Appraise property,63567030915
+73_11,Assess eligibility,63567036159
+73_11,Prepare acceptance pack,63567037634
+73_11,Check if home insurance quote is requested,63567039699
+73_11,Send acceptance pack,63567043860
+73_11,Verify repayment agreement,63567045242
+73_11,Approve application,63567052251
+73_11,Loan application approved,63567052251
+244_12,Loan application received,63578610000
+244_12,Check application form completeness,63578610860
+244_12,Check credit history,63578611330
+244_12,Assess loan risk,63578611467
+244_12,Appraise property,63578611788
+244_12,Assess eligibility,63578613399
+244_12,Added Activity,63578617676
+244_12,Loan application rejected,63578617676
+243_13,Loan application received,63578536200
+243_13,Check application form completeness,63578538767
+243_13,Check credit history,63578539017
+243_13,Assess loan risk,63578540528
+243_13,Appraise property,63578543726
+243_13,Assess eligibility,63578604600
+243_13,Added Activity,63578605310
+243_13,Loan application rejected,63578605310
+71_14,Loan application received,63566706600
+71_14,Check application form completeness,63566706718
+71_14,Check credit history,63566707095
+71_14,Assess loan risk,63566938826
+71_14,Appraise property,63566940273
+71_14,Assess eligibility,63566940390
+71_14,Added Activity,63566940622
+71_14,Loan application rejected,63566940622
+58_15,Loan application received,63565920000
+58_15,Check application form completeness,63565920337
+58_15,Check credit history,63565920509
+58_15,Assess loan risk,63565921473
+58_15,Appraise property,63565921671
+58_15,Assess eligibility,63565926432
+58_15,Prepare acceptance pack,63565926998
+58_15,Check if home insurance quote is requested,63565927263
+58_15,Send home insurance quote,63565927504
+58_15,Verify repayment agreement,63565928144
+58_15,Approve application,63565928992
+58_15,Loan application approved,63565928992
+59_16,Loan application received,63565993800
+59_16,Check application form completeness,63565994219
+59_16,Appraise property,63565995621
+59_16,Check credit history,63565995982
+59_16,Assess loan risk,63565996006
+59_16,Assess eligibility,63565999629
+59_16,Prepare acceptance pack,63566003410
+59_16,Check if home insurance quote is requested,63566005385
+59_16,Send acceptance pack,63566006772
+59_16,Verify repayment agreement,63566008582
+59_16,Cancel application,63566012112
+59_16,Loan application canceled,63566012112
+245_17,Loan application received,63578626200
+245_17,Check application form completeness,63578627665
+245_17,Check credit history,63578628632
+245_17,Appraise property,63578628649
+245_17,Assess loan risk,63578691923
+245_17,Assess eligibility,63578693347
+245_17,Added Activity,63578696693
+245_17,Loan application rejected,63578696693
+246_18,Loan application received,63578700000
+246_18,Check application form completeness,63578701110
+246_18,Check credit history,63578701902
+246_18,Assess loan risk,63578702635
+246_18,Appraise property,63578703952
+246_18,Assess eligibility,63578706888
+246_18,Prepare acceptance pack,63578707102
+246_18,Check if home insurance quote is requested,63578708663
+246_18,Send acceptance pack,63578711436
+246_18,Verify repayment agreement,63578712639
+246_18,Cancel application,63578715704
+246_18,Loan application canceled,63578715704
+248_19,Loan application received,63578790000
+248_19,Check application form completeness,63578794249
+248_19,Appraise property,63578797135
+248_19,Check credit history,63578797597
+248_19,Assess loan risk,63578798638
+248_19,Assess eligibility,63578803441
+248_19,Added Activity,63579034829
+248_19,Reject application,63579035598
+248_19,Loan application rejected,63579035598
+247_20,Loan application received,63578716200
+247_20,Check application form completeness,63578716946
+247_20,Appraise property,63578776075
+247_20,Check credit history,63578776293
+247_20,Assess loan risk,63578778635
+247_20,Assess eligibility,63578779322
+247_20,Prepare acceptance pack,63578780575
+247_20,Check if home insurance quote is requested,63578781410
+247_20,Send acceptance pack,63578781744
+247_20,Verify repayment agreement,63578783964
+247_20,Approve application,63578785670
+247_20,Loan application approved,63578785670
+126_21,Loan application received,63570592800
+126_21,Check application form completeness,63570656534
+126_21,Check credit history,63570656602
+126_21,Appraise property,63570660542
+126_21,Assess loan risk,63570660703
+126_21,Assess eligibility,63570661669
+126_21,Prepare acceptance pack,63570662001
+126_21,Check if home insurance quote is requested,63570664477
+126_21,Send home insurance quote,63570665942
+126_21,Verify repayment agreement,63570672855
+126_21,Approve application,63570673179
+126_21,Loan application approved,63570673179
+147_22,Loan application received,63571969800
+147_22,Check application form completeness,63571971305
+147_22,Appraise property,63571973166
+147_22,Check credit history,63571973362
+147_22,Assess loan risk,63571973952
+147_22,Assess eligibility,63571977281
+147_22,Added Activity,63571977597
+147_22,Reject application,63572037527
+147_22,Loan application rejected,63572037527
+148_23,Loan application received,63572043600
+148_23,Check application form completeness,63572044941
+148_23,Check credit history,63572044979
+148_23,Appraise property,63572045562
+148_23,Assess loan risk,63572046283
+148_23,Assess eligibility,63572047536
+148_23,Prepare acceptance pack,63572048336
+148_23,Check if home insurance quote is requested,63572048462
+148_23,Send acceptance pack,63572049606
+148_23,Verify repayment agreement,63572051480
+148_23,Approve application,63572052940
+148_23,Loan application approved,63572052940
+145_24,Loan application received,63571879800
+145_24,Check application form completeness,63571880437
+145_24,Appraise property,63571884785
+145_24,Check credit history,63571889046
+145_24,Assess loan risk,63571890980
+145_24,Assess eligibility,63571950680
+145_24,Prepare acceptance pack,63571953926
+145_24,Check if home insurance quote is requested,63571956850
+145_24,Send acceptance pack,63571957864
+145_24,Verify repayment agreement,63571958230
+145_24,Approve application,63571958760
+145_24,Loan application approved,63571958760
+149_25,Loan application received,63572059800
+149_25,Check application form completeness,63572063112
+149_25,Appraise property,63572063121
+149_25,Check credit history,63572125429
+149_25,Assess loan risk,63572129350
+149_25,Assess eligibility,63572130197
+149_25,Prepare acceptance pack,63572133283
+149_25,Check if home insurance quote is requested,63572133774
+149_25,Send acceptance pack,63572136052
+149_25,Verify repayment agreement,63572136672
+149_25,Approve application,63572138387
+149_25,Loan application approved,63572138387
+123_26,Loan application received,63570313800
+123_26,Check application form completeness,63570314866
+123_26,Appraise property,63570317089
+123_26,Check credit history,63570317968
+123_26,Assess loan risk,63570320577
+123_26,Assess eligibility,63570322789
+123_26,Reject application,63570322979
+123_26,Added Activity,63570323695
+123_26,Loan application rejected,63570323695
+127_27,Loan application received,63570666600
+127_27,Check application form completeness,63570667114
+127_27,Appraise property,63570667761
+127_27,Check credit history,63570667821
+127_27,Assess loan risk,63570668967
+127_27,Assess eligibility,63570669192
+127_27,Added Activity,63570669649
+127_27,Reject application,63570670870
+127_27,Loan application rejected,63570670870
+122_28,Loan application received,63570240000
+122_28,Check application form completeness,63570242108
+122_28,Appraise property,63570243542
+122_28,Check credit history,63570245684
+122_28,Assess loan risk,63570247569
+122_28,Assess eligibility,63570248375
+122_28,Prepare acceptance pack,63570249612
+122_28,Check if home insurance quote is requested,63570309526
+122_28,Send home insurance quote,63570310435
+122_28,Verify repayment agreement,63570313160
+122_28,Cancel application,63570313375
+122_28,Loan application canceled,63570313375
+143_29,Loan application received,63571789800
+143_29,Check application form completeness,63571790758
+143_29,Check credit history,63571791320
+143_29,Assess loan risk,63571791425
+143_29,Appraise property,63571794304
+143_29,Assess eligibility,63571794342
+143_29,Added Activity,63571795301
+143_29,Loan application rejected,63571795301
+144_30,Loan application received,63571806000
+144_30,Check application form completeness,63571865168
+144_30,Check credit history,63571865783
+144_30,Appraise property,63571866728
+144_30,Assess loan risk,63571867751
+144_30,Assess eligibility,63571868555
+144_30,Prepare acceptance pack,63571869338
+144_30,Check if home insurance quote is requested,63571871514
+144_30,Send acceptance pack,63571872225
+144_30,Verify repayment agreement,63571873462
+144_30,Cancel application,63571874254
+144_30,Loan application canceled,63571874254
+120_31,Loan application received,63570150000
+120_31,Check application form completeness,63570153075
+120_31,Check credit history,63570154009
+120_31,Assess loan risk,63570154919
+120_31,Appraise property,63570155128
+120_31,Assess eligibility,63570157872
+120_31,Added Activity,63570157884
+120_31,Reject application,63570163308
+120_31,Loan application rejected,63570163308
+128_32,Loan application received,63570682800
+128_32,Check application form completeness,63570741631
+128_32,Appraise property,63570743364
+128_32,Check credit history,63570744600
+128_32,Assess loan risk,63570745191
+128_32,Assess eligibility,63570745711
+128_32,Prepare acceptance pack,63570747560
+128_32,Check if home insurance quote is requested,63570747964
+128_32,Send acceptance pack,63570752517
+128_32,Verify repayment agreement,63570755322
+128_32,Approve application,63570755368
+128_32,Loan application approved,63570755368
+142_33,Loan application received,63571543200
+142_33,Check application form completeness,63571543288
+142_33,Appraise property,63571543567
+142_33,Check credit history,63571544573
+142_33,Assess loan risk,63571544604
+142_33,Assess eligibility,63571546444
+142_33,Prepare acceptance pack,63571781255
+142_33,Check if home insurance quote is requested,63571782240
+142_33,Send acceptance pack,63571782701
+142_33,Verify repayment agreement,63571783159
+142_33,Cancel application,63571783947
+142_33,Loan application canceled,63571783947
+121_34,Loan application received,63570223800
+121_34,Check application form completeness,63570225290
+121_34,Appraise property,63570226442
+121_34,Check credit history,63570228174
+121_34,Assess loan risk,63570230183
+121_34,Assess eligibility,63570230612
+121_34,Reject application,63570231639
+121_34,Added Activity,63570236143
+121_34,Loan application rejected,63570236143
+129_35,Loan application received,63570756600
+129_35,Check application form completeness,63570756758
+129_35,Check credit history,63570757249
+129_35,Appraise property,63570758463
+129_35,Assess loan risk,63570759312
+129_35,Assess eligibility,63570761434
+129_35,Prepare acceptance pack,63570763303
+129_35,Check if home insurance quote is requested,63570765079
+129_35,Send home insurance quote,63570766061
+129_35,Verify repayment agreement,63570766615
+129_35,Cancel application,63570767515
+129_35,Loan application canceled,63570767515
+79_36,Loan application received,63567297000
+79_36,Check application form completeness,63567299648
+79_36,Check credit history,63567299880
+79_36,Appraise property,63567299968
+79_36,Assess loan risk,63567300088
+79_36,Assess eligibility,63567303954
+79_36,Reject application,63567303988
+79_36,Added Activity,63567304947
+79_36,Loan application rejected,63567304947
+57_37,Loan application received,63565903800
+57_37,Check application form completeness,63565911155
+57_37,Appraise property,63565911254
+57_37,Check credit history,63565912900
+57_37,Assess loan risk,63565914630
+57_37,Assess eligibility,63565914913
+57_37,Added Activity,63565916622
+57_37,Loan application rejected,63565916622
+242_38,Loan application received,63578520000
+242_38,Check application form completeness,63578521912
+242_38,Check credit history,63578522031
+242_38,Assess loan risk,63578522663
+242_38,Appraise property,63578524763
+242_38,Assess eligibility,63578525504
+242_38,Added Activity,63578525770
+242_38,Loan application rejected,63578525770
+56_39,Loan application received,63565830000
+56_39,Check application form completeness,63565831751
+56_39,Appraise property,63565832216
+56_39,Check credit history,63565833814
+56_39,Assess loan risk,63565835812
+56_39,Assess eligibility,63565840120
+56_39,Prepare acceptance pack,63565840707
+56_39,Check if home insurance quote is requested,63565841232
+56_39,Send home insurance quote,63565843156
+56_39,Verify repayment agreement,63565902366
+56_39,Approve application,63565902900
+56_39,Loan application approved,63565902900
+78_40,Loan application received,63567223200
+78_40,Check application form completeness,63567223251
+78_40,Appraise property,63567225703
+78_40,Check credit history,63567285895
+78_40,Assess loan risk,63567286420
+78_40,Assess eligibility,63567289472
+78_40,Prepare acceptance pack,63567290427
+78_40,Check if home insurance quote is requested,63567290533
+78_40,Send home insurance quote,63567296421
+78_40,Verify repayment agreement,63567297651
+78_40,Cancel application,63567297823
+78_40,Loan application canceled,63567297823
+55_41,Loan application received,63565756200
+55_41,Check application form completeness,63565756394
+55_41,Check credit history,63565756990
+55_41,Assess loan risk,63565817059
+55_41,Appraise property,63565823312
+55_41,Assess eligibility,63565824052
+55_41,Reject application,63565826547
+55_41,Added Activity,63565831000
+55_41,Loan application rejected,63565831000
+241_42,Loan application received,63578446200
+241_42,Check application form completeness,63578447092
+241_42,Appraise property,63578447284
+241_42,Check credit history,63578448461
+241_42,Assess loan risk,63578449525
+241_42,Assess eligibility,63578449765
+241_42,Added Activity,63578453750
+241_42,Reject application,63578457382
+241_42,Loan application rejected,63578457382
+77_43,Loan application received,63567207000
+77_43,Check application form completeness,63567207183
+77_43,Appraise property,63567207497
+77_43,Check credit history,63567208121
+77_43,Assess loan risk,63567209254
+77_43,Assess eligibility,63567214086
+77_43,Added Activity,63567215431
+77_43,Reject application,63567215578
+77_43,Loan application rejected,63567215578
+53_44,Loan application received,63565493400
+53_44,Check application form completeness,63565495354
+53_44,Appraise property,63565495677
+53_44,Check credit history,63565496453
+53_44,Assess loan risk,63565496801
+53_44,Assess eligibility,63565729294
+53_44,Prepare acceptance pack,63565729531
+53_44,Check if home insurance quote is requested,63565731970
+53_44,Send acceptance pack,63565734208
+53_44,Verify repayment agreement,63565734816
+53_44,Approve application,63565735221
+53_44,Loan application approved,63565735221
+52_45,Loan application received,63565477200
+52_45,Check application form completeness,63565478752
+52_45,Check credit history,63565479379
+52_45,Appraise property,63565480602
+52_45,Assess loan risk,63565487956
+52_45,Assess eligibility,63565488721
+52_45,Prepare acceptance pack,63565490126
+52_45,Check if home insurance quote is requested,63565492085
+52_45,Send home insurance quote,63565492504
+52_45,Verify repayment agreement,63565493249
+52_45,Cancel application,63565495174
+52_45,Loan application canceled,63565495174
+54_46,Loan application received,63565740000
+54_46,Check application form completeness,63565741454
+54_46,Check credit history,63565745334
+54_46,Appraise property,63565746060
+54_46,Assess loan risk,63565746358
+54_46,Assess eligibility,63565746725
+54_46,Prepare acceptance pack,63565749329
+54_46,Check if home insurance quote is requested,63565751265
+54_46,Send acceptance pack,63565752694
+54_46,Verify repayment agreement,63565753546
+54_46,Cancel application,63565754695
+54_46,Loan application canceled,63565754695
+74_47,Loan application received,63567043200
+74_47,Check application form completeness,63567045062
+74_47,Appraise property,63567046152
+74_47,Check credit history,63567047858
+74_47,Assess loan risk,63567048859
+74_47,Assess eligibility,63567049851
+74_47,Prepare acceptance pack,63567050780
+74_47,Check if home insurance quote is requested,63567050867
+74_47,Send acceptance pack,63567051915
+74_47,Verify repayment agreement,63567053340
+74_47,Approve application,63567112571
+74_47,Loan application approved,63567112571
+76_48,Loan application received,63567133200
+76_48,Check application form completeness,63567198375
+76_48,Check credit history,63567199402
+76_48,Appraise property,63567199512
+76_48,Assess loan risk,63567200282
+76_48,Assess eligibility,63567200907
+76_48,Prepare acceptance pack,63567203659
+76_48,Check if home insurance quote is requested,63567203697
+76_48,Send home insurance quote,63567204196
+76_48,Verify repayment agreement,63567205694
+76_48,Approve application,63567209785
+76_48,Loan application approved,63567209785
+124_49,Loan application received,63570330000
+124_49,Check application form completeness,63570330341
+124_49,Appraise property,63570330439
+124_49,Check credit history,63570332203
+124_49,Assess loan risk,63570334451
+124_49,Assess eligibility,63570335629
+124_49,Prepare acceptance pack,63570569606
+124_49,Check if home insurance quote is requested,63570571216
+124_49,Send home insurance quote,63570571363
+124_49,Verify repayment agreement,63570571653
+124_49,Cancel application,63570572339
+124_49,Loan application canceled,63570572339
+240_50,Loan application received,63578199600
+240_50,Check application form completeness,63578434552
+240_50,Check credit history,63578434612
+240_50,Assess loan risk,63578435766
+240_50,Appraise property,63578436560
+240_50,Assess eligibility,63578437119
+240_50,Prepare acceptance pack,63578439453
+240_50,Check if home insurance quote is requested,63578440944
+240_50,Send home insurance quote,63578444423
+240_50,Verify repayment agreement,63578446523
+240_50,Cancel application,63578447282
+240_50,Loan application canceled,63578447282
+146_51,Loan application received,63571953600
+146_51,Check application form completeness,63571954980
+146_51,Appraise property,63571957499
+146_51,Check credit history,63571961186
+146_51,Assess loan risk,63571966889
+146_51,Assess eligibility,63571967602
+146_51,Reject application,63571968668
+146_51,Added Activity,63571973443
+146_51,Loan application rejected,63571973443
+125_52,Loan application received,63570576600
+125_52,Check application form completeness,63570579741
+125_52,Check credit history,63570580152
+125_52,Appraise property,63570580397
+125_52,Assess loan risk,63570581667
+125_52,Assess eligibility,63570582646
+125_52,Reject application,63570584189
+125_52,Added Activity,63570588300
+125_52,Loan application rejected,63570588300
+75_53,Loan application received,63567117000
+75_53,Check application form completeness,63567118225
+75_53,Return application back to applicant,63567119642
+75_53,Receive updated application,63567120594
+75_53,Check application form completeness,63567121052
+75_53,Appraise property,63567121242
+75_53,Check credit history,63567121674
+75_53,Assess loan risk,63567123920
+75_53,Assess eligibility,63567124876
+75_53,Prepare acceptance pack,63567128480
+75_53,Check if home insurance quote is requested,63567129550
+75_53,Send acceptance pack,63567130756
+75_53,Verify repayment agreement,63567134465
+75_53,Approve application,63567134899
+75_53,Loan application approved,63567134899
+81_54,Loan application received,63567559800
+81_54,Check application form completeness,63567560791
+81_54,Appraise property,63567561128
+81_54,Check credit history,63567562917
+81_54,Assess loan risk,63567563194
+81_54,Assess eligibility,63567567802
+81_54,Prepare acceptance pack,63567571063
+81_54,Check if home insurance quote is requested,63567571586
+81_54,Send home insurance quote,63567631260
+81_54,Verify repayment agreement,63567635478
+81_54,Cancel application,63567639446
+81_54,Loan application canceled,63567639446
+239_55,Loan application received,63578183400
+239_55,Check application form completeness,63578183728
+239_55,Appraise property,63578184394
+239_55,Check credit history,63578184820
+239_55,Assess loan risk,63578185950
+239_55,Assess eligibility,63578191384
+239_55,Added Activity,63578196266
+239_55,Loan application rejected,63578196266
+83_56,Loan application received,63567649800
+83_56,Check application form completeness,63567651545
+83_56,Appraise property,63567652883
+83_56,Check credit history,63567654111
+83_56,Assess loan risk,63567654427
+83_56,Assess eligibility,63567654606
+83_56,Added Activity,63567654945
+83_56,Loan application rejected,63567654945
+41_57,Loan application received,63564780600
+41_57,Check application form completeness,63564781823
+41_57,Appraise property,63564782123
+41_57,Check credit history,63564784199
+41_57,Assess loan risk,63564784414
+41_57,Assess eligibility,63564789908
+41_57,Added Activity,63564790165
+41_57,Loan application rejected,63564790165
+233_58,Loan application received,63577913400
+233_58,Check application form completeness,63577915309
+233_58,Appraise property,63577915689
+233_58,Check credit history,63577917773
+233_58,Assess loan risk,63577920294
+233_58,Assess eligibility,63577924576
+233_58,Prepare acceptance pack,63577925425
+233_58,Check if home insurance quote is requested,63577926149
+233_58,Send home insurance quote,63577926367
+233_58,Verify repayment agreement,63577929096
+233_58,Cancel application,63577929279
+233_58,Loan application canceled,63577929279
+47_59,Loan application received,63565223400
+47_59,Check application form completeness,63565224763
+47_59,Check credit history,63565225168
+47_59,Assess loan risk,63565227336
+47_59,Appraise property,63565228993
+47_59,Assess eligibility,63565229750
+47_59,Added Activity,63565234725
+47_59,Loan application rejected,63565234725
+161_60,Loan application received,63573003000
+161_60,Check application form completeness,63573007711
+161_60,Check credit history,63573007948
+161_60,Appraise property,63573008716
+161_60,Assess loan risk,63573010048
+161_60,Assess eligibility,63573012049
+161_60,Prepare acceptance pack,63573012087
+161_60,Check if home insurance quote is requested,63573013722
+161_60,Send home insurance quote,63573073344
+161_60,Verify repayment agreement,63573074662
+161_60,Approve application,63573078638
+161_60,Loan application approved,63573078638
+49_61,Loan application received,63565313400
+49_61,Check application form completeness,63565320600
+49_61,Appraise property,63565322198
+49_61,Check credit history,63565384925
+49_61,Assess loan risk,63565384976
+49_61,Assess eligibility,63565385632
+49_61,Prepare acceptance pack,63565386488
+49_61,Check if home insurance quote is requested,63565388407
+49_61,Send home insurance quote,63565389422
+49_61,Verify repayment agreement,63565390850
+49_61,Cancel application,63565392940
+49_61,Loan application canceled,63565392940
+235_62,Loan application received,63578003400
+235_62,Check application form completeness,63578005237
+235_62,Appraise property,63578005437
+235_62,Check credit history,63578006492
+235_62,Assess loan risk,63578006544
+235_62,Assess eligibility,63578006928
+235_62,Added Activity,63578007430
+235_62,Reject application,63578010715
+235_62,Loan application rejected,63578010715
+237_63,Loan application received,63578093400
+237_63,Check application form completeness,63578096972
+237_63,Check credit history,63578099627
+237_63,Appraise property,63578100516
+237_63,Assess loan risk,63578102762
+237_63,Assess eligibility,63578105467
+237_63,Prepare acceptance pack,63578106475
+237_63,Check if home insurance quote is requested,63578107791
+237_63,Send acceptance pack,63578109317
+237_63,Verify repayment agreement,63578109873
+237_63,Approve application,63578110251
+237_63,Loan application approved,63578110251
+150_64,Loan application received,63572133600
+150_64,Check application form completeness,63572135205
+150_64,Check credit history,63572135786
+150_64,Assess loan risk,63572136619
+150_64,Appraise property,63572138010
+150_64,Assess eligibility,63572141118
+150_64,Added Activity,63572142540
+150_64,Loan application rejected,63572142540
+171_65,Loan application received,63573683400
+171_65,Check application form completeness,63573683858
+171_65,Appraise property,63573684288
+171_65,Check credit history,63573684421
+171_65,Assess loan risk,63573685919
+171_65,Assess eligibility,63573687226
+171_65,Added Activity,63573687612
+171_65,Reject application,63573689655
+171_65,Loan application rejected,63573689655
+192_66,Loan application received,63575002800
+192_66,Check application form completeness,63575062016
+192_66,Return application back to applicant,63575063169
+192_66,Receive updated application,63575068250
+192_66,Check application form completeness,63575068417
+192_66,Appraise property,63575068847
+192_66,Check credit history,63575069588
+192_66,Assess loan risk,63575071923
+192_66,Assess eligibility,63575074585
+192_66,Prepare acceptance pack,63575076204
+192_66,Check if home insurance quote is requested,63575076541
+192_66,Send acceptance pack,63575078066
+192_66,Verify repayment agreement,63575080292
+192_66,Cancel application,63575080581
+192_66,Loan application canceled,63575080581
+152_67,Loan application received,63572396400
+152_67,Check application form completeness,63572397393
+152_67,Check credit history,63572397419
+152_67,Assess loan risk,63572397797
+152_67,Appraise property,63572405616
+152_67,Assess eligibility,63572405978
+152_67,Added Activity,63572406430
+152_67,Reject application,63572408731
+152_67,Loan application rejected,63572408731
+173_68,Loan application received,63573773400
+173_68,Check application form completeness,63573774371
+173_68,Check credit history,63573775154
+173_68,Assess loan risk,63573775423
+173_68,Appraise property,63573776176
+173_68,Assess eligibility,63573777080
+173_68,Added Activity,63573777084
+173_68,Reject application,63573778981
+173_68,Loan application rejected,63573778981
+190_69,Loan application received,63574912800
+190_69,Check application form completeness,63574975592
+190_69,Check credit history,63574975687
+190_69,Assess loan risk,63574977340
+190_69,Appraise property,63574978990
+190_69,Assess eligibility,63574979569
+190_69,Prepare acceptance pack,63574985989
+190_69,Check if home insurance quote is requested,63574991862
+190_69,Send acceptance pack,63574998997
+190_69,Verify repayment agreement,63575060912
+190_69,Approve application,63575063443
+190_69,Loan application approved,63575063443
+194_70,Loan application received,63575150400
+194_70,Check application form completeness,63575151660
+194_70,Appraise property,63575151674
+194_70,Check credit history,63575153823
+194_70,Assess loan risk,63575156721
+194_70,Assess eligibility,63575162048
+194_70,Prepare acceptance pack,63575163183
+194_70,Check if home insurance quote is requested,63575163703
+194_70,Send acceptance pack,63575165222
+194_70,Verify repayment agreement,63575165539
+194_70,Approve application,63575167265
+194_70,Loan application approved,63575167265
+158_71,Loan application received,63572666400
+158_71,Check application form completeness,63572730685
+158_71,Check credit history,63572730867
+158_71,Appraise property,63572731051
+158_71,Assess loan risk,63572733447
+158_71,Assess eligibility,63572736054
+158_71,Reject application,63572736639
+158_71,Added Activity,63572745832
+158_71,Loan application rejected,63572745832
+179_72,Loan application received,63574216200
+179_72,Check application form completeness,63574217182
+179_72,Appraise property,63574217305
+179_72,Check credit history,63574220566
+179_72,Assess loan risk,63574221046
+179_72,Assess eligibility,63574282958
+179_72,Added Activity,63574283018
+179_72,Reject application,63574283030
+179_72,Loan application rejected,63574283030
+137_73,Loan application received,63571347000
+137_73,Check application form completeness,63571348160
+137_73,Check credit history,63571348748
+137_73,Assess loan risk,63571348864
+137_73,Appraise property,63571350562
+137_73,Assess eligibility,63571351872
+137_73,Prepare acceptance pack,63571352042
+137_73,Check if home insurance quote is requested,63571353912
+137_73,Send acceptance pack,63571354318
+137_73,Verify repayment agreement,63571354718
+137_73,Cancel application,63571363955
+137_73,Loan application canceled,63571363955
+156_74,Loan application received,63572576400
+156_74,Check application form completeness,63572577329
+156_74,Return application back to applicant,63572578310
+156_74,Receive updated application,63572579273
+156_74,Check application form completeness,63572643514
+156_74,Appraise property,63572645218
+156_74,Check credit history,63572645376
+156_74,Assess loan risk,63572645484
+156_74,Assess eligibility,63572645919
+156_74,Added Activity,63572646428
+156_74,Reject application,63572646536
+156_74,Loan application rejected,63572646536
+177_75,Loan application received,63573953400
+177_75,Check application form completeness,63573954009
+177_75,Check credit history,63573954487
+177_75,Assess loan risk,63573954534
+177_75,Appraise property,63573955304
+177_75,Assess eligibility,63573955652
+177_75,Added Activity,63573958796
+177_75,Loan application rejected,63573958796
+198_76,Loan application received,63575503200
+198_76,Check application form completeness,63575503543
+198_76,Appraise property,63575504089
+198_76,Check credit history,63575509091
+198_76,Assess loan risk,63575509164
+198_76,Assess eligibility,63575512667
+198_76,Added Activity,63575516626
+198_76,Loan application rejected,63575516626
+112_77,Loan application received,63569559600
+112_77,Check application form completeness,63569620996
+112_77,Check credit history,63569624185
+112_77,Appraise property,63569624356
+112_77,Assess loan risk,63569628034
+112_77,Assess eligibility,63569632469
+112_77,Reject application,63569634679
+112_77,Added Activity,63569641819
+112_77,Loan application rejected,63569641819
+116_78,Loan application received,63569970000
+116_78,Check application form completeness,63569970391
+116_78,Check credit history,63569970454
+116_78,Appraise property,63569971296
+116_78,Assess loan risk,63569973352
+116_78,Assess eligibility,63569980112
+116_78,Prepare acceptance pack,63569981004
+116_78,Check if home insurance quote is requested,63569981274
+116_78,Send home insurance quote,63569981351
+116_78,Verify repayment agreement,63569984605
+116_78,Cancel application,63569987822
+116_78,Loan application canceled,63569987822
+133_79,Loan application received,63570936600
+133_79,Check application form completeness,63571173818
+133_79,Check credit history,63571173889
+133_79,Assess loan risk,63571174647
+133_79,Appraise property,63571174649
+133_79,Assess eligibility,63571174756
+133_79,Added Activity,63571174891
+133_79,Loan application rejected,63571174891
+154_80,Loan application received,63572486400
+154_80,Check application form completeness,63572487774
+154_80,Appraise property,63572488423
+154_80,Check credit history,63572488423
+154_80,Assess loan risk,63572494848
+154_80,Assess eligibility,63572494850
+154_80,Prepare acceptance pack,63572555959
+154_80,Check if home insurance quote is requested,63572557266
+154_80,Send acceptance pack,63572557693
+154_80,Verify repayment agreement,63572557701
+154_80,Cancel application,63572562602
+154_80,Loan application canceled,63572562602
+175_81,Loan application received,63573863400
+175_81,Check application form completeness,63573863456
+175_81,Appraise property,63573864673
+175_81,Check credit history,63573865686
+175_81,Assess loan risk,63573870730
+175_81,Assess eligibility,63573879240
+175_81,Prepare acceptance pack,63573937336
+175_81,Check if home insurance quote is requested,63573938953
+175_81,Send acceptance pack,63573939279
+175_81,Verify repayment agreement,63573939692
+175_81,Cancel application,63573942961
+175_81,Loan application canceled,63573942961
+196_82,Loan application received,63575413200
+196_82,Check application form completeness,63575413206
+196_82,Check credit history,63575413753
+196_82,Appraise property,63575415164
+196_82,Assess loan risk,63575417151
+196_82,Assess eligibility,63575417589
+196_82,Added Activity,63575418019
+196_82,Loan application rejected,63575418019
+131_83,Loan application received,63570846600
+131_83,Check application form completeness,63570846782
+131_83,Check credit history,63570847004
+131_83,Appraise property,63570847951
+131_83,Assess loan risk,63570848650
+131_83,Assess eligibility,63570849978
+131_83,Reject application,63570851042
+131_83,Added Activity,63570851672
+131_83,Loan application rejected,63570851672
+139_84,Loan application received,63571437000
+139_84,Check application form completeness,63571438028
+139_84,Appraise property,63571438740
+139_84,Check credit history,63571438910
+139_84,Assess loan risk,63571439121
+139_84,Assess eligibility,63571439845
+139_84,Reject application,63571440419
+139_84,Added Activity,63571442068
+139_84,Loan application rejected,63571442068
+68_85,Loan application received,63566600400
+68_85,Check application form completeness,63566603103
+68_85,Appraise property,63566605325
+68_85,Check credit history,63566605554
+68_85,Assess loan risk,63566607910
+68_85,Assess eligibility,63566609612
+68_85,Added Activity,63566611604
+68_85,Loan application rejected,63566611604
+110_86,Loan application received,63569469600
+110_86,Check application form completeness,63569470272
+110_86,Appraise property,63569470398
+110_86,Check credit history,63569531749
+110_86,Assess loan risk,63569532324
+110_86,Assess eligibility,63569534875
+110_86,Added Activity,63569536194
+110_86,Loan application rejected,63569536194
+118_87,Loan application received,63570060000
+118_87,Check application form completeness,63570060506
+118_87,Check credit history,63570061555
+118_87,Appraise property,63570062312
+118_87,Assess loan risk,63570063092
+118_87,Assess eligibility,63570066001
+118_87,Added Activity,63570066220
+118_87,Loan application rejected,63570066220
+89_88,Loan application received,63568150200
+89_88,Check application form completeness,63568151077
+89_88,Check credit history,63568151282
+89_88,Appraise property,63568153951
+89_88,Assess loan risk,63568156182
+89_88,Assess eligibility,63568156999
+89_88,Reject application,63568158242
+89_88,Added Activity,63568158744
+89_88,Loan application rejected,63568158744
+231_89,Loan application received,63577593000
+231_89,Check application form completeness,63577826272
+231_89,Appraise property,63577826318
+231_89,Check credit history,63577827983
+231_89,Assess loan risk,63577830960
+231_89,Assess eligibility,63577831618
+231_89,Prepare acceptance pack,63577835801
+231_89,Check if home insurance quote is requested,63577835804
+231_89,Send home insurance quote,63577836438
+231_89,Verify repayment agreement,63577837744
+231_89,Cancel application,63577837927
+231_89,Loan application canceled,63577837927
+24_90,Loan application received,63563583600
+24_90,Check application form completeness,63563584106
+24_90,Appraise property,63563584990
+24_90,Check credit history,63563588035
+24_90,Assess loan risk,63563589455
+24_90,Assess eligibility,63563594522
+24_90,Added Activity,63563595650
+24_90,Reject application,63563596693
+24_90,Loan application rejected,63563596693
+210_91,Loan application received,63576273600
+210_91,Check application form completeness,63576274454
+210_91,Appraise property,63576274459
+210_91,Check credit history,63576276159
+210_91,Assess loan risk,63576276400
+210_91,Assess eligibility,63576278653
+210_91,Prepare acceptance pack,63576282348
+210_91,Check if home insurance quote is requested,63576286721
+210_91,Send home insurance quote,63576287618
+210_91,Verify repayment agreement,63576289987
+210_91,Cancel application,63576295891
+210_91,Loan application canceled,63576295891
+87_92,Loan application received,63567829800
+87_92,Check application form completeness,63567889665
+87_92,Appraise property,63567889929
+87_92,Check credit history,63567891768
+87_92,Assess loan risk,63567892983
+87_92,Assess eligibility,63567893453
+87_92,Prepare acceptance pack,63567894700
+87_92,Check if home insurance quote is requested,63567895640
+87_92,Send home insurance quote,63567896144
+87_92,Verify repayment agreement,63567896983
+87_92,Cancel application,63567897118
+87_92,Loan application canceled,63567897118
+45_93,Loan application received,63565133400
+45_93,Check application form completeness,63565133956
+45_93,Return application back to applicant,63565134240
+45_93,Receive updated application,63565134413
+45_93,Check application form completeness,63565135190
+45_93,Appraise property,63565135704
+45_93,Check credit history,63565138400
+45_93,Assess loan risk,63565145962
+45_93,Assess eligibility,63565152144
+45_93,Prepare acceptance pack,63565152472
+45_93,Check if home insurance quote is requested,63565210919
+45_93,Send acceptance pack,63565211588
+45_93,Verify repayment agreement,63565211612
+45_93,Cancel application,63565218560
+45_93,Loan application canceled,63565218560
+66_94,Loan application received,63566510400
+66_94,Check application form completeness,63566515750
+66_94,Appraise property,63566516262
+66_94,Check credit history,63566517032
+66_94,Assess loan risk,63566518589
+66_94,Assess eligibility,63566519792
+66_94,Prepare acceptance pack,63566519832
+66_94,Check if home insurance quote is requested,63566520836
+66_94,Send home insurance quote,63566521959
+66_94,Verify repayment agreement,63566522531
+66_94,Approve application,63566528760
+66_94,Loan application approved,63566528760
+85_95,Loan application received,63567739800
+85_95,Check application form completeness,63567739839
+85_95,Check credit history,63567741995
+85_95,Appraise property,63567742706
+85_95,Assess loan risk,63567743392
+85_95,Assess eligibility,63567802973
+85_95,Prepare acceptance pack,63567803419
+85_95,Check if home insurance quote is requested,63567805515
+85_95,Send acceptance pack,63567805960
+85_95,Verify repayment agreement,63567806332
+85_95,Cancel application,63567806494
+85_95,Loan application canceled,63567806494
+43_96,Loan application received,63564870600
+43_96,Check application form completeness,63564873523
+43_96,Check credit history,63564873544
+43_96,Appraise property,63564874359
+43_96,Assess loan risk,63564875768
+43_96,Assess eligibility,63564878959
+43_96,Added Activity,63564879811
+43_96,Reject application,63564882041
+43_96,Loan application rejected,63564882041
+20_97,Loan application received,63563403600
+20_97,Check application form completeness,63563409195
+20_97,Return application back to applicant,63563409727
+20_97,Receive updated application,63563413776
+20_97,Check application form completeness,63563415151
+20_97,Check credit history,63563415299
+20_97,Assess loan risk,63563415424
+20_97,Appraise property,63563416492
+20_97,Assess eligibility,63563417142
+20_97,Added Activity,63563417339
+20_97,Loan application rejected,63563417339
+22_98,Loan application received,63563493600
+22_98,Check application form completeness,63563494740
+22_98,Check credit history,63563494879
+22_98,Assess loan risk,63563495264
+22_98,Appraise property,63563495471
+22_98,Assess eligibility,63563497230
+22_98,Added Activity,63563497593
+22_98,Reject application,63563500534
+22_98,Loan application rejected,63563500534
+135_99,Loan application received,63571199400
+135_99,Check application form completeness,63571199536
+135_99,Check credit history,63571200142
+135_99,Appraise property,63571200630
+135_99,Assess loan risk,63571260609
+135_99,Assess eligibility,63571263262
+135_99,Added Activity,63571265595
+135_99,Loan application rejected,63571265595
+64_100,Loan application received,63566362800
+64_100,Check application form completeness,63566420522
+64_100,Check credit history,63566421832
+64_100,Assess loan risk,63566422083
+64_100,Appraise property,63566422190
+64_100,Assess eligibility,63566425977
+64_100,Prepare acceptance pack,63566426803
+64_100,Check if home insurance quote is requested,63566429437
+64_100,Send acceptance pack,63566430615
+64_100,Verify repayment agreement,63566432528
+64_100,Cancel application,63566435001
+64_100,Loan application canceled,63566435001
+114_101,Loan application received,63569707200
+114_101,Check application form completeness,63569708538
+114_101,Check credit history,63569709464
+114_101,Appraise property,63569709651
+114_101,Assess loan risk,63569710441
+114_101,Assess eligibility,63569711169
+114_101,Prepare acceptance pack,63569711827
+114_101,Check if home insurance quote is requested,63569712289
+114_101,Send home insurance quote,63569712464
+114_101,Verify repayment agreement,63569713114
+114_101,Approve application,63569713946
+114_101,Loan application approved,63569713946
+218_102,Loan application received,63576806400
+218_102,Check application form completeness,63576814775
+218_102,Appraise property,63576814912
+218_102,Check credit history,63576815089
+218_102,Assess loan risk,63576876870
+218_102,Assess eligibility,63576877394
+218_102,Prepare acceptance pack,63576880101
+218_102,Check if home insurance quote is requested,63576882102
+218_102,Send acceptance pack,63576883941
+218_102,Verify repayment agreement,63576888179
+218_102,Approve application,63576889128
+218_102,Loan application approved,63576889128
+217_103,Loan application received,63576790200
+217_103,Check application form completeness,63576790378
+217_103,Check credit history,63576790818
+217_103,Assess loan risk,63576791753
+217_103,Appraise property,63576793810
+217_103,Assess eligibility,63576794345
+217_103,Prepare acceptance pack,63576796339
+217_103,Check if home insurance quote is requested,63576800074
+217_103,Send home insurance quote,63576803156
+217_103,Verify repayment agreement,63576803979
+217_103,Approve application,63576807673
+217_103,Loan application approved,63576807673
+25_104,Loan application received,63563657400
+25_104,Check application form completeness,63563658533
+25_104,Appraise property,63563659051
+25_104,Check credit history,63563661867
+25_104,Assess loan risk,63563664511
+25_104,Assess eligibility,63563665235
+25_104,Prepare acceptance pack,63563668628
+25_104,Check if home insurance quote is requested,63563668706
+25_104,Send home insurance quote,63563672003
+25_104,Verify repayment agreement,63563672351
+25_104,Cancel application,63563673234
+25_104,Loan application canceled,63563673234
+211_105,Loan application received,63576289800
+211_105,Check application form completeness,63576291735
+211_105,Appraise property,63576291773
+211_105,Check credit history,63576292762
+211_105,Assess loan risk,63576295184
+211_105,Assess eligibility,63576298673
+211_105,Prepare acceptance pack,63576357875
+211_105,Check if home insurance quote is requested,63576358633
+211_105,Send home insurance quote,63576358728
+211_105,Verify repayment agreement,63576360588
+211_105,Cancel application,63576362680
+211_105,Loan application canceled,63576362680
+219_106,Loan application received,63576880200
+219_106,Check application form completeness,63576882159
+219_106,Check credit history,63576882816
+219_106,Appraise property,63576882829
+219_106,Assess loan risk,63576889995
+219_106,Assess eligibility,63576890897
+219_106,Prepare acceptance pack,63576894027
+219_106,Check if home insurance quote is requested,63576896702
+219_106,Send acceptance pack,63576900821
+219_106,Verify repayment agreement,63576903517
+219_106,Cancel application,63576962278
+219_106,Loan application canceled,63576962278
+182_107,Loan application received,63574380000
+182_107,Check application form completeness,63574383702
+182_107,Appraise property,63574385719
+182_107,Check credit history,63574389622
+182_107,Assess loan risk,63574391770
+182_107,Assess eligibility,63574393095
+182_107,Prepare acceptance pack,63574394218
+182_107,Check if home insurance quote is requested,63574397903
+182_107,Send acceptance pack,63574457164
+182_107,Verify repayment agreement,63574458497
+182_107,Approve application,63574460499
+182_107,Loan application approved,63574460499
+181_108,Loan application received,63574306200
+181_108,Check application form completeness,63574369627
+181_108,Check credit history,63574369865
+181_108,Assess loan risk,63574370812
+181_108,Appraise property,63574372674
+181_108,Assess eligibility,63574377478
+181_108,Added Activity,63574377892
+181_108,Loan application rejected,63574377892
+183_109,Loan application received,63574396200
+183_109,Check application form completeness,63574397023
+183_109,Check credit history,63574397730
+183_109,Appraise property,63574397979
+183_109,Assess loan risk,63574455869
+183_109,Assess eligibility,63574456109
+183_109,Prepare acceptance pack,63574460646
+183_109,Check if home insurance quote is requested,63574463804
+183_109,Send acceptance pack,63574465103
+183_109,Verify repayment agreement,63574465295
+183_109,Approve application,63574467232
+183_109,Loan application approved,63574467232
+26_110,Loan application received,63563673600
+26_110,Check application form completeness,63563673644
+26_110,Check credit history,63563673934
+26_110,Assess loan risk,63563674365
+26_110,Appraise property,63563675792
+26_110,Assess eligibility,63563682874
+26_110,Reject application,63563684304
+26_110,Added Activity,63563915926
+26_110,Loan application rejected,63563915926
+212_111,Loan application received,63576363600
+212_111,Check application form completeness,63576367044
+212_111,Check credit history,63576367210
+212_111,Appraise property,63576367595
+212_111,Assess loan risk,63576367745
+212_111,Assess eligibility,63576368133
+212_111,Added Activity,63576368248
+212_111,Loan application rejected,63576368248
+180_112,Loan application received,63574290000
+180_112,Check application form completeness,63574292932
+180_112,Appraise property,63574293655
+180_112,Check credit history,63574293934
+180_112,Assess loan risk,63574294336
+180_112,Assess eligibility,63574295746
+180_112,Reject application,63574296004
+180_112,Added Activity,63574299982
+180_112,Loan application rejected,63574299982
+184_113,Loan application received,63574470000
+184_113,Check application form completeness,63574470499
+184_113,Check credit history,63574471789
+184_113,Appraise property,63574471987
+184_113,Assess loan risk,63574474643
+184_113,Assess eligibility,63574474893
+184_113,Added Activity,63574480502
+184_113,Loan application rejected,63574480502
+27_114,Loan application received,63563920200
+27_114,Check application form completeness,63563927128
+27_114,Check credit history,63563927761
+27_114,Assess loan risk,63563928037
+27_114,Appraise property,63563928955
+27_114,Assess eligibility,63563929102
+27_114,Prepare acceptance pack,63563929462
+27_114,Check if home insurance quote is requested,63563929562
+27_114,Send acceptance pack,63563929863
+27_114,Verify repayment agreement,63563932846
+27_114,Approve application,63563935506
+27_114,Loan application approved,63563935506
+213_115,Loan application received,63576379800
+213_115,Check application form completeness,63576384637
+213_115,Appraise property,63576384979
+213_115,Check credit history,63576385190
+213_115,Assess loan risk,63576616688
+213_115,Assess eligibility,63576617827
+213_115,Added Activity,63576618232
+213_115,Loan application rejected,63576618232
+29_116,Loan application received,63564010200
+29_116,Check application form completeness,63564010534
+29_116,Appraise property,63564012528
+29_116,Check credit history,63564013061
+29_116,Assess loan risk,63564015049
+29_116,Assess eligibility,63564016549
+29_116,Reject application,63564017665
+29_116,Added Activity,63564018326
+29_116,Loan application rejected,63564018326
+28_117,Loan application received,63563936400
+28_117,Check application form completeness,63563939490
+28_117,Appraise property,63563940120
+28_117,Check credit history,63563941519
+28_117,Assess loan risk,63563942118
+28_117,Assess eligibility,63564005013
+28_117,Added Activity,63564005112
+28_117,Reject application,63564005918
+28_117,Loan application rejected,63564005918
+214_118,Loan application received,63576626400
+214_118,Check application form completeness,63576626667
+214_118,Check credit history,63576626685
+214_118,Appraise property,63576627240
+214_118,Assess loan risk,63576629113
+214_118,Assess eligibility,63576631464
+214_118,Prepare acceptance pack,63576632106
+214_118,Check if home insurance quote is requested,63576633130
+214_118,Send acceptance pack,63576635372
+214_118,Verify repayment agreement,63576635899
+214_118,Cancel application,63576639249
+214_118,Loan application canceled,63576639249
+216_119,Loan application received,63576716400
+216_119,Check application form completeness,63576717549
+216_119,Appraise property,63576718551
+216_119,Check credit history,63576718781
+216_119,Assess loan risk,63576720755
+216_119,Assess eligibility,63576721598
+216_119,Added Activity,63576722411
+216_119,Reject application,63576723187
+216_119,Loan application rejected,63576723187
+215_120,Loan application received,63576642600
+215_120,Check application form completeness,63576642903
+215_120,Appraise property,63576703625
+215_120,Check credit history,63576703775
+215_120,Assess loan risk,63576704623
+215_120,Assess eligibility,63576706468
+215_120,Prepare acceptance pack,63576707917
+215_120,Check if home insurance quote is requested,63576709824
+215_120,Send acceptance pack,63576714493
+215_120,Verify repayment agreement,63576718517
+215_120,Cancel application,63576719067
+215_120,Loan application canceled,63576719067
+7_121,Loan application received,63562386600
+7_121,Check application form completeness,63562387409
+7_121,Appraise property,63562387950
+7_121,Check credit history,63562446539
+7_121,Assess loan risk,63562447946
+7_121,Assess eligibility,63562449065
+7_121,Prepare acceptance pack,63562449876
+7_121,Check if home insurance quote is requested,63562452930
+7_121,Send acceptance pack,63562457755
+7_121,Verify repayment agreement,63562461648
+7_121,Cancel application,63562464326
+7_121,Loan application canceled,63562464326
+6_122,Loan application received,63562370400
+6_122,Check application form completeness,63562373232
+6_122,Check credit history,63562374450
+6_122,Appraise property,63562374655
+6_122,Assess loan risk,63562377739
+6_122,Assess eligibility,63562378617
+6_122,Prepare acceptance pack,63562380851
+6_122,Check if home insurance quote is requested,63562382071
+6_122,Send acceptance pack,63562382277
+6_122,Verify repayment agreement,63562448385
+6_122,Approve application,63562449420
+6_122,Loan application approved,63562449420
+8_123,Loan application received,63562460400
+8_123,Check application form completeness,63562460530
+8_123,Appraise property,63562462159
+8_123,Check credit history,63562462503
+8_123,Assess loan risk,63562468882
+8_123,Assess eligibility,63562470665
+8_123,Prepare acceptance pack,63562473404
+8_123,Check if home insurance quote is requested,63562705490
+8_123,Send acceptance pack,63562706634
+8_123,Verify repayment agreement,63562707272
+8_123,Cancel application,63562707590
+8_123,Loan application canceled,63562707590
+9_124,Loan application received,63562707000
+9_124,Check application form completeness,63562709498
+9_124,Check credit history,63562709557
+9_124,Appraise property,63562709629
+9_124,Assess loan risk,63562710565
+9_124,Assess eligibility,63562710650
+9_124,Prepare acceptance pack,63562711768
+9_124,Check if home insurance quote is requested,63562712277
+9_124,Send acceptance pack,63562714298
+9_124,Verify repayment agreement,63562714951
+9_124,Cancel application,63562715814
+9_124,Loan application canceled,63562715814
+229_125,Loan application received,63577503000
+229_125,Check application form completeness,63577505572
+229_125,Appraise property,63577506104
+229_125,Check credit history,63577567254
+229_125,Assess loan risk,63577568727
+229_125,Assess eligibility,63577569731
+229_125,Prepare acceptance pack,63577573182
+229_125,Check if home insurance quote is requested,63577573705
+229_125,Send home insurance quote,63577574682
+229_125,Verify repayment agreement,63577576254
+229_125,Cancel application,63577579250
+229_125,Loan application canceled,63577579250
+91_126,Loan application received,63568240200
+91_126,Check application form completeness,63568241739
+91_126,Appraise property,63568243504
+91_126,Check credit history,63568250456
+91_126,Assess loan risk,63568250480
+91_126,Assess eligibility,63568250942
+91_126,Reject application,63568252482
+91_126,Added Activity,63568253632
+91_126,Loan application rejected,63568253632
+92_127,Loan application received,63568256400
+92_127,Check application form completeness,63568260691
+92_127,Check credit history,63568262508
+92_127,Assess loan risk,63568263433
+92_127,Appraise property,63568322279
+92_127,Assess eligibility,63568322943
+92_127,Prepare acceptance pack,63568323446
+92_127,Check if home insurance quote is requested,63568324061
+92_127,Send acceptance pack,63568325515
+92_127,Verify repayment agreement,63568326425
+92_127,Approve application,63568327019
+92_127,Loan application approved,63568327019
+0_128,Loan application received,63562100400
+0_128,Check application form completeness,63562100628
+0_128,Appraise property,63562100755
+0_128,Check credit history,63562104603
+0_128,Assess loan risk,63562106285
+0_128,Assess eligibility,63562108675
+0_128,Prepare acceptance pack,63562110448
+0_128,Check if home insurance quote is requested,63562113044
+0_128,Send acceptance pack,63562113365
+0_128,Verify repayment agreement,63562117654
+0_128,Cancel application,63562119252
+0_128,Loan application canceled,63562119252
+207_129,Loan application received,63576109800
+207_129,Check application form completeness,63576109839
+207_129,Appraise property,63576110116
+207_129,Check credit history,63576110142
+207_129,Assess loan risk,63576110860
+207_129,Assess eligibility,63576111597
+207_129,Reject application,63576111828
+207_129,Added Activity,63576112051
+207_129,Loan application rejected,63576112051
+209_130,Loan application received,63576199800
+209_130,Check application form completeness,63576202597
+209_130,Appraise property,63576203568
+209_130,Check credit history,63576203771
+209_130,Assess loan risk,63576204494
+209_130,Assess eligibility,63576205975
+209_130,Added Activity,63576209938
+209_130,Loan application rejected,63576209938
+30_131,Loan application received,63564026400
+30_131,Check application form completeness,63564028301
+30_131,Appraise property,63564028378
+30_131,Check credit history,63564028837
+30_131,Assess loan risk,63564090027
+30_131,Assess eligibility,63564090289
+30_131,Prepare acceptance pack,63564091365
+30_131,Check if home insurance quote is requested,63564093977
+30_131,Send home insurance quote,63564094587
+30_131,Verify repayment agreement,63564095367
+30_131,Cancel application,63564099619
+30_131,Loan application canceled,63564099619
+227_132,Loan application received,63577413000
+227_132,Check application form completeness,63577413965
+227_132,Appraise property,63577414679
+227_132,Check credit history,63577414902
+227_132,Assess loan risk,63577421642
+227_132,Assess eligibility,63577479659
+227_132,Prepare acceptance pack,63577484801
+227_132,Check if home insurance quote is requested,63577487150
+227_132,Send home insurance quote,63577489739
+227_132,Verify repayment agreement,63577491173
+227_132,Approve application,63577491208
+227_132,Loan application approved,63577491208
+90_133,Loan application received,63568166400
+90_133,Check application form completeness,63568174891
+90_133,Check credit history,63568176396
+90_133,Appraise property,63568235067
+90_133,Assess loan risk,63568235619
+90_133,Assess eligibility,63568236530
+90_133,Prepare acceptance pack,63568238623
+90_133,Check if home insurance quote is requested,63568238711
+90_133,Send home insurance quote,63568238964
+90_133,Verify repayment agreement,63568239835
+90_133,Cancel application,63568246146
+90_133,Loan application canceled,63568246146
+94_134,Loan application received,63568346400
+94_134,Check application form completeness,63568407675
+94_134,Check credit history,63568408399
+94_134,Appraise property,63568409611
+94_134,Assess loan risk,63568412160
+94_134,Assess eligibility,63568412507
+94_134,Added Activity,63568413551
+94_134,Loan application rejected,63568413551
+228_135,Loan application received,63577486800
+228_135,Check application form completeness,63577494698
+228_135,Check credit history,63577495161
+228_135,Assess loan risk,63577495973
+228_135,Appraise property,63577497525
+228_135,Assess eligibility,63577497587
+228_135,Prepare acceptance pack,63577498659
+228_135,Check if home insurance quote is requested,63577500448
+228_135,Send acceptance pack,63577500796
+228_135,Verify repayment agreement,63577501537
+228_135,Cancel application,63577501846
+228_135,Loan application canceled,63577501846
+206_136,Loan application received,63576036000
+206_136,Check application form completeness,63576037237
+206_136,Check credit history,63576098433
+206_136,Assess loan risk,63576098669
+206_136,Appraise property,63576104735
+206_136,Assess eligibility,63576105377
+206_136,Prepare acceptance pack,63576108712
+206_136,Check if home insurance quote is requested,63576110526
+206_136,Send acceptance pack,63576110983
+206_136,Verify repayment agreement,63576111059
+206_136,Approve application,63576111348
+206_136,Loan application approved,63576111348
+3_137,Loan application received,63562206600
+3_137,Check application form completeness,63562206656
+3_137,Appraise property,63562206935
+3_137,Check credit history,63562207108
+3_137,Assess loan risk,63562209811
+3_137,Assess eligibility,63562211742
+3_137,Prepare acceptance pack,63562274064
+3_137,Check if home insurance quote is requested,63562276140
+3_137,Send home insurance quote,63562277144
+3_137,Verify repayment agreement,63562280358
+3_137,Cancel application,63562282084
+3_137,Loan application canceled,63562282084
+4_138,Loan application received,63562280400
+4_138,Check application form completeness,63562280968
+4_138,Appraise property,63562281399
+4_138,Check credit history,63562281434
+4_138,Assess loan risk,63562281850
+4_138,Assess eligibility,63562282689
+4_138,Added Activity,63562285297
+4_138,Loan application rejected,63562285297
+5_139,Loan application received,63562296600
+5_139,Check application form completeness,63562298425
+5_139,Check credit history,63562298901
+5_139,Appraise property,63562299477
+5_139,Assess loan risk,63562301861
+5_139,Assess eligibility,63562364266
+5_139,Reject application,63562366902
+5_139,Added Activity,63562367714
+5_139,Loan application rejected,63562367714
+93_140,Loan application received,63568330200
+93_140,Check application form completeness,63568332932
+93_140,Appraise property,63568333820
+93_140,Check credit history,63568334284
+93_140,Assess loan risk,63568334815
+93_140,Assess eligibility,63568336222
+93_140,Prepare acceptance pack,63568337432
+93_140,Check if home insurance quote is requested,63568340906
+93_140,Send home insurance quote,63568340972
+93_140,Verify repayment agreement,63568344271
+93_140,Approve application,63568349056
+93_140,Loan application approved,63568349056
+222_141,Loan application received,63576986400
+222_141,Check application form completeness,63576986957
+222_141,Check credit history,63576987476
+222_141,Appraise property,63576988433
+222_141,Assess loan risk,63576989012
+222_141,Assess eligibility,63577225395
+222_141,Added Activity,63577227077
+222_141,Loan application rejected,63577227077
+14_142,Loan application received,63562903200
+14_142,Check application form completeness,63562905433
+14_142,Appraise property,63562905487
+14_142,Check credit history,63562905948
+14_142,Assess loan risk,63562905950
+14_142,Assess eligibility,63562905974
+14_142,Prepare acceptance pack,63562906550
+14_142,Check if home insurance quote is requested,63562964617
+14_142,Send home insurance quote,63562969320
+14_142,Verify repayment agreement,63562972868
+14_142,Approve application,63562975579
+14_142,Loan application approved,63562975579
+208_143,Loan application received,63576126000
+208_143,Check application form completeness,63576186917
+208_143,Appraise property,63576188717
+208_143,Check credit history,63576188848
+208_143,Assess loan risk,63576189856
+208_143,Assess eligibility,63576192027
+208_143,Added Activity,63576192292
+208_143,Reject application,63576192777
+208_143,Loan application rejected,63576192777
+36_144,Loan application received,63564526800
+36_144,Check application form completeness,63564528165
+36_144,Appraise property,63564528359
+36_144,Check credit history,63564533088
+36_144,Assess loan risk,63564533703
+36_144,Assess eligibility,63564536913
+36_144,Reject application,63564537088
+36_144,Added Activity,63564538167
+36_144,Loan application rejected,63564538167
+37_145,Loan application received,63564543000
+37_145,Check application form completeness,63564544900
+37_145,Check credit history,63564545262
+37_145,Assess loan risk,63564545332
+37_145,Appraise property,63564546007
+37_145,Assess eligibility,63564546133
+37_145,Added Activity,63564548061
+37_145,Loan application rejected,63564548061
+201_146,Loan application received,63575667000
+201_146,Check application form completeness,63575667449
+201_146,Check credit history,63575667793
+201_146,Assess loan risk,63575669008
+201_146,Appraise property,63575671047
+201_146,Assess eligibility,63575672074
+201_146,Added Activity,63575676377
+201_146,Loan application rejected,63575676377
+15_147,Loan application received,63562977000
+15_147,Check application form completeness,63562977003
+15_147,Check credit history,63562977317
+15_147,Appraise property,63562977353
+15_147,Assess loan risk,63562979734
+15_147,Assess eligibility,63562984423
+15_147,Added Activity,63562986469
+15_147,Loan application rejected,63562986469
+38_148,Loan application received,63564616800
+38_148,Check application form completeness,63564620163
+38_148,Check credit history,63564621941
+38_148,Assess loan risk,63564623374
+38_148,Appraise property,63564624386
+38_148,Assess eligibility,63564625049
+38_148,Added Activity,63564626804
+38_148,Loan application rejected,63564626804
+223_149,Loan application received,63577233000
+223_149,Check application form completeness,63577236556
+223_149,Check credit history,63577237840
+223_149,Appraise property,63577239826
+223_149,Assess loan risk,63577240868
+223_149,Assess eligibility,63577241516
+223_149,Added Activity,63577242888
+223_149,Loan application rejected,63577242888
+224_150,Loan application received,63577249200
+224_150,Check application form completeness,63577311080
+224_150,Appraise property,63577311112
+224_150,Check credit history,63577311690
+224_150,Assess loan risk,63577315268
+224_150,Assess eligibility,63577315448
+224_150,Reject application,63577316008
+224_150,Added Activity,63577316835
+224_150,Loan application rejected,63577316835
+16_151,Loan application received,63562993200
+16_151,Check application form completeness,63563053013
+16_151,Appraise property,63563054024
+16_151,Check credit history,63563055655
+16_151,Assess loan risk,63563063671
+16_151,Assess eligibility,63563066056
+16_151,Prepare acceptance pack,63563068859
+16_151,Check if home insurance quote is requested,63563072121
+16_151,Send home insurance quote,63563073392
+16_151,Verify repayment agreement,63563073764
+16_151,Approve application,63563076956
+16_151,Loan application approved,63563076956
+202_152,Loan application received,63575683200
+202_152,Check application form completeness,63575683880
+202_152,Appraise property,63575684926
+202_152,Check credit history,63575686339
+202_152,Assess loan risk,63575690083
+202_152,Assess eligibility,63575691859
+202_152,Prepare acceptance pack,63575753789
+202_152,Check if home insurance quote is requested,63575758376
+202_152,Send acceptance pack,63575764895
+202_152,Verify repayment agreement,63575766799
+202_152,Approve application,63575771817
+202_152,Loan application approved,63575771817
+225_153,Loan application received,63577323000
+225_153,Check application form completeness,63577323152
+225_153,Appraise property,63577324080
+225_153,Check credit history,63577324241
+225_153,Assess loan risk,63577329388
+225_153,Assess eligibility,63577331178
+225_153,Reject application,63577331422
+225_153,Added Activity,63577331471
+225_153,Loan application rejected,63577331471
+2_154,Loan application received,63562190400
+2_154,Check application form completeness,63562196070
+2_154,Appraise property,63562196333
+2_154,Check credit history,63562196645
+2_154,Assess loan risk,63562200676
+2_154,Assess eligibility,63562203414
+2_154,Prepare acceptance pack,63562205026
+2_154,Check if home insurance quote is requested,63562205294
+2_154,Send acceptance pack,63562208359
+2_154,Verify repayment agreement,63562208597
+2_154,Approve application,63562209036
+2_154,Loan application approved,63562209036
+39_155,Loan application received,63564633000
+39_155,Check application form completeness,63564633089
+39_155,Appraise property,63564633153
+39_155,Check credit history,63564634316
+39_155,Assess loan risk,63564634749
+39_155,Assess eligibility,63564692912
+39_155,Reject application,63564693875
+39_155,Added Activity,63564699728
+39_155,Loan application rejected,63564699728
+17_156,Loan application received,63563067000
+17_156,Check application form completeness,63563067401
+17_156,Check credit history,63563068140
+17_156,Assess loan risk,63563068375
+17_156,Appraise property,63563070007
+17_156,Assess eligibility,63563071401
+17_156,Added Activity,63563072353
+17_156,Loan application rejected,63563072353
+19_157,Loan application received,63563329800
+19_157,Check application form completeness,63563331592
+19_157,Check credit history,63563331683
+19_157,Assess loan risk,63563332848
+19_157,Appraise property,63563397881
+19_157,Assess eligibility,63563398969
+19_157,Prepare acceptance pack,63563399121
+19_157,Check if home insurance quote is requested,63563400165
+19_157,Send home insurance quote,63563406023
+19_157,Verify repayment agreement,63563407651
+19_157,Cancel application,63563407712
+19_157,Loan application canceled,63563407712
+203_158,Loan application received,63575757000
+203_158,Check application form completeness,63575757112
+203_158,Check credit history,63575758382
+203_158,Appraise property,63575760413
+203_158,Assess loan risk,63575761575
+203_158,Assess eligibility,63575762617
+203_158,Prepare acceptance pack,63575775184
+203_158,Check if home insurance quote is requested,63575777042
+203_158,Send acceptance pack,63575778666
+203_158,Verify repayment agreement,63575778908
+203_158,Cancel application,63576015056
+203_158,Loan application canceled,63576015056
+205_159,Loan application received,63576019800
+205_159,Check application form completeness,63576020717
+205_159,Appraise property,63576021024
+205_159,Check credit history,63576022273
+205_159,Assess loan risk,63576022685
+205_159,Assess eligibility,63576022707
+205_159,Added Activity,63576024849
+205_159,Loan application rejected,63576024849
+1_160,Loan application received,63562116600
+1_160,Check application form completeness,63562120240
+1_160,Check credit history,63562120290
+1_160,Assess loan risk,63562120919
+1_160,Appraise property,63562121184
+1_160,Assess eligibility,63562127436
+1_160,Prepare acceptance pack,63562128306
+1_160,Check if home insurance quote is requested,63562128332
+1_160,Send acceptance pack,63562189305
+1_160,Verify repayment agreement,63562189590
+1_160,Cancel application,63562191743
+1_160,Loan application canceled,63562191743
+226_161,Loan application received,63577396800
+226_161,Check application form completeness,63577397095
+226_161,Check credit history,63577397253
+226_161,Assess loan risk,63577397955
+226_161,Appraise property,63577398522
+226_161,Assess eligibility,63577399599
+226_161,Added Activity,63577400977
+226_161,Reject application,63577401853
+226_161,Loan application rejected,63577401853
+18_162,Loan application received,63563313600
+18_162,Check application form completeness,63563315739
+18_162,Check credit history,63563315954
+18_162,Assess loan risk,63563316404
+18_162,Appraise property,63563318706
+18_162,Assess eligibility,63563321124
+18_162,Prepare acceptance pack,63563324289
+18_162,Check if home insurance quote is requested,63563324776
+18_162,Send acceptance pack,63563325205
+18_162,Verify repayment agreement,63563327414
+18_162,Approve application,63563328501
+18_162,Loan application approved,63563328501
+204_163,Loan application received,63575773200
+204_163,Check application form completeness,63575774633
+204_163,Appraise property,63575775084
+204_163,Check credit history,63575778825
+204_163,Assess loan risk,63576011627
+204_163,Assess eligibility,63576011804
+204_163,Prepare acceptance pack,63576017180
+204_163,Check if home insurance quote is requested,63576017337
+204_163,Send home insurance quote,63576018913
+204_163,Verify repayment agreement,63576019460
+204_163,Approve application,63576020865
+204_163,Loan application approved,63576020865
+105_164,Loan application received,63569100600
+105_164,Check application form completeness,63569102052
+105_164,Check credit history,63569102224
+105_164,Appraise property,63569102403
+105_164,Assess loan risk,63569102530
+105_164,Assess eligibility,63569104960
+105_164,Prepare acceptance pack,63569110058
+105_164,Check if home insurance quote is requested,63569111538
+105_164,Send acceptance pack,63569112425
+105_164,Verify repayment agreement,63569112779
+105_164,Cancel application,63569112880
+105_164,Loan application canceled,63569112880
+189_165,Loan application received,63574896600
+189_165,Check application form completeness,63574898817
+189_165,Check credit history,63574899487
+189_165,Assess loan risk,63574899908
+189_165,Appraise property,63574900442
+189_165,Assess eligibility,63574901203
+189_165,Prepare acceptance pack,63574901825
+189_165,Check if home insurance quote is requested,63574903778
+189_165,Send home insurance quote,63574903792
+189_165,Verify repayment agreement,63574905229
+189_165,Cancel application,63574906290
+189_165,Loan application canceled,63574906290
+104_166,Loan application received,63569026800
+104_166,Check application form completeness,63569028605
+104_166,Check credit history,63569029943
+104_166,Assess loan risk,63569030130
+104_166,Appraise property,63569031038
+104_166,Assess eligibility,63569038596
+104_166,Prepare acceptance pack,63569041123
+104_166,Check if home insurance quote is requested,63569102354
+104_166,Send home insurance quote,63569102860
+104_166,Verify repayment agreement,63569105795
+104_166,Approve application,63569106917
+104_166,Loan application approved,63569106917
+106_167,Loan application received,63569116800
+106_167,Check application form completeness,63569120892
+106_167,Appraise property,63569121984
+106_167,Check credit history,63569123433
+106_167,Assess loan risk,63569124381
+106_167,Assess eligibility,63569125943
+106_167,Prepare acceptance pack,63569127551
+106_167,Check if home insurance quote is requested,63569359400
+106_167,Send acceptance pack,63569361365
+106_167,Verify repayment agreement,63569361506
+106_167,Approve application,63569362743
+106_167,Loan application approved,63569362743
+167_168,Loan application received,63573273000
+167_168,Check application form completeness,63573274209
+167_168,Return application back to applicant,63573274739
+167_168,Receive updated application,63573334494
+167_168,Check application form completeness,63573335913
+167_168,Check credit history,63573338317
+167_168,Assess loan risk,63573339544
+167_168,Appraise property,63573341439
+167_168,Assess eligibility,63573344097
+167_168,Added Activity,63573345848
+167_168,Loan application rejected,63573345848
+169_169,Loan application received,63573593400
+169_169,Check application form completeness,63573595429
+169_169,Check credit history,63573595442
+169_169,Assess loan risk,63573596771
+169_169,Appraise property,63573599275
+169_169,Assess eligibility,63573599454
+169_169,Added Activity,63573600900
+169_169,Loan application rejected,63573600900
+187_170,Loan application received,63574806600
+187_170,Check application form completeness,63574810566
+187_170,Appraise property,63574811828
+187_170,Check credit history,63574812164
+187_170,Assess loan risk,63574813085
+187_170,Assess eligibility,63574815150
+187_170,Prepare acceptance pack,63574817290
+187_170,Check if home insurance quote is requested,63574821600
+187_170,Send acceptance pack,63574822679
+187_170,Verify repayment agreement,63574823603
+187_170,Cancel application,63574826549
+187_170,Loan application canceled,63574826549
+188_171,Loan application received,63574822800
+188_171,Check application form completeness,63574823857
+188_171,Check credit history,63574824060
+188_171,Assess loan risk,63574824483
+188_171,Appraise property,63574825101
+188_171,Assess eligibility,63574827435
+188_171,Prepare acceptance pack,63574827715
+188_171,Check if home insurance quote is requested,63574890394
+188_171,Send acceptance pack,63574894090
+188_171,Verify repayment agreement,63574896201
+188_171,Cancel application,63574901542
+188_171,Loan application canceled,63574901542
+166_172,Loan application received,63573256800
+166_172,Check application form completeness,63573257273
+166_172,Check credit history,63573258119
+166_172,Assess loan risk,63573258680
+166_172,Appraise property,63573259766
+166_172,Assess eligibility,63573265414
+166_172,Prepare acceptance pack,63573265843
+166_172,Check if home insurance quote is requested,63573266237
+166_172,Send home insurance quote,63573267176
+166_172,Verify repayment agreement,63573268039
+166_172,Cancel application,63573268668
+166_172,Loan application canceled,63573268668
+101_173,Loan application received,63568863000
+101_173,Check application form completeness,63568864191
+101_173,Appraise property,63568864929
+101_173,Check credit history,63568926119
+101_173,Assess loan risk,63568929790
+101_173,Assess eligibility,63568930857
+101_173,Prepare acceptance pack,63568932717
+101_173,Check if home insurance quote is requested,63568936521
+101_173,Send acceptance pack,63568937677
+101_173,Verify repayment agreement,63568937915
+101_173,Cancel application,63568941376
+101_173,Loan application canceled,63568941376
+109_174,Loan application received,63569453400
+109_174,Check application form completeness,63569456226
+109_174,Appraise property,63569456781
+109_174,Check credit history,63569457335
+109_174,Assess loan risk,63569461004
+109_174,Assess eligibility,63569462537
+109_174,Added Activity,63569463838
+109_174,Reject application,63569466571
+109_174,Loan application rejected,63569466571
+186_175,Loan application received,63574560000
+186_175,Check application form completeness,63574560177
+186_175,Appraise property,63574562942
+186_175,Check credit history,63574564521
+186_175,Assess loan risk,63574564743
+186_175,Assess eligibility,63574565101
+186_175,Added Activity,63574568654
+186_175,Loan application rejected,63574568654
+100_176,Loan application received,63568846800
+100_176,Check application form completeness,63568848149
+100_176,Check credit history,63568848197
+100_176,Assess loan risk,63568848821
+100_176,Appraise property,63568849233
+100_176,Assess eligibility,63568850848
+100_176,Prepare acceptance pack,63568852862
+100_176,Check if home insurance quote is requested,63568853264
+100_176,Send home insurance quote,63568855197
+100_176,Verify repayment agreement,63568856452
+100_176,Cancel application,63568857479
+100_176,Loan application canceled,63568857479
+108_177,Loan application received,63569379600
+108_177,Check application form completeness,63569382333
+108_177,Appraise property,63569382522
+108_177,Check credit history,63569382673
+108_177,Assess loan risk,63569384127
+108_177,Assess eligibility,63569384498
+108_177,Reject application,63569384747
+108_177,Added Activity,63569386457
+108_177,Loan application rejected,63569386457
+185_178,Loan application received,63574543800
+185_178,Check application form completeness,63574544960
+185_178,Check credit history,63574545238
+185_178,Appraise property,63574545894
+185_178,Assess loan risk,63574546237
+185_178,Assess eligibility,63574548141
+185_178,Prepare acceptance pack,63574550570
+185_178,Check if home insurance quote is requested,63574554763
+185_178,Send home insurance quote,63574559656
+185_178,Verify repayment agreement,63574561023
+185_178,Cancel application,63574565008
+185_178,Loan application canceled,63574565008
+163_179,Loan application received,63573093000
+163_179,Check application form completeness,63573095643
+163_179,Appraise property,63573096046
+163_179,Check credit history,63573098704
+163_179,Assess loan risk,63573099653
+163_179,Assess eligibility,63573161701
+163_179,Added Activity,63573161795
+163_179,Reject application,63573162744
+163_179,Loan application rejected,63573162744
+165_180,Loan application received,63573183000
+165_180,Check application form completeness,63573187666
+165_180,Appraise property,63573246728
+165_180,Check credit history,63573247206
+165_180,Assess loan risk,63573250646
+165_180,Assess eligibility,63573250746
+165_180,Added Activity,63573252036
+165_180,Reject application,63573253910
+165_180,Loan application rejected,63573253910
+107_181,Loan application received,63569363400
+107_181,Check application form completeness,63569366789
+107_181,Return application back to applicant,63569367117
+107_181,Receive updated application,63569367172
+107_181,Check application form completeness,63569368895
+107_181,Appraise property,63569369516
+107_181,Check credit history,63569370023
+107_181,Assess loan risk,63569370283
+107_181,Assess eligibility,63569375225
+107_181,Added Activity,63569375280
+107_181,Reject application,63569379071
+107_181,Loan application rejected,63569379071
+164_182,Loan application received,63573166800
+164_182,Check application form completeness,63573171087
+164_182,Appraise property,63573171740
+164_182,Check credit history,63573174560
+164_182,Assess loan risk,63573176794
+164_182,Assess eligibility,63573177035
+164_182,Prepare acceptance pack,63573179774
+164_182,Check if home insurance quote is requested,63573180650
+164_182,Send home insurance quote,63573180819
+164_182,Verify repayment agreement,63573182461
+164_182,Approve application,63573187108
+164_182,Loan application approved,63573187108
+200_183,Loan application received,63575593200
+200_183,Check application form completeness,63575593738
+200_183,Appraise property,63575593959
+200_183,Check credit history,63575594175
+200_183,Assess loan risk,63575596942
+200_183,Assess eligibility,63575598357
+200_183,Prepare acceptance pack,63575601829
+200_183,Check if home insurance quote is requested,63575602746
+200_183,Send home insurance quote,63575665378
+200_183,Verify repayment agreement,63575668981
+200_183,Cancel application,63575671385
+200_183,Loan application canceled,63575671385
+221_184,Loan application received,63576970200
+221_184,Check application form completeness,63576970517
+221_184,Appraise property,63576974320
+221_184,Check credit history,63576975136
+221_184,Assess loan risk,63576975519
+221_184,Assess eligibility,63576976099
+221_184,Prepare acceptance pack,63576981394
+221_184,Check if home insurance quote is requested,63576983320
+221_184,Send acceptance pack,63576983609
+221_184,Verify repayment agreement,63576984227
+221_184,Approve application,63576985832
+221_184,Loan application approved,63576985832
+99_185,Loan application received,63568773000
+99_185,Check application form completeness,63568773569
+99_185,Check credit history,63568776263
+99_185,Appraise property,63568776311
+99_185,Assess loan risk,63568779347
+99_185,Assess eligibility,63568780910
+99_185,Added Activity,63568781417
+99_185,Reject application,63568841988
+99_185,Loan application rejected,63568841988
+35_186,Loan application received,63564280200
+35_186,Check application form completeness,63564282148
+35_186,Appraise property,63564282785
+35_186,Check credit history,63564283420
+35_186,Assess loan risk,63564283560
+35_186,Assess eligibility,63564523873
+35_186,Added Activity,63564524335
+35_186,Loan application rejected,63564524335
+13_187,Loan application received,63562887000
+13_187,Check application form completeness,63562889219
+13_187,Check credit history,63562889524
+13_187,Assess loan risk,63562890099
+13_187,Appraise property,63562890524
+13_187,Assess eligibility,63562891910
+13_187,Prepare acceptance pack,63562892357
+13_187,Check if home insurance quote is requested,63562892590
+13_187,Send acceptance pack,63562893781
+13_187,Verify repayment agreement,63562894329
+13_187,Approve application,63562894697
+13_187,Loan application approved,63562894697
+34_188,Loan application received,63564264000
+34_188,Check application form completeness,63564265648
+34_188,Check credit history,63564265694
+34_188,Appraise property,63564266011
+34_188,Assess loan risk,63564267388
+34_188,Assess eligibility,63564267727
+34_188,Prepare acceptance pack,63564271321
+34_188,Check if home insurance quote is requested,63564272202
+34_188,Send home insurance quote,63564273551
+34_188,Verify repayment agreement,63564274620
+34_188,Cancel application,63564278221
+34_188,Loan application canceled,63564278221
+98_189,Loan application received,63568756800
+98_189,Check application form completeness,63568759167
+98_189,Appraise property,63568759362
+98_189,Check credit history,63568760166
+98_189,Assess loan risk,63568760927
+98_189,Assess eligibility,63568762790
+98_189,Added Activity,63568763104
+98_189,Reject application,63568763298
+98_189,Loan application rejected,63568763298
+220_190,Loan application received,63576896400
+220_190,Check application form completeness,63576896978
+220_190,Appraise property,63576897658
+220_190,Check credit history,63576901324
+220_190,Assess loan risk,63576901457
+220_190,Assess eligibility,63576903272
+220_190,Added Activity,63576962018
+220_190,Reject application,63576966080
+220_190,Loan application rejected,63576966080
+12_191,Loan application received,63562813200
+12_191,Check application form completeness,63562814880
+12_191,Check credit history,63562815611
+12_191,Assess loan risk,63562816234
+12_191,Appraise property,63562819907
+12_191,Assess eligibility,63562883893
+12_191,Prepare acceptance pack,63562885396
+12_191,Check if home insurance quote is requested,63562886642
+12_191,Send home insurance quote,63562888296
+12_191,Verify repayment agreement,63562888789
+12_191,Cancel application,63562889771
+12_191,Loan application canceled,63562889771
+32_192,Loan application received,63564116400
+32_192,Check application form completeness,63564182620
+32_192,Appraise property,63564185723
+32_192,Check credit history,63564186904
+32_192,Assess loan risk,63564187449
+32_192,Assess eligibility,63564189151
+32_192,Prepare acceptance pack,63564189470
+32_192,Check if home insurance quote is requested,63564193241
+32_192,Send acceptance pack,63564195449
+32_192,Verify repayment agreement,63564195524
+32_192,Cancel application,63564198233
+32_192,Loan application canceled,63564198233
+95_193,Loan application received,63568420200
+95_193,Check application form completeness,63568424892
+95_193,Appraise property,63568426366
+95_193,Check credit history,63568428492
+95_193,Assess loan risk,63568429988
+95_193,Assess eligibility,63568430078
+95_193,Added Activity,63568432069
+95_193,Loan application rejected,63568432069
+96_194,Loan application received,63568436400
+96_194,Check application form completeness,63568497535
+96_194,Check credit history,63568498307
+96_194,Appraise property,63568498312
+96_194,Assess loan risk,63568498443
+96_194,Assess eligibility,63568500376
+96_194,Prepare acceptance pack,63568503035
+96_194,Check if home insurance quote is requested,63568503275
+96_194,Send acceptance pack,63568506445
+96_194,Verify repayment agreement,63568508949
+96_194,Cancel application,63568512995
+96_194,Loan application canceled,63568512995
+31_195,Loan application received,63564100200
+31_195,Check application form completeness,63564100506
+31_195,Check credit history,63564101352
+31_195,Assess loan risk,63564101656
+31_195,Appraise property,63564101766
+31_195,Assess eligibility,63564102229
+31_195,Prepare acceptance pack,63564103362
+31_195,Check if home insurance quote is requested,63564104019
+31_195,Send acceptance pack,63564105996
+31_195,Verify repayment agreement,63564106150
+31_195,Cancel application,63564106703
+31_195,Loan application canceled,63564106703
+33_196,Loan application received,63564190200
+33_196,Check application form completeness,63564191080
+33_196,Appraise property,63564191156
+33_196,Check credit history,63564192424
+33_196,Assess loan risk,63564192870
+33_196,Assess eligibility,63564193446
+33_196,Reject application,63564193814
+33_196,Added Activity,63564196128
+33_196,Loan application rejected,63564196128
+102_197,Loan application received,63568936800
+102_197,Check application form completeness,63568937518
+102_197,Appraise property,63568937576
+102_197,Check credit history,63568939626
+102_197,Assess loan risk,63568939902
+102_197,Assess eligibility,63568940394
+102_197,Added Activity,63568940432
+102_197,Loan application rejected,63568940432
+11_198,Loan application received,63562797000
+11_198,Check application form completeness,63562804279
+11_198,Appraise property,63562804579
+11_198,Check credit history,63562807464
+11_198,Assess loan risk,63562807935
+11_198,Assess eligibility,63562809440
+11_198,Prepare acceptance pack,63562810667
+11_198,Check if home insurance quote is requested,63562811161
+11_198,Send home insurance quote,63562811330
+11_198,Verify repayment agreement,63562815001
+11_198,Approve application,63562815503
+11_198,Loan application approved,63562815503
+103_199,Loan application received,63568953000
+103_199,Check application form completeness,63568953522
+103_199,Appraise property,63569012426
+103_199,Check credit history,63569012818
+103_199,Assess loan risk,63569016899
+103_199,Assess eligibility,63569020273
+103_199,Prepare acceptance pack,63569022906
+103_199,Check if home insurance quote is requested,63569024628
+103_199,Send acceptance pack,63569025517
+103_199,Verify repayment agreement,63569027909
+103_199,Cancel application,63569029148
+103_199,Loan application canceled,63569029148
+97_200,Loan application received,63568510200
+97_200,Check application form completeness,63568510563
+97_200,Appraise property,63568510748
+97_200,Check credit history,63568511273
+97_200,Assess loan risk,63568512231
+97_200,Assess eligibility,63568513341
+97_200,Added Activity,63568516031
+97_200,Loan application rejected,63568516031
+10_201,Loan application received,63562723200
+10_201,Check application form completeness,63562729618
+10_201,Appraise property,63562729671
+10_201,Check credit history,63562732330
+10_201,Assess loan risk,63562733294
+10_201,Assess eligibility,63562733821
+10_201,Prepare acceptance pack,63562795528
+10_201,Check if home insurance quote is requested,63562795572
+10_201,Send home insurance quote,63562796106
+10_201,Verify repayment agreement,63562798019
+10_201,Cancel application,63562798892
+10_201,Loan application canceled,63562798892
+168_202,Loan application received,63573346800
+168_202,Check application form completeness,63573347768
+168_202,Check credit history,63573349916
+168_202,Assess loan risk,63573350124
+168_202,Appraise property,63573352471
+168_202,Assess eligibility,63573352878
+168_202,Reject application,63573353373
+168_202,Added Activity,63573355092
+168_202,Loan application rejected,63573355092
+40_203,Loan application received,63564706800
+40_203,Check application form completeness,63564708933
+40_203,Appraise property,63564709064
+40_203,Check credit history,63564709524
+40_203,Assess loan risk,63564716324
+40_203,Assess eligibility,63564717434
+40_203,Added Activity,63564719065
+40_203,Loan application rejected,63564719065
+238_204,Loan application received,63578109600
+238_204,Check application form completeness,63578110116
+238_204,Check credit history,63578110273
+238_204,Appraise property,63578110344
+238_204,Assess loan risk,63578110591
+238_204,Assess eligibility,63578111532
+238_204,Added Activity,63578112195
+238_204,Reject application,63578171079
+238_204,Loan application rejected,63578171079
+80_205,Loan application received,63567313200
+80_205,Check application form completeness,63567544885
+80_205,Check credit history,63567545305
+80_205,Appraise property,63567548864
+80_205,Assess loan risk,63567551976
+80_205,Assess eligibility,63567557586
+80_205,Prepare acceptance pack,63567560227
+80_205,Check if home insurance quote is requested,63567561133
+80_205,Send home insurance quote,63567562881
+80_205,Verify repayment agreement,63567565508
+80_205,Approve application,63567567979
+80_205,Loan application approved,63567567979
+84_206,Loan application received,63567723600
+84_206,Check application form completeness,63567724276
+84_206,Appraise property,63567726506
+84_206,Check credit history,63567726631
+84_206,Assess loan risk,63567726786
+84_206,Assess eligibility,63567730453
+84_206,Prepare acceptance pack,63567730717
+84_206,Check if home insurance quote is requested,63567732429
+84_206,Send home insurance quote,63567733122
+84_206,Verify repayment agreement,63567733818
+84_206,Approve application,63567734211
+84_206,Loan application approved,63567734211
+82_207,Loan application received,63567633600
+82_207,Check application form completeness,63567634186
+82_207,Return application back to applicant,63567636760
+82_207,Receive updated application,63567639208
+82_207,Check application form completeness,63567639356
+82_207,Appraise property,63567640221
+82_207,Check credit history,63567640432
+82_207,Assess loan risk,63567641608
+82_207,Assess eligibility,63567643282
+82_207,Added Activity,63567644405
+82_207,Reject application,63567644870
+82_207,Loan application rejected,63567644870
+48_208,Loan application received,63565239600
+48_208,Check application form completeness,63565300688
+48_208,Check credit history,63565300763
+48_208,Appraise property,63565301154
+48_208,Assess loan risk,63565301408
+48_208,Assess eligibility,63565308145
+48_208,Reject application,63565308162
+48_208,Added Activity,63565308715
+48_208,Loan application rejected,63565308715
+234_209,Loan application received,63577929600
+234_209,Check application form completeness,63577933625
+234_209,Appraise property,63577935517
+234_209,Check credit history,63577937954
+234_209,Assess loan risk,63577998941
+234_209,Assess eligibility,63577999170
+234_209,Prepare acceptance pack,63578002049
+234_209,Check if home insurance quote is requested,63578004587
+234_209,Send acceptance pack,63578008994
+234_209,Verify repayment agreement,63578009119
+234_209,Approve application,63578010272
+234_209,Loan application approved,63578010272
+162_210,Loan application received,63573076800
+162_210,Check application form completeness,63573076949
+162_210,Check credit history,63573077137
+162_210,Appraise property,63573078080
+162_210,Assess loan risk,63573078281
+162_210,Assess eligibility,63573080008
+162_210,Added Activity,63573081190
+162_210,Loan application rejected,63573081190
+236_211,Loan application received,63578019600
+236_211,Check application form completeness,63578024746
+236_211,Check credit history,63578026080
+236_211,Assess loan risk,63578086074
+236_211,Appraise property,63578086497
+236_211,Assess eligibility,63578087624
+236_211,Added Activity,63578087897
+236_211,Loan application rejected,63578087897
+160_212,Loan application received,63572756400
+160_212,Check application form completeness,63572987019
+160_212,Return application back to applicant,63572988979
+160_212,Receive updated application,63572992092
+160_212,Check application form completeness,63572993016
+160_212,Check credit history,63572994953
+160_212,Assess loan risk,63572995063
+160_212,Appraise property,63572996474
+160_212,Assess eligibility,63572999186
+160_212,Added Activity,63573001131
+160_212,Loan application rejected,63573001131
+193_213,Loan application received,63575076600
+193_213,Check application form completeness,63575076977
+193_213,Appraise property,63575077876
+193_213,Check credit history,63575079385
+193_213,Assess loan risk,63575083877
+193_213,Assess eligibility,63575084451
+193_213,Added Activity,63575085694
+193_213,Loan application rejected,63575085694
+170_214,Loan application received,63573609600
+170_214,Check application form completeness,63573610270
+170_214,Appraise property,63573610635
+170_214,Check credit history,63573611750
+170_214,Assess loan risk,63573613557
+170_214,Assess eligibility,63573614489
+170_214,Prepare acceptance pack,63573615437
+170_214,Check if home insurance quote is requested,63573615556
+170_214,Send acceptance pack,63573616556
+170_214,Verify repayment agreement,63573679996
+170_214,Approve application,63573680091
+170_214,Loan application approved,63573680091
+172_215,Loan application received,63573699600
+172_215,Check application form completeness,63573701397
+172_215,Appraise property,63573704481
+172_215,Check credit history,63573705237
+172_215,Assess loan risk,63573706252
+172_215,Assess eligibility,63573706545
+172_215,Prepare acceptance pack,63573765163
+172_215,Check if home insurance quote is requested,63573766137
+172_215,Send acceptance pack,63573766608
+172_215,Verify repayment agreement,63573767725
+172_215,Approve application,63573769607
+172_215,Loan application approved,63573769607
+191_216,Loan application received,63574986600
+191_216,Check application form completeness,63574992670
+191_216,Appraise property,63574992789
+191_216,Check credit history,63574994512
+191_216,Assess loan risk,63574994913
+191_216,Assess eligibility,63575000598
+191_216,Prepare acceptance pack,63575000863
+191_216,Check if home insurance quote is requested,63575002120
+191_216,Send home insurance quote,63575002208
+191_216,Verify repayment agreement,63575002238
+191_216,Approve application,63575060921
+191_216,Loan application approved,63575060921
+195_217,Loan application received,63575166600
+195_217,Check application form completeness,63575170904
+195_217,Appraise property,63575171133
+195_217,Check credit history,63575171393
+195_217,Assess loan risk,63575174262
+195_217,Assess eligibility,63575175040
+195_217,Reject application,63575406553
+195_217,Added Activity,63575407436
+195_217,Loan application rejected,63575407436
+130_218,Loan application received,63570830400
+130_218,Check application form completeness,63570835096
+130_218,Check credit history,63570835394
+130_218,Assess loan risk,63570838764
+130_218,Appraise property,63570839999
+130_218,Assess eligibility,63570841674
+130_218,Added Activity,63570847245
+130_218,Loan application rejected,63570847245
+151_219,Loan application received,63572149800
+151_219,Check application form completeness,63572151022
+151_219,Appraise property,63572382044
+151_219,Check credit history,63572382450
+151_219,Assess loan risk,63572382514
+151_219,Assess eligibility,63572383490
+151_219,Prepare acceptance pack,63572386953
+151_219,Check if home insurance quote is requested,63572387358
+151_219,Send acceptance pack,63572388849
+151_219,Verify repayment agreement,63572389657
+151_219,Cancel application,63572392118
+151_219,Loan application canceled,63572392118
+136_220,Loan application received,63571273200
+136_220,Check application form completeness,63571273214
+136_220,Appraise property,63571275164
+136_220,Check credit history,63571277681
+136_220,Assess loan risk,63571279026
+136_220,Assess eligibility,63571279735
+136_220,Added Activity,63571283195
+136_220,Loan application rejected,63571283195
+178_221,Loan application received,63574200000
+178_221,Check application form completeness,63574201116
+178_221,Appraise property,63574201428
+178_221,Check credit history,63574205863
+178_221,Assess loan risk,63574206171
+178_221,Assess eligibility,63574207467
+178_221,Added Activity,63574208159
+178_221,Reject application,63574208991
+178_221,Loan application rejected,63574208991
+115_222,Loan application received,63569723400
+115_222,Check application form completeness,63569725848
+115_222,Check credit history,63569726705
+115_222,Assess loan risk,63569727053
+115_222,Appraise property,63569729020
+115_222,Assess eligibility,63569729369
+115_222,Prepare acceptance pack,63569729904
+115_222,Check if home insurance quote is requested,63569731585
+115_222,Send acceptance pack,63569963302
+115_222,Verify repayment agreement,63569963490
+115_222,Approve application,63569964597
+115_222,Loan application approved,63569964597
+117_223,Loan application received,63569986200
+117_223,Check application form completeness,63569986705
+117_223,Check credit history,63569990109
+117_223,Assess loan risk,63569990593
+117_223,Appraise property,63570052602
+117_223,Assess eligibility,63570053598
+117_223,Prepare acceptance pack,63570054078
+117_223,Check if home insurance quote is requested,63570056431
+117_223,Send home insurance quote,63570056759
+117_223,Verify repayment agreement,63570057916
+117_223,Cancel application,63570058194
+117_223,Loan application canceled,63570058194
+134_224,Loan application received,63571183200
+134_224,Check application form completeness,63571184124
+134_224,Check credit history,63571185168
+134_224,Assess loan risk,63571185918
+134_224,Appraise property,63571186845
+134_224,Assess eligibility,63571197143
+134_224,Reject application,63571200151
+134_224,Added Activity,63571259274
+134_224,Loan application rejected,63571259274
+138_225,Loan application received,63571363200
+138_225,Check application form completeness,63571364262
+138_225,Check credit history,63571364333
+138_225,Assess loan risk,63571364838
+138_225,Appraise property,63571365712
+138_225,Assess eligibility,63571367648
+138_225,Prepare acceptance pack,63571373825
+138_225,Check if home insurance quote is requested,63571432346
+138_225,Send acceptance pack,63571434411
+138_225,Verify repayment agreement,63571436816
+138_225,Cancel application,63571437166
+138_225,Loan application canceled,63571437166
+199_226,Loan application received,63575519400
+199_226,Check application form completeness,63575519738
+199_226,Check credit history,63575520945
+199_226,Appraise property,63575521151
+199_226,Assess loan risk,63575580355
+199_226,Assess eligibility,63575581584
+199_226,Added Activity,63575582968
+199_226,Loan application rejected,63575582968
+155_227,Loan application received,63572560200
+155_227,Check application form completeness,63572560898
+155_227,Appraise property,63572561682
+155_227,Check credit history,63572562278
+155_227,Assess loan risk,63572562776
+155_227,Assess eligibility,63572562961
+155_227,Prepare acceptance pack,63572564259
+155_227,Check if home insurance quote is requested,63572567056
+155_227,Send home insurance quote,63572570845
+155_227,Verify repayment agreement,63572574522
+155_227,Approve application,63572576460
+155_227,Loan application approved,63572576460
+159_228,Loan application received,63572740200
+159_228,Check application form completeness,63572744506
+159_228,Appraise property,63572744972
+159_228,Check credit history,63572745133
+159_228,Assess loan risk,63572748744
+159_228,Assess eligibility,63572750996
+159_228,Prepare acceptance pack,63572753730
+159_228,Check if home insurance quote is requested,63572753808
+159_228,Send acceptance pack,63572754518
+159_228,Verify repayment agreement,63572990302
+159_228,Approve application,63572992596
+159_228,Loan application approved,63572992596
+197_229,Loan application received,63575429400
+197_229,Check application form completeness,63575434122
+197_229,Appraise property,63575492558
+197_229,Check credit history,63575492631
+197_229,Assess loan risk,63575492962
+197_229,Assess eligibility,63575493023
+197_229,Prepare acceptance pack,63575494043
+197_229,Check if home insurance quote is requested,63575494530
+197_229,Send home insurance quote,63575497784
+197_229,Verify repayment agreement,63575498075
+197_229,Cancel application,63575499138
+197_229,Loan application canceled,63575499138
+174_230,Loan application received,63573789600
+174_230,Check application form completeness,63573792182
+174_230,Check credit history,63573850987
+174_230,Appraise property,63573852928
+174_230,Assess loan risk,63573854051
+174_230,Assess eligibility,63573856886
+174_230,Added Activity,63573862875
+174_230,Loan application rejected,63573862875
+176_231,Loan application received,63573879600
+176_231,Check application form completeness,63573938423
+176_231,Return application back to applicant,63573940170
+176_231,Receive updated application,63573942311
+176_231,Check application form completeness,63573943581
+176_231,Check credit history,63573944966
+176_231,Appraise property,63573944992
+176_231,Assess loan risk,63573949267
+176_231,Assess eligibility,63573950830
+176_231,Prepare acceptance pack,63573955312
+176_231,Check if home insurance quote is requested,63573960048
+176_231,Send home insurance quote,63573960747
+176_231,Verify repayment agreement,63573963397
+176_231,Cancel application,63573963514
+176_231,Loan application canceled,63573963514
+111_232,Loan application received,63569543400
+111_232,Check application form completeness,63569543953
+111_232,Appraise property,63569545833
+111_232,Check credit history,63569548521
+111_232,Assess loan risk,63569548543
+111_232,Assess eligibility,63569548641
+111_232,Reject application,63569550127
+111_232,Added Activity,63569550427
+111_232,Loan application rejected,63569550427
+119_233,Loan application received,63570076200
+119_233,Check application form completeness,63570077028
+119_233,Check credit history,63570077557
+119_233,Assess loan risk,63570135798
+119_233,Appraise property,63570136959
+119_233,Assess eligibility,63570137293
+119_233,Prepare acceptance pack,63570138954
+119_233,Check if home insurance quote is requested,63570139705
+119_233,Send home insurance quote,63570139866
+119_233,Verify repayment agreement,63570141952
+119_233,Approve application,63570142124
+119_233,Loan application approved,63570142124
+132_234,Loan application received,63570920400
+132_234,Check application form completeness,63570922029
+132_234,Check credit history,63570922318
+132_234,Appraise property,63570922510
+132_234,Assess loan risk,63570927025
+132_234,Assess eligibility,63570932280
+132_234,Prepare acceptance pack,63570934889
+132_234,Check if home insurance quote is requested,63570935108
+132_234,Send acceptance pack,63570936131
+132_234,Verify repayment agreement,63570937618
+132_234,Approve application,63570939006
+132_234,Loan application approved,63570939006
+153_235,Loan application received,63572470200
+153_235,Check application form completeness,63572471504
+153_235,Appraise property,63572471516
+153_235,Check credit history,63572472051
+153_235,Assess loan risk,63572475046
+153_235,Assess eligibility,63572476511
+153_235,Added Activity,63572478804
+153_235,Loan application rejected,63572478804
+46_236,Loan application received,63565149600
+46_236,Check application form completeness,63565150747
+46_236,Appraise property,63565151267
+46_236,Check credit history,63565151492
+46_236,Assess loan risk,63565152032
+46_236,Assess eligibility,63565213936
+46_236,Reject application,63565216704
+46_236,Added Activity,63565216777
+46_236,Loan application rejected,63565216777
+232_237,Loan application received,63577839600
+232_237,Check application form completeness,63577841502
+232_237,Appraise property,63577843444
+232_237,Check credit history,63577843557
+232_237,Assess loan risk,63577845508
+232_237,Assess eligibility,63577845885
+232_237,Prepare acceptance pack,63577847238
+232_237,Check if home insurance quote is requested,63577847886
+232_237,Send home insurance quote,63577852799
+232_237,Verify repayment agreement,63577853518
+232_237,Cancel application,63577853947
+232_237,Loan application canceled,63577853947
+67_238,Loan application received,63566526600
+67_238,Check application form completeness,63566528086
+67_238,Check credit history,63566528511
+67_238,Assess loan risk,63566530606
+67_238,Appraise property,63566531541
+67_238,Assess eligibility,63566532980
+67_238,Prepare acceptance pack,63566593631
+67_238,Check if home insurance quote is requested,63566593652
+67_238,Send home insurance quote,63566594067
+67_238,Verify repayment agreement,63566596126
+67_238,Approve application,63566599085
+67_238,Loan application approved,63566599085
+44_239,Loan application received,63564886800
+44_239,Check application form completeness,63564888796
+44_239,Appraise property,63564888994
+44_239,Check credit history,63564892073
+44_239,Assess loan risk,63564893957
+44_239,Assess eligibility,63565124796
+44_239,Prepare acceptance pack,63565125253
+44_239,Check if home insurance quote is requested,63565126302
+44_239,Send home insurance quote,63565126755
+44_239,Verify repayment agreement,63565127921
+44_239,Cancel application,63565131560
+44_239,Loan application canceled,63565131560
+230_240,Loan application received,63577576800
+230_240,Check application form completeness,63577578538
+230_240,Appraise property,63577578887
+230_240,Check credit history,63577579898
+230_240,Assess loan risk,63577579957
+230_240,Assess eligibility,63577581716
+230_240,Added Activity,63577583869
+230_240,Loan application rejected,63577583869
+88_241,Loan application received,63567903600
+88_241,Check application form completeness,63567910636
+88_241,Appraise property,63567910705
+88_241,Check credit history,63567910963
+88_241,Assess loan risk,63567910972
+88_241,Assess eligibility,63567913321
+88_241,Added Activity,63567913548
+88_241,Loan application rejected,63567913548
+23_242,Loan application received,63563509800
+23_242,Check application form completeness,63563569509
+23_242,Check credit history,63563570849
+23_242,Appraise property,63563571338
+23_242,Assess loan risk,63563572234
+23_242,Assess eligibility,63563572317
+23_242,Added Activity,63563573576
+23_242,Loan application rejected,63563573576
+42_243,Loan application received,63564796800
+42_243,Check application form completeness,63564797606
+42_243,Return application back to applicant,63564798448
+42_243,Receive updated application,63564799934
+42_243,Check application form completeness,63564802112
+42_243,Appraise property,63564802227
+42_243,Check credit history,63564802627
+42_243,Assess loan risk,63564805101
+42_243,Assess eligibility,63564865213
+42_243,Prepare acceptance pack,63564866141
+42_243,Check if home insurance quote is requested,63564871045
+42_243,Send acceptance pack,63564871492
+42_243,Verify repayment agreement,63564872712
+42_243,Cancel application,63564873457
+42_243,Loan application canceled,63564873457
+63_244,Loan application received,63566346600
+63_244,Check application form completeness,63566347284
+63_244,Check credit history,63566348870
+63_244,Appraise property,63566350662
+63_244,Assess loan risk,63566350695
+63_244,Assess eligibility,63566353798
+63_244,Prepare acceptance pack,63566357748
+63_244,Check if home insurance quote is requested,63566359693
+63_244,Send home insurance quote,63566360084
+63_244,Verify repayment agreement,63566360835
+63_244,Cancel application,63566420904
+63_244,Loan application canceled,63566420904
+65_245,Loan application received,63566436600
+65_245,Check application form completeness,63566439208
+65_245,Check credit history,63566439985
+65_245,Assess loan risk,63566442011
+65_245,Appraise property,63566442559
+65_245,Assess eligibility,63566442780
+65_245,Added Activity,63566444174
+65_245,Reject application,63566446191
+65_245,Loan application rejected,63566446191
+113_246,Loan application received,63569633400
+113_246,Check application form completeness,63569635613
+113_246,Check credit history,63569635960
+113_246,Assess loan risk,63569636491
+113_246,Appraise property,63569636592
+113_246,Assess eligibility,63569637281
+113_246,Prepare acceptance pack,63569639035
+113_246,Check if home insurance quote is requested,63569640573
+113_246,Send acceptance pack,63569643185
+113_246,Verify repayment agreement,63569704321
+113_246,Cancel application,63569705553
+113_246,Loan application canceled,63569705553
+86_247,Loan application received,63567813600
+86_247,Check application form completeness,63567814006
+86_247,Appraise property,63567814372
+86_247,Check credit history,63567817497
+86_247,Assess loan risk,63567817652
+86_247,Assess eligibility,63567821814
+86_247,Added Activity,63567822385
+86_247,Reject application,63567824538
+86_247,Loan application rejected,63567824538
+157_248,Loan application received,63572650200
+157_248,Check application form completeness,63572650387
+157_248,Check credit history,63572650813
+157_248,Appraise property,63572651462
+157_248,Assess loan risk,63572652721
+157_248,Assess eligibility,63572658889
+157_248,Added Activity,63572659456
+157_248,Reject application,63572663879
+157_248,Loan application rejected,63572663879
+21_249,Loan application received,63563419800
+21_249,Check application form completeness,63563423483
+21_249,Check credit history,63563423686
+21_249,Appraise property,63563424496
+21_249,Assess loan risk,63563424684
+21_249,Assess eligibility,63563483662
+21_249,Prepare acceptance pack,63563484332
+21_249,Check if home insurance quote is requested,63563487540
+21_249,Send acceptance pack,63563487900
+21_249,Verify repayment agreement,63563488376
+21_249,Approve application,63563488741
+21_249,Loan application approved,63563488741

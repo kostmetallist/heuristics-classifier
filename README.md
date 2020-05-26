@@ -11,6 +11,11 @@ correlations between attributes in the log.
 ### Running the application
 `./run.sh` on Unix systems or `start.bat` on Windows.
 
+### Input log data
+Log files in CSV and XLSX formats are presenteed under `log_collector/resource` 
+directory. Please refer to [doc](https://github.com/kostmetallist/heuristics-classifier/blob/master/log_collector/README.md) 
+for more details on the data origin.
+
 ### Troubleshooting
 Please leave your suggestions and bug reports at 
 [issues page](https://github.com/kostmetallist/heuristics-classifier/issues).
