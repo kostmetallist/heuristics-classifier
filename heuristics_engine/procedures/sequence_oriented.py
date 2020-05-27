@@ -27,6 +27,7 @@ class SequenceOriented(HeuristicBase):
         logger.info(pformat([x for x 
                              in zip(self.attr_names, labeled_attributes)], 
                             indent=2))
+        # TODO dump statements into file
         return labeled_attributes
 
 

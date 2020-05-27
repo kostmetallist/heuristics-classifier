@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 import networkx as nx
 
 import logger as lg
+from datastructures.referenced_sequence import ReferencedSequence
 
 DEFAULT_EXPORT_DIR = 'dot_output'
 EXPORT_FILE_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
@@ -187,10 +188,6 @@ class HeuristicBase(ABC):
         unique_entries = set()
         statement = ''
 
-        def append_fragment(frag):
-            if frag:
-                statement += f'; {frag}'
-
         for value in values:
 
             if value:
@@ -205,7 +202,11 @@ class HeuristicBase(ABC):
                 if len(unique_entries) > self.STRING_CARDINALITY_LIMIT:
                     report_unique_entries = False
 
-            #TODO repetitive patterns detection
+        # TODO meaningful repetitive patterns detection
+        ref_sequence = ReferencedSequence(values)
+        ref_sequence.reduce_loops()
+        if len(ref_sequence.content['values']) < len(values):
+            statement += '; found repetitive patterns'
 
         if null_found:
             statement += '; nulls are found among values'
