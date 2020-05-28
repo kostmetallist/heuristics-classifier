@@ -18,9 +18,19 @@ class HeuristicBase(ABC):
         'true': ['true', 'True', 'TRUE', 'T'],
         'false': ['false', 'False', 'FALSE', 'F']
     }
+
     INTEGER_CARDINALITY_LIMIT = 5
     STRING_CARDINALITY_LIMIT = 5
-    DEFAULT_NO_STATEMENT_STRING = 'no specific statements have been deduced'
+    STATEMENTS = {
+        'base_type': 'OF BASE TYPE',
+        'cardinal_unique': 'CARDINAL: CONTAINS UNIQUES',
+        'cardinal_of_set': 'CARDINAL: VALUES IN SET',
+        'cardinal_static': 'CARDINAL: CONTAINS STATIC',
+        'empty_specific': 'NO SPECIFIC STATEMENTS',
+        'deferred_init': 'INITIALIZED AFTERWARDS',
+        'repetitive_patterns': 'HAS REPETITIVE PATTERNS',
+        'with_nulls': 'CONTAINS NULLS',
+    }
 
     class TrivialDomain(Enum):
         NULLABLE = auto()
@@ -209,26 +219,28 @@ class HeuristicBase(ABC):
             print('repetitive patterns:')
             print(ref_sequence.content['values'])
             print(ref_sequence.content['refs'])
-            statement += '; found repetitive patterns'
+            statement += f'; {self.STATEMENTS["repetitive_patterns"]}'
 
         if null_found:
-            statement += '; nulls are found among values'
+            statement += f'; {self.STATEMENTS["with_nulls"]}'
 
         if deferred_init_detected and unique_entries:
-            statement += '; value is initialized afterwards'
+            statement += f'; {self.STATEMENTS["deferred_init"]}'
+
+        # cardinal characteristics section
+        if len(unique_entries) == len(values):
+            statement += f'; {self.STATEMENTS["cardinal_unique"]}'
 
         if report_unique_entries and \
            (type_assignment == self.TrivialDomain.INTEGER or
             type_assignment == self.TrivialDomain.STRING):
 
             prepared = [str(x) for x in unique_entries]
-            statement += f'; values are in set ({", ".join(prepared)})'
-
-        if len(unique_entries) == len(values):
-            statement += '; all the values are unique'
+            statement += f'; {self.STATEMENTS["cardinal_of_set"]} ' \
+                         + f'({", ".join(prepared)})'
 
         if len(unique_entries) == 1:
-            statement += '; values are static'
+            statement += f'; {self.STATEMENTS["cardinal_static"]} ({values[0]})'
 
         return statement
 
@@ -259,7 +271,7 @@ class HeuristicBase(ABC):
         for index in clarifications:
             refined_values[index] = clarifications[index]
 
-        statement = f'base type: {type_assignment.name}'
+        statement = f'{self.STATEMENTS["base_type"]} ({type_assignment.name})'
         if type_assignment != self.TrivialDomain.NULLABLE:
             statement += \
                f'{self.infer_common_statements(refined_values, type_assignment)}'
@@ -276,7 +288,7 @@ class HeuristicBase(ABC):
             deduced = 'no meaningful assessment for type-inconsistent data'
 
         return '; '.join([statement, deduced if deduced 
-                                     else self.DEFAULT_NO_STATEMENT_STRING])
+                                     else self.STATEMENTS['empty_specific']])
 
     @abstractmethod
     def process_messages(self, data: dict):
