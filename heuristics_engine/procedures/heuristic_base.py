@@ -206,6 +206,9 @@ class HeuristicBase(ABC):
         ref_sequence = ReferencedSequence(values)
         ref_sequence.reduce_loops()
         if len(ref_sequence.content['values']) < len(values):
+            print('repetitive patterns:')
+            print(ref_sequence.content['values'])
+            print(ref_sequence.content['refs'])
             statement += '; found repetitive patterns'
 
         if null_found:
@@ -258,7 +261,7 @@ class HeuristicBase(ABC):
 
         statement = f'base type: {type_assignment.name}'
         if type_assignment != self.TrivialDomain.NULLABLE:
-            statement += '; ' + \
+            statement += \
                f'{self.infer_common_statements(refined_values, type_assignment)}'
 
         if type_assignment == self.TrivialDomain.INTEGER:
