@@ -26,7 +26,6 @@ between event log file and its origin:
 | [Online Judge (RUET OJ) Kaggle Server Log Dataset](https://www.kaggle.com/shawon10/web-log-dataset/data?select=weblog.csv) | <ul><li>`weblog.csv`</li></ul> |
 
 ### Building 
-This module is generally called from the project
 Use either the simplified `go run` to directly execute a program or `go build` 
 command to generate an executable for deferred launch. One may want to choose 
 from two commands listed below assuming `launch.go` represents an entry point 

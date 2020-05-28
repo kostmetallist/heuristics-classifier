@@ -104,7 +104,7 @@ class HeuristicBase(ABC):
         suggested_clarifications = dict()
         values = [x[attr_name] for x in self.log_data]
         current_type = self.TrivialDomain.NULLABLE
-        logger.info(f'deducing trivial type for {attr_name}...')
+        logger.info(f'deducing trivial type for \"{attr_name}\"...')
         for index, elem in enumerate(values):
 
             if not elem:

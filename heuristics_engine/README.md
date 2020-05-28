@@ -8,18 +8,18 @@ particular case, `pipenv` is utilized to manage dependencies and dispatch the
 virtual environment entry/deactivation.
 
 ### Running the engine
-Root module is named `dependency_finder.py` and supposed to be invoked after 
+Root module is named `engine.py` and supposed to be invoked after 
 entrance into virtual environment.
 
 ```
 pipenv shell
-python3 dependency_finder.py <input_json_location>
+python3 engine.py <input_json_location>
 ```
 
 or 
 
 ```
-pipenv run python3 dependency_finder.py <input_json_location>
+pipenv run python3 engine.py <input_json_location>
 ```
 
 Note that while running commands above, your current working directory should 

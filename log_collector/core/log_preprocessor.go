@@ -16,7 +16,7 @@ import (
 
 var dataSources = [...]string{"local CSV", "local XLSX", "google spreadsheets"}
 var dumpFileLocation = "output/data.json"
-var heuEngineEntryScript = "dependency_finder.py"
+var heuEngineEntryScript = "engine.py"
 var chosenDataSource string
 
 func readFile2String(ch chan<- string, path string) {

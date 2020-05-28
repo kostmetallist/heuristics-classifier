@@ -1,4 +1,4 @@
 {
-    "csvFileLocation": "resource/csv/sample.csv",
+    "csvFileLocation": "resource/csv/cyclic_activities.csv",
     "limitReadLinesTo": -1
 }

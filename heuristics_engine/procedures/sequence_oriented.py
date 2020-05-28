@@ -13,6 +13,7 @@ class SequenceOriented(HeuristicBase):
                          statements_list, 
                          output_file=DEFAULT_STATEMENTS_DUMP_FILE):
         if output_file:
+            logger.info(f'dumping statements into {output_file}...')
             with open(output_file, mode='w', encoding='UTF-8') as output_stream:
                 for pair in zip(self.attr_names, statements_list):
                     output_stream.write(f'{pair[0]}:\n'
