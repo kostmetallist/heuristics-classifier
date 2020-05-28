@@ -3,10 +3,23 @@ from pprint import pformat
 import logger as lg
 from procedures.heuristic_base import HeuristicBase
 
+DEFAULT_STATEMENTS_DUMP_FILE = 'output/statements_dump/sequence_oriented.txt'
 logger = lg.get_logger('HEL')
 
 
 class SequenceOriented(HeuristicBase):
+
+    def _dump_statements(self, 
+                         statements_list, 
+                         output_file=DEFAULT_STATEMENTS_DUMP_FILE):
+        if output_file:
+            with open(output_file, mode='w', encoding='UTF-8') as output_stream:
+                for pair in zip(self.attr_names, statements_list):
+                    output_stream.write(f'{pair[0]}:\n'
+                                        + "\n".join([stripped.rjust(len(stripped)+2)
+                                                     for stripped in [x.strip()
+                                                                      for x in pair[1].split(";")]])
+                                        + '\n')
 
     def infer_statement_for_integer(self, values):
         return ''
@@ -27,8 +40,7 @@ class SequenceOriented(HeuristicBase):
         logger.info(pformat([x for x 
                              in zip(self.attr_names, labeled_attributes)], 
                             indent=2))
-        # TODO dump statements into file
-        return labeled_attributes
+        self._dump_statements(labeled_attributes)
 
 
 # argv[1] is the file location for the JSON event data

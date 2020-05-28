@@ -32,8 +32,8 @@ preprocessed log data had been dumped into the configured output folder
 of workflow initiated by root level `run.sh`/`start.bat` script.
 
 ### Visualizing `.dot` files data
-By default, generated graphs are placed into `dot_output` directory and are in 
-[DOT format](https://www.graphviz.org/doc/info/lang.html). In order to convert 
-these files into human-readable form, the `dot` utility can be used. For 
+By default, generated graphs are placed into `output/dot_output` directory and 
+are in [DOT format](https://www.graphviz.org/doc/info/lang.html). In order to 
+convert these files into human-readable form, the `dot` utility can be used. For 
 Linux systems, run `dot -Tpdf -o<desired-output-location> <path-to-dot-files>` 
 to receive a PDF document with the underlying graph depicted.

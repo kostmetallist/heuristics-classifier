@@ -7,8 +7,8 @@ import networkx as nx
 import logger as lg
 from datastructures.referenced_sequence import ReferencedSequence
 
-DEFAULT_EXPORT_DIR = 'dot_output'
-EXPORT_FILE_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
+DEFAULT_DOT_EXPORT_DIR = 'output/dot_output'
+DOT_FILENAME_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
 logger = lg.get_logger('HEL')
 
 
@@ -68,12 +68,12 @@ class HeuristicBase(ABC):
     def export_graph_to_dot(graph, export_file_path=''):
         if not export_file_path:
             export_file = open(
-                path.join(DEFAULT_EXPORT_DIR, 
-                    datetime.now().strftime(EXPORT_FILE_FORMAT)), 
+                path.join(DEFAULT_DOT_EXPORT_DIR, 
+                    datetime.now().strftime(DOT_FILENAME_FORMAT)), 
                 mode='x', 
                 encoding='UTF-8')
         else:
-            export_file = open(export_file_path, 'x', encoding='UTF-8')
+            export_file = open(export_file_path, 'w', encoding='UTF-8')
 
         logger.info(f'exporting graph to the {export_file.name}...')
         nx.drawing.nx_pydot.write_dot(graph, export_file)
@@ -212,7 +212,7 @@ class HeuristicBase(ABC):
                 if len(unique_entries) > self.STRING_CARDINALITY_LIMIT:
                     report_unique_entries = False
 
-        # TODO meaningful repetitive patterns detection
+        # TODO cyclic patterns statements generation
         ref_sequence = ReferencedSequence(values)
         ref_sequence.reduce_loops()
         if len(ref_sequence.content['values']) < len(values):
