@@ -1,9 +1,11 @@
 from copy import deepcopy
+import portion as P
 
 
 class ReferencedSequence:
 
     def __init__(self, values):
+        self.initial_size = len(values)
         self.content = {
             'values': deepcopy(values),
             'refs': [set() for i in range(len(values))],
@@ -84,22 +86,48 @@ class ReferencedSequence:
         return 0
 
     def is_cyclic(self):
+        refs = self.content['refs']
         appendix_start = self._retrieve_appendix_start_index()
         if appendix_start == -1:
-            return True
+            if (refs[len(refs)-1] == {0} and
+                all([len(x)==0 for x in refs[:len(refs)-1]])):
+
+                return True
         return False
             
-
     def is_pseudocyclic(self):
         if self.is_cyclic():
             return True
         values = self.content['values']
         appendix_start = self._retrieve_appendix_start_index()
+        if appendix_start == -1:
+            return True
+            
         appendix = values[appendix_start:]
         for i in range(len(appendix)):
             if values[appendix_start+i] != appendix[i]:
                 return False
         return True
+
+    def get_stereotype_ratio(self):
+        '''
+        Calculate stereotype ratio for the underlying ReferencedSequence.
+
+        Stereotype ratio is the fraction of sequence elements presented as
+        entries of some repetitive pattern. E.g., consider the following case:
+        `seq` = [a, b (->1), c (->0), d]. Element 'b' is included into pattern
+        referring to 'b' elem, and 'c' is the part of pattern referring to 'a'.
+        Thus, 'a', 'b' and 'c' relate to some patterns while 'd' does not.
+        So, ratio here is 3/4.
+        '''
+        refs = self.content['refs']
+        patterned_area = P.empty()
+        for i in range(len(refs)):
+            for ref in refs[i]:
+                patterned_area |= P.closed(*sorted([i, ref]))
+
+        indices = list(P.iterate(patterned_area, step=1))
+        return len(indices)/len(refs)
 
 
 if __name__ == '__main__':
@@ -115,6 +143,7 @@ if __name__ == '__main__':
         print(rseq.content['refs'])
         print(f'test for pseudocyclic: {rseq.is_pseudocyclic()}')
         print(f'test for cyclic: {rseq.is_cyclic()}')
+        print(f'stereotype ratio: {rseq.get_stereotype_ratio()}')
     else:
         from sys import stderr
         print('given sequence is empty, aborting...', file=stderr)
