@@ -75,7 +75,6 @@ class SequenceOriented(HeuristicBase):
         delta_at_beginning = None
         previous, previous_delta = None, None
         for item in values:
-            print(item)
             if previous is not None:
                 delta = abs(item-previous)
                 if previous_delta is not None:

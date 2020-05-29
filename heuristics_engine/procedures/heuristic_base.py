@@ -211,7 +211,7 @@ class HeuristicBase(ABC):
                 statements.append(Statement('CYCLED VALUES'))
             else:
                 ratio = ref_sequence.get_stereotype_ratio()
-                logger.info(f'detected steretype ratio {ratio}')
+                logger.info(f'detected stereotype ratio {ratio}')
                 if ratio > self.STEREOTYPE_RATIO_THRESHOLD:
                     statements.append(Statement(
                         'PSEUDO CYCLIC WITH STEREOTYPE RATIO', ratio))
@@ -293,7 +293,7 @@ class HeuristicBase(ABC):
             deduced = Statement('NO ASSESSMENT FOR TYPE-INCONSISTENT DATA')
 
         return statements + (deduced if deduced 
-                             else Statement('NO SPECIFIC STATEMENTS'))
+                             else [Statement('NO SPECIFIC STATEMENTS')])
 
     @abstractmethod
     def process_messages(self, data: dict):
