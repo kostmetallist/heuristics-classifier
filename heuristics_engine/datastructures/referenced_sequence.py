@@ -45,7 +45,6 @@ class ReferencedSequence:
                 self.content['refs'][pivot_index+i].union(aligned_refs)
 
     def reduce_loops(self):
-
         values = self.content['values']
         pivot_index = 0
         while pivot_index < len(values):
@@ -67,3 +66,55 @@ class ReferencedSequence:
                         break
                         
             pivot_index += 1
+
+    def _retrieve_appendix_start_index(self):
+        '''
+        Get start index of appendix in the current content['values'].
+
+        Appendix is considered as a postfix of a sequence, following the
+        element referring to the very begginning of the sequence. For instance,
+        let `seq` = [a, b, c, a, b, c, d, e]. After applying reduce_loops, 
+        it becomes [a, b, c (->0), d, e]. Then, [d, e] is an appendix as it
+        resides after the 'c' element, which references to the start of `seq`.
+        '''
+        values = self.content['values']
+        for i in range(len(values)-1, -1, -1):
+            if 0 in self.content['refs'][i]:
+                return i+1 if i+1 != len(values) else -1
+        return 0
+
+    def is_cyclic(self):
+        appendix_start = self._retrieve_appendix_start_index()
+        if appendix_start == -1:
+            return True
+        return False
+            
+
+    def is_pseudocyclic(self):
+        if self.is_cyclic():
+            return True
+        values = self.content['values']
+        appendix_start = self._retrieve_appendix_start_index()
+        appendix = values[appendix_start:]
+        for i in range(len(appendix)):
+            if values[appendix_start+i] != appendix[i]:
+                return False
+        return True
+
+
+if __name__ == '__main__':
+    from sys import argv
+    # processing all the argv entries starting from index 1 as elements of
+    # list containing string values, e.g. 
+    # `python3 referenced_sequence.py a b c a b c a`
+    if len(argv) > 1:
+        rseq = ReferencedSequence(argv[1:])
+        rseq.reduce_loops()
+        print('after reducing:')
+        print(rseq.content['values'])
+        print(rseq.content['refs'])
+        print(f'test for pseudocyclic: {rseq.is_pseudocyclic()}')
+        print(f'test for cyclic: {rseq.is_cyclic()}')
+    else:
+        from sys import stderr
+        print('given sequence is empty, aborting...', file=stderr)

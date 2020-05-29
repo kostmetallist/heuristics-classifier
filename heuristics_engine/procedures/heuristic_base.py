@@ -98,7 +98,7 @@ class HeuristicBase(ABC):
 
     def deduce_attribute_type(self, attr_name):
         # Map for possible types conversions which is to cast values to ones
-        # of more appropriate type, i.e. "true" [str] -> True [Boolean];
+        # of more appropriate type, i.e. "true" [str] -> True [bool];
         # key: message index,
         # value: proposed item value.
         suggested_clarifications = dict()
