@@ -6,6 +6,7 @@ import networkx as nx
 
 import logger as lg
 from datastructures.referenced_sequence import ReferencedSequence
+from datastructures.statement import Statement
 
 DEFAULT_DOT_EXPORT_DIR = 'output/dot_output'
 DOT_FILENAME_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
@@ -22,17 +23,6 @@ class HeuristicBase(ABC):
     INTEGER_CARDINALITY_LIMIT = 5
     STRING_CARDINALITY_LIMIT = 5
     STEREOTYPE_RATIO_THRESHOLD = .7
-    STATEMENTS = {
-        'base_type': 'OF BASE TYPE',
-        'cardinal_unique': 'CARDINAL: CONTAINS UNIQUES',
-        'cardinal_of_set': 'CARDINAL: VALUES IN SET',
-        'cardinal_static': 'CARDINAL: CONTAINS STATIC',
-        'cyclic': 'CYCLED VALUES',
-        'deferred_init': 'INITIALIZED AFTERWARDS',
-        'empty_specific': 'NO SPECIFIC STATEMENTS',
-        'pseudo_cyclic': 'PSEUDO CYCLIC WITH STEREOTYPE RATIO',
-        'with_nulls': 'CONTAINS NULLS',
-    }
 
     class TrivialDomain(Enum):
         NULLABLE = auto()
@@ -198,7 +188,7 @@ class HeuristicBase(ABC):
         deferred_init_detected = values[0] is None
         report_unique_entries = True
         unique_entries = set()
-        statement = ''
+        statements = []
 
         for value in values:
 
@@ -218,36 +208,46 @@ class HeuristicBase(ABC):
         ref_sequence.reduce_loops()
         if ref_sequence.is_pseudocyclic():
             if ref_sequence.is_cyclic():
-                statement += f'; {self.STATEMENTS["cyclic"]}'
+                statements.append(Statement('CYCLED VALUES'))
             else:
                 ratio = ref_sequence.get_stereotype_ratio()
                 logger.info(f'detected steretype ratio {ratio}')
                 if ratio > self.STEREOTYPE_RATIO_THRESHOLD:
-                    statement += f'; {self.STATEMENTS["pseudo_cyclic"]} ' \
-                                 + f'({ratio})'
+                    statements.append(Statement(
+                        'PSEUDO CYCLIC WITH STEREOTYPE RATIO', ratio))
 
         if null_found:
-            statement += f'; {self.STATEMENTS["with_nulls"]}'
+            statements.append(Statement('CONTAINS NULLS'))
 
         if deferred_init_detected and unique_entries:
-            statement += f'; {self.STATEMENTS["deferred_init"]}'
+            statements.append(Statement('INITIALIZED AFTERWARDS'))
 
         # cardinal characteristics section
         if len(unique_entries) == len(values):
-            statement += f'; {self.STATEMENTS["cardinal_unique"]}'
+            statements.append(Statement('CARDINAL: CONTAINS UNIQUES'))
 
         if report_unique_entries and \
            (type_assignment == self.TrivialDomain.INTEGER or
             type_assignment == self.TrivialDomain.STRING):
 
             prepared = [str(x) for x in unique_entries]
-            statement += f'; {self.STATEMENTS["cardinal_of_set"]} ' \
-                         + f'({", ".join(prepared)})'
+            statements.append(Statement('CARDINAL: VALUES IN SET', prepared))
 
         if len(unique_entries) == 1:
-            statement += f'; {self.STATEMENTS["cardinal_static"]} ({values[0]})'
+            statements.append(Statement('CARDINAL: CONTAINS STATIC', values[0]))
 
-        return statement
+        return statements
+
+    def dump_statements(self, attr_statements_list, output_file):
+        if output_file:
+            logger.info(f'dumping statements into {output_file}...')
+            with open(output_file, mode='w', encoding='UTF-8') as output_stream:
+                for pair in zip(self.attr_names, attr_statements_list):
+                    prepared_statements = \
+                        ';\n'.join(stmt.rjust(len(stmt)+2) for stmt in 
+                                   [x.to_string() for x in pair[1]])
+                    output_stream.write(f'{pair[0]}:\n'
+                                        + prepared_statements + '\n')
 
     @abstractmethod
     def infer_statement_for_integer(self, values):
@@ -276,10 +276,10 @@ class HeuristicBase(ABC):
         for index in clarifications:
             refined_values[index] = clarifications[index]
 
-        statement = f'{self.STATEMENTS["base_type"]} ({type_assignment.name})'
+        statements = [Statement('OF BASE TYPE', type_assignment)]
         if type_assignment != self.TrivialDomain.NULLABLE:
-            statement += \
-               f'{self.infer_common_statements(refined_values, type_assignment)}'
+            statements += self.infer_common_statements(refined_values, 
+                                                       type_assignment)
 
         if type_assignment == self.TrivialDomain.INTEGER:
             deduced = self.infer_statement_for_integer(refined_values)
@@ -290,10 +290,10 @@ class HeuristicBase(ABC):
         elif type_assignment == self.TrivialDomain.STRING:
             deduced = self.infer_statement_for_string(refined_values)
         else:
-            deduced = 'no meaningful assessment for type-inconsistent data'
+            deduced = Statement('NO ASSESSMENT FOR TYPE-INCONSISTENT DATA')
 
-        return '; '.join([statement, deduced if deduced 
-                                     else self.STATEMENTS['empty_specific']])
+        return statements + (deduced if deduced 
+                             else Statement('NO SPECIFIC STATEMENTS'))
 
     @abstractmethod
     def process_messages(self, data: dict):
