@@ -15,11 +15,13 @@ logger = lg.get_logger('HEL')
 if __name__ == '__main__':
     import json
     import sys
+    from os import path
 
     if len(sys.argv) < 2:
         logger.error('JSON file should be passed as an argument '
                      + 'for the script. Aborting...')
     else:
+        logger.info(f'using {path.abspath(sys.argv[1])} as an input...')
         with open(sys.argv[1]) as json_data_stream:
             events = json.loads(json_data_stream.readline())
             if not events:

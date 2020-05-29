@@ -10,13 +10,7 @@ logger = lg.get_logger('HEL')
 
 class SequenceOriented(HeuristicBase):
 
-    # STATEMENTS = {
-    #     'accumulative': 'ACCUMULATIVE',
-    #     'alternating': 'ALTERNATING',
-    #     'id_candidate': 'ID CANDIDATE',
-    #     'in_range': 'VALUES IN RANGE',
-    #     'monotonic': 'MONOTONIC',
-    # }
+    STABILIZATION_RATE_THRESHOLD = 2
 
     def _infer_numeric_statements(self, values):
         '''
@@ -68,10 +62,47 @@ class SequenceOriented(HeuristicBase):
         return statements
 
     def infer_statement_for_integer(self, values):
+        # Stabilization detection.
+        # Statement is produced when the stabilization rate exceeds the 
+        # `STABILIZATION_RATE_THRESHOLD`. The rate represents an extent of
+        # delta shrinking and is calculated as an absolute delta between adjacent
+        # elements at the beginning of a sequence divided by an adjacent elements
+        # delta int the end of the collection. Sequence must be convergent in
+        # order to produce such statement.
+        logger.info('getting specific statements for INTEGER type attribute')
+        is_stabilized = True
+        is_constant_delta = True
+        delta_at_beginning = None
+        previous, previous_delta = None, None
+        for item in values:
+            print(item)
+            if previous is not None:
+                delta = abs(item-previous)
+                if previous_delta is not None:
+                    if delta != previous_delta:
+                        is_constant_delta = False
+                        if delta > previous_delta:
+                            is_stabilized = False
+                            break
+                else:
+                    delta_at_beginning = delta
+                previous_delta = delta
+            previous = item
+
         statements = self._infer_numeric_statements(values)
+        if not delta or is_stabilized and delta and \
+            delta_at_beginning/delta > self.STABILIZATION_RATE_THRESHOLD:
+
+            statements.append(Statement('STABILIZES', delta_at_beginning, delta))
+
+        # Id candidate detection
+        explanatories = [x.explanatory for x in statements]
+        if 'MONOTONIC' in explanatories and is_constant_delta:
+            statements.append(Statement('ID CANDIDATE'))
         return statements
 
     def infer_statement_for_float(self, values):
+        logger.info('getting specific statements for REAL type attribute')
         return self._infer_numeric_statements(values)
 
     def infer_statement_for_boolean(self, values):
