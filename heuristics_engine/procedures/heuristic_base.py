@@ -195,17 +195,17 @@ class HeuristicBase(ABC):
 
     def infer_common_statements(self, values, type_assignment):
         null_found = False
-        deferred_init_detected = not bool(values[0])
+        deferred_init_detected = values[0] is None
         report_unique_entries = True
         unique_entries = set()
         statement = ''
 
         for value in values:
 
-            if value:
-                unique_entries.add(value)
-            else:
+            if value is None:
                 null_found = True
+            else:
+                unique_entries.add(value)
 
             if type_assignment == self.TrivialDomain.INTEGER:
                 if len(unique_entries) > self.INTEGER_CARDINALITY_LIMIT:
