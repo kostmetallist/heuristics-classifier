@@ -21,14 +21,16 @@ class HeuristicBase(ABC):
 
     INTEGER_CARDINALITY_LIMIT = 5
     STRING_CARDINALITY_LIMIT = 5
+    STEREOTYPE_RATIO_THRESHOLD = .7
     STATEMENTS = {
         'base_type': 'OF BASE TYPE',
         'cardinal_unique': 'CARDINAL: CONTAINS UNIQUES',
         'cardinal_of_set': 'CARDINAL: VALUES IN SET',
         'cardinal_static': 'CARDINAL: CONTAINS STATIC',
-        'empty_specific': 'NO SPECIFIC STATEMENTS',
+        'cyclic': 'CYCLED VALUES',
         'deferred_init': 'INITIALIZED AFTERWARDS',
-        'repetitive_patterns': 'HAS REPETITIVE PATTERNS',
+        'empty_specific': 'NO SPECIFIC STATEMENTS',
+        'pseudo_cyclic': 'PSEUDO CYCLIC WITH STEREOTYPE RATIO',
         'with_nulls': 'CONTAINS NULLS',
     }
 
@@ -212,14 +214,17 @@ class HeuristicBase(ABC):
                 if len(unique_entries) > self.STRING_CARDINALITY_LIMIT:
                     report_unique_entries = False
 
-        # TODO cyclic patterns statements generation
         ref_sequence = ReferencedSequence(values)
         ref_sequence.reduce_loops()
-        if len(ref_sequence.content['values']) < len(values):
-            print('repetitive patterns:')
-            print(ref_sequence.content['values'])
-            print(ref_sequence.content['refs'])
-            statement += f'; {self.STATEMENTS["repetitive_patterns"]}'
+        if ref_sequence.is_pseudocyclic():
+            if ref_sequence.is_cyclic():
+                statement += f'; {self.STATEMENTS["cyclic"]}'
+            else:
+                ratio = ref_sequence.get_stereotype_ratio()
+                logger.info(f'detected steretype ratio {ratio}')
+                if ratio > self.STEREOTYPE_RATIO_THRESHOLD:
+                    statement += f'; {self.STATEMENTS["pseudo_cyclic"]} ' \
+                                 + f'({ratio})'
 
         if null_found:
             statement += f'; {self.STATEMENTS["with_nulls"]}'

@@ -100,14 +100,15 @@ class ReferencedSequence:
             return True
         values = self.content['values']
         appendix_start = self._retrieve_appendix_start_index()
-        if appendix_start == -1:
+        if appendix_start:
+            if appendix_start == -1:
+                return True
+            appendix = values[appendix_start:]
+            for i in range(len(appendix)):
+                if values[appendix_start+i] != appendix[i]:
+                    return False
             return True
-            
-        appendix = values[appendix_start:]
-        for i in range(len(appendix)):
-            if values[appendix_start+i] != appendix[i]:
-                return False
-        return True
+        return False
 
     def get_stereotype_ratio(self):
         '''
