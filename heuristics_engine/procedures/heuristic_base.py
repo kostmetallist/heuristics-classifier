@@ -2,6 +2,7 @@ from os import path
 from datetime import datetime
 from enum import Enum, auto
 from abc import ABC, abstractmethod
+from pprint import pformat
 import networkx as nx
 
 import logger as lg
@@ -295,14 +296,23 @@ class HeuristicBase(ABC):
         return statements + (deduced if deduced 
                              else [Statement('NO SPECIFIC STATEMENTS')])
 
-    @abstractmethod
-    def process_messages(self, data: dict):
+    def process_messages(self, dump_file=''):
         '''
-        The most general method for particular heuristic. Commonly, it appears 
-        as an entrance point for analysis. Meant to be a caller for the rest of 
-        methods.
+        Generate statements for log attributes.
+
+        The most general method for a heuristic. Dumps inferred statements to
+        the console via logger and to the dump file if its name is specified.
+        Appears as an entry point for further analysis. Meant to be a caller
+        for the rest of methods.
         '''
-        raise NotImplementedError
+        labeled_attributes = [self.get_global_attribute_statement(attr)
+                              for attr in self.attr_names]
+        logger.info('retrieved the following statements:')
+        logger.info(pformat([(pair[0], [x.to_string() for x in pair[1]]) for pair
+                             in zip(self.attr_names, labeled_attributes)], 
+                             indent=2))
+        if dump_file:
+            self.dump_statements(labeled_attributes, dump_file)
 
 
 if __name__ == '__main__':

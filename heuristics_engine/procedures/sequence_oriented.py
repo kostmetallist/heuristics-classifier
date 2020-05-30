@@ -1,5 +1,3 @@
-from pprint import pformat
-
 import logger as lg
 from datastructures.statement import Statement
 from procedures.heuristic_base import HeuristicBase
@@ -110,14 +108,8 @@ class SequenceOriented(HeuristicBase):
     def infer_statement_for_string(self, values):
         return None
 
-    def process_messages(self):
-        labeled_attributes = [self.get_global_attribute_statement(attr)
-                              for attr in self.attr_names]
-        logger.info('retrieved the following statements:')
-        logger.info(pformat([(pair[0], [x.to_string() for x in pair[1]]) for pair
-                             in zip(self.attr_names, labeled_attributes)], 
-                             indent=2))
-        self.dump_statements(labeled_attributes, DEFAULT_STATEMENTS_DUMP_FILE)
+    def process_messages(self, dump_file=DEFAULT_STATEMENTS_DUMP_FILE):
+        super().process_messages(dump_file)
 
 
 # argv[1] is the file location for the JSON event data

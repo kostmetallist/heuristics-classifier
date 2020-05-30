@@ -34,6 +34,13 @@ A `<heuristic_name>` argument is optional and has the default value of
 | `distribution-oriented` | Provides information regarding normalization of REAL values and gives an empirical inference of values' distribution based on statistical fit for different distributions. |
 | `date-oriented` | Tries to treat STRING-typed fields as a date/datetime/time entries and providing statements on conformance of the attribute to the standardized or custom date/timestamp notation. Evaluates time periods during which log records are produced and infers periodic regularities. |
 
+As an example, one can invoke `sequence-oriented` heuristic to process generic
+data created for demonstration:
+
+```
+pipenv run python3 engine.py ../log_collector/output/sample.json sequence-oriented
+```
+
 This engine is triggered automatically by Log Collector module after 
 preprocessed log data had been dumped into the configured output folder 
 (e.g. `log_collector/output`). Therefore, launch of this module is the part 

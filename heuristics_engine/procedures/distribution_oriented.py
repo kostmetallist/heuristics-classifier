@@ -1,4 +1,3 @@
-from pprint import pformat
 import warnings
 
 import numpy as np
@@ -50,7 +49,6 @@ class DistributionOriented(HeuristicBase):
                 with warnings.catch_warnings():
                     # Ignore warnings from data which cannot be procedured
                     warnings.filterwarnings('ignore')
-
                     params = distribution.fit(values)
                     args = params[:-2]
                     pdf = distribution.pdf(x, loc=params[-2], scale=params[-1],
@@ -66,6 +64,8 @@ class DistributionOriented(HeuristicBase):
                 logger.error('unknown exception during distribution fit for '
                              + f'{distribution.name}')
 
+        logger.info(f'chosen {best_distribution.name} due to minimal SSE '
+                    + f'value of {minimal_sse}')
         return (best_distribution.name, [float(param) for param in best_params])
 
     def infer_statement_for_integer(self, values):
@@ -87,14 +87,8 @@ class DistributionOriented(HeuristicBase):
     def infer_statement_for_string(self, values):
         return None
 
-    def process_messages(self):
-        labeled_attributes = [self.get_global_attribute_statement(attr)
-                              for attr in self.attr_names]
-        logger.info('retrieved the following statements:')
-        logger.info(pformat([(pair[0], [x.to_string() for x in pair[1]]) for pair
-                             in zip(self.attr_names, labeled_attributes)], 
-                             indent=2))
-        self.dump_statements(labeled_attributes, DEFAULT_STATEMENTS_DUMP_FILE)
+    def process_messages(self, dump_file=DEFAULT_STATEMENTS_DUMP_FILE):
+        super().process_messages(dump_file)
 
 
 # argv[1] is the file location for the JSON event data
