@@ -231,7 +231,7 @@ class HeuristicBase(ABC):
             type_assignment == self.TrivialDomain.STRING):
 
             prepared = [str(x) for x in unique_entries]
-            statements.append(Statement('CARDINAL: VALUES IN SET', prepared))
+            statements.append(Statement('CARDINAL: VALUES IN SET', *prepared))
 
         if len(unique_entries) == 1:
             statements.append(Statement('CARDINAL: CONTAINS STATIC', values[0]))

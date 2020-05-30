@@ -9,22 +9,30 @@ virtual environment entry/deactivation.
 
 ### Running the engine
 Root module is named `engine.py` and supposed to be invoked after 
-entrance into virtual environment.
+entrance into virtual environment. While running commands, your current working
+directory should be `heuristics_engine`. Otherwise, a new instance of venv
+will be created and required dependencies won't be installed. Use the following
+lines to launch the engine:
 
 ```
 pipenv shell
-python3 engine.py <input_json_location>
+python3 engine.py <input_json_location> [<heuristic_name>]
 ```
 
 or 
 
 ```
-pipenv run python3 engine.py <input_json_location>
+pipenv run python3 engine.py <input_json_location> [<heuristic_name>]
 ```
 
-Note that while running commands above, your current working directory should 
-be `heuristics_engine`. Otherwise, a new instance of venv will be created and 
-required dependencies won't be installed.
+A `<heuristic_name>` argument is optional and has the default value of
+`sequence-oriented` heuristic. Available heuristics are enumerated underneath:
+
+| Heuristic name | Description |
+|---|---|
+| `sequence-oriented` (DEFAULT) | Performs numeric analysis, focusing on INTEGER and REAL trivial types. Detects monotonous sequences, alternate signs, range of values, and gives assessments on whether the attribute can be an identifier. |
+| `distribution-oriented` | Provides information regarding normalization of REAL values and gives an empirical inference of values' distribution based on statistical fit for different distributions. |
+| `date-oriented` | Tries to treat STRING-typed fields as a date/datetime/time entries and providing statements on conformance of the attribute to the standardized or custom date/timestamp notation. Evaluates time periods during which log records are produced and infers periodic regularities. |
 
 This engine is triggered automatically by Log Collector module after 
 preprocessed log data had been dumped into the configured output folder 
