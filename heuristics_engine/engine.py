@@ -18,8 +18,12 @@ logger = lg.get_logger('HEL')
 # argv[2] (optional) is the name of heuristic procedure to use
 if __name__ == '__main__':
     import json
-    import sys
     from os import path
+    import sys
+    from time import time
+
+    time_start = time()
+    logger.info('starting heuristics engine...')
 
     if len(sys.argv) < 2:
         logger.error('JSON file should be passed as an argument '
@@ -49,4 +53,5 @@ if __name__ == '__main__':
             finally:
                 heuristic.process_messages()
 
+    logger.info('elapsed time: ' + '{:.3f} ms'.format((time()-time_start)*1000))
     logger.info('shutting down heuristics engine...')
