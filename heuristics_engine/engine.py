@@ -9,7 +9,6 @@ HEURISTIC_MAPPINGS = {
     'sequence-oriented': SequenceOriented,
 }
 
-# TODO docs for heuristics names
 DEFAULT_HEURISTIC_NAME = 'sequence-oriented'
 # stands for Heuristics Engine Logger
 logger = lg.get_logger('HEL')
