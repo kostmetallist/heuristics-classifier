@@ -1,5 +1,7 @@
 from datetime import datetime as dt
 import dateutil.parser as dateparser
+from collections import defaultdict
+from functools import reduce
 
 import logger as lg
 from datastructures.statement import Statement
@@ -29,6 +31,24 @@ class DateOriented(HeuristicBase):
         'month',
         'year',
     ]
+    WEEKDAY_MAPPINGS = {
+        0: 'MON', 1: 'TUE', 2: 'WED', 3: 'THU', 4: 'FRI', 5: 'SAT', 6: 'SUN',
+    }
+    MONTH_MAPPINGS = {
+        1: 'JAN',
+        2: 'FEB',
+        3: 'MAR',
+        4: 'APR',
+        5: 'MAY',
+        6: 'JUN',
+        7: 'JUL',
+        8: 'AUG',
+        9: 'SEP',
+        10: 'OCT',
+        11: 'NOV',
+        12: 'DEC',
+    }
+    MODE_THRESHOLD = .75
 
     @staticmethod
     def _try_retrieve_timestamp(value: int):
@@ -139,8 +159,6 @@ class DateOriented(HeuristicBase):
                 return first.replace(**kwargs) > second.replace(**kwargs)
 
         for item in datetimes:
-            print('item', item)
-            print('precision', precision)
             if previous:
                 while precision:
                     if is_greater_than(previous, item, precision):
@@ -164,6 +182,36 @@ class DateOriented(HeuristicBase):
         else:
             return statements
 
+        for rate in DateOriented.PRECISION_RATES[get_precision_index(precision):]:
+            items_by_rate = defaultdict(int)
+            if rate == 'day':
+                for item in datetimes:
+                    items_by_rate[item.weekday()] += 1
+            else:
+                for item in datetimes:
+                    items_by_rate[getattr(item, rate)] += 1
+
+            mode = reduce(lambda x, y: x if x[1] > y[1] else y, 
+                          items_by_rate.items())
+            if mode:
+                mode_ratio = mode[1]/len(datetimes)
+            else:
+                continue
+
+            logger.info(f'fixed mode ratio {mode_ratio} for "{rate}" frequency')
+            if mode_ratio > DateOriented.MODE_THRESHOLD:
+                statement_explanatory = 'WITH MODE'
+                if rate == 'day':
+                    statements.append(Statement(
+                        statement_explanatory, rate,
+                        DateOriented.WEEKDAY_MAPPINGS[mode[0]]))
+                elif rate == 'month':
+                    statements.append(Statement(
+                        statement_explanatory, rate, 
+                        DateOriented.MONTH_MAPPINGS[mode[0]]))
+                else:
+                    statements.append(Statement(statement_explanatory, rate, 
+                                                mode[0]))
         return statements
 
     def infer_statement_for_integer(self, values):
