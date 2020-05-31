@@ -9,6 +9,7 @@ pydot = "*"
 portion = "*"
 numpy = "*"
 scipy = "*"
+python-dateutil = "*"
 
 [requires]
 python_version = "3.6"
