@@ -17,7 +17,7 @@ as a source for further analysis.
 `./run.sh` on Unix systems or `start.bat` on Windows.
 
 ### Input log data
-Log files in CSV and XLSX formats are presenteed under `log_collector/resource`
+Log files in CSV and XLSX formats are presented under `log_collector/resource`
 directory. Please refer to [doc](https://github.com/kostmetallist/heuristics-classifier/blob/master/log_collector/README.md)
 for more details on the data origin.
 
