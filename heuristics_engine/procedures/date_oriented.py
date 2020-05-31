@@ -139,9 +139,14 @@ class DateOriented(HeuristicBase):
                 return first.replace(**kwargs) > second.replace(**kwargs)
 
         for item in datetimes:
+            print('item', item)
+            print('precision', precision)
             if previous:
-                while precision and is_greater_than(previous, item, precision):
-                    precision = downgrade_precision(precision)
+                while precision:
+                    if is_greater_than(previous, item, precision):
+                        precision = downgrade_precision(precision)
+                    else:
+                        break
                 if not precision:
                     logger.info('dates in a given temporal sequence are '
                               + 'not ordered consequentially')
@@ -155,7 +160,7 @@ class DateOriented(HeuristicBase):
             previous = item
 
         if is_ordered:
-            statements.append(Statement('VALID TEMPORAL SEQUENCE'))
+            statements.append(Statement('VALID TEMPORAL SEQUENCE', precision))
         else:
             return statements
 
