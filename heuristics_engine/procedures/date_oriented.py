@@ -11,6 +11,7 @@ logger = lg.get_logger('HEL')
 
 class DateOriented(HeuristicBase):
 
+    FAILED_PARSINGS_LIMIT = 5
     PATTERNS = [
         '%Y %b %d',
         '%Y %b %d %H:%M:%S',
@@ -58,29 +59,42 @@ class DateOriented(HeuristicBase):
         else:
             underlying_type = type(values[0])
 
-        logger.info(f'converting sequence of "{underlying_type}" items into '
-                    + 'temporal sequence')
-        # TODO set limit for incorrectly parsed entries after which this function
-        # will be aborted
+        logger.info(f'converting sequence of "{underlying_type.__name__}" '
+                    + 'items into temporal sequence')
+        failed_parsings = 0
         for item in values:
+            if failed_parsings > DateOriented.FAILED_PARSINGS_LIMIT:
+                log.error('too much elements have failed to be converted into'
+                          + 'datetime objects, aborting...')
+                break
+
             if underlying_type is int:
                 temporal = DateOriented._try_retrieve_timestamp(item)
                 if temporal:
                     result.append(temporal)
+                else:
+                    failed_parsings += 1
             elif underlying_type is str:
                 try:
                     temporal = DateOriented._try_retrieve_timestamp(float(item))
                     if temporal:
                         result.append(temporal)
+                    else:
+                        failed_parsings += 1
                 except ValueError:
                     parsed = DateOriented._try_datetime_parsing(item)
                     if parsed:
                         result.append(parsed)
+                    else:
+                        failed_parsings += 1
             else:
-                logger.error(f'provided type ({underlying_type}) cannot be '
-                             'transformed into temporal-like one, aborting...')
+                logger.error(f'provided type ({underlying_type.__name__}) cannot'
+                             'be transformed into temporal-like, aborting...')
                 break
 
+        if failed_parsings:
+            logger.warn(f'{failed_parsings} out of {len(values)} elements have '
+                        + 'been ignored and not added to the temporal sequence')
         return result
 
     def infer_statement_for_integer(self, values):
