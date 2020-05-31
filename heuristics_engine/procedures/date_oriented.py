@@ -21,6 +21,14 @@ class DateOriented(HeuristicBase):
         '%Y/%m/%d %H:%M:%S',
         '%x',
     ]
+    PRECISION_RATES = [
+        'microsecond',
+        'second',
+        'minute',
+        'day',
+        'month',
+        'year',
+    ]
 
     @staticmethod
     def _try_retrieve_timestamp(value: int):
@@ -66,7 +74,7 @@ class DateOriented(HeuristicBase):
             if failed_parsings > DateOriented.FAILED_PARSINGS_LIMIT:
                 log.error('too much elements have failed to be converted into'
                           + 'datetime objects, aborting...')
-                break
+                return
 
             if underlying_type is int:
                 temporal = DateOriented._try_retrieve_timestamp(item)
@@ -88,20 +96,74 @@ class DateOriented(HeuristicBase):
                     else:
                         failed_parsings += 1
             else:
-                logger.error(f'provided type ({underlying_type.__name__}) cannot'
+                logger.info(f'provided type ({underlying_type.__name__}) cannot'
                              'be transformed into temporal-like, aborting...')
-                break
+                return
 
         if failed_parsings:
             logger.warn(f'{failed_parsings} out of {len(values)} elements have '
                         + 'been ignored and not added to the temporal sequence')
         return result
 
+    @staticmethod
+    def _infer_temporal_statements(values):
+        statements = []
+        datetimes = DateOriented._get_temporal_sequence(values)
+        is_ordered = True
+        precision = DateOriented.PRECISION_RATES[0]
+        previous = None
+
+        def get_precision_index(precision):
+            try:
+                index = DateOriented.PRECISION_RATES.index(precision)
+                return index
+            except ValueError:
+                logger.error(f'invalid precision expression ({precision})')
+                return
+
+        def downgrade_precision(precision):
+            index = get_precision_index(precision)
+            if index:
+                if index == len(DateOriented.PRECISION_RATES)-1:
+                    return
+                else:
+                    precision = DateOriented.PRECISION_RATES[index+1]
+                    return precision
+
+        def is_greater_than(first, second, precision):
+            index = get_precision_index(precision)
+            if index:
+                ignored_fields = DateOriented.PRECISION_RATES[:index]
+                kwargs = {x: (0 if x in ['microsecond', 'second', 'minute'] 
+                              else 1) for x in ignored_fields}
+                return first.replace(**kwargs) > second.replace(**kwargs)
+
+        for item in datetimes:
+            if previous:
+                while precision and is_greater_than(previous, item, precision):
+                    precision = downgrade_precision(precision)
+                if not precision:
+                    logger.info('dates in a given temporal sequence are '
+                              + 'not ordered consequentially')
+                    is_ordered = False
+                    break
+            else:
+                for rate in DateOriented.PRECISION_RATES:
+                    if getattr(item, rate):
+                        precision = rate
+                        break
+            previous = item
+
+        if is_ordered:
+            statements.append(Statement('VALID TEMPORAL SEQUENCE'))
+        else:
+            return statements
+
+        return statements
+
     def infer_statement_for_integer(self, values):
         logger.info('getting specific statements for INTEGER type attribute')
-        datetimes = self._get_temporal_sequence(values)
-        print(datetimes)
-        return None
+        return self._infer_temporal_statements(values)
 
     def infer_statement_for_float(self, values):
         return None
@@ -111,9 +173,7 @@ class DateOriented(HeuristicBase):
 
     def infer_statement_for_string(self, values):
         logger.info('getting specific statements for STRING type attribute')
-        datetimes = self._get_temporal_sequence(values)
-        print(datetimes)
-        return None
+        return self._infer_temporal_statements(values)
 
     def process_messages(self, dump_file=DEFAULT_STATEMENTS_DUMP_FILE):
         super().process_messages(dump_file)

@@ -9,7 +9,7 @@ import logger as lg
 from datastructures.referenced_sequence import ReferencedSequence
 from datastructures.statement import Statement
 
-DEFAULT_DOT_EXPORT_DIR = 'output/dot_output'
+DEFAULT_DOT_EXPORT_DIR = 'output'
 DOT_FILENAME_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
 logger = lg.get_logger('HEL')
 
