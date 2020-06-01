@@ -3,14 +3,11 @@ from datetime import datetime
 from enum import Enum, auto
 from abc import ABC, abstractmethod
 from pprint import pformat
-import networkx as nx
 
 import logger as lg
 from datastructures.referenced_sequence import ReferencedSequence
 from datastructures.statement import Statement
 
-DEFAULT_DOT_EXPORT_DIR = 'output'
-DOT_FILENAME_FORMAT = '%Y-%m-%d-%H-%M-%S-output.dot'
 logger = lg.get_logger('HEL')
 
 
@@ -56,33 +53,6 @@ class HeuristicBase(ABC):
             result = False
         finally: 
             return result
-
-    @staticmethod
-    def export_graph_to_dot(graph, export_file_path=''):
-        if not export_file_path:
-            export_file = open(
-                path.join(DEFAULT_DOT_EXPORT_DIR, 
-                    datetime.now().strftime(DOT_FILENAME_FORMAT)), 
-                mode='x', 
-                encoding='UTF-8')
-        else:
-            export_file = open(export_file_path, 'w', encoding='UTF-8')
-
-        logger.info(f'exporting graph to the {export_file.name}...')
-        nx.drawing.nx_pydot.write_dot(graph, export_file)
-        export_file.close()
-
-    @staticmethod
-    def test_networkx():
-        G = nx.MultiDiGraph()
-        edges = [
-            [1, 2, {'label': 'foo'}],
-            [1, 3, {'label': 'bar'}],
-            [2, 4, {'label': 'baz'}],
-            [3, 4, {'label': 'qux'}],
-        ]
-        G.add_edges_from(edges)
-        HeuristicBase.export_graph_to_dot(G)
 
     # log_data is not empty, which should be controlled before object instantiation
     def __init__(self, log_data: list):
@@ -313,8 +283,3 @@ class HeuristicBase(ABC):
                              indent=2))
         if dump_file:
             self.dump_statements(labeled_attributes, dump_file)
-
-
-if __name__ == '__main__':
-    logger.info('running test method...')
-    HeuristicBase.test_networkx()
