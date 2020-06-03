@@ -55,7 +55,7 @@ class DateOriented(HeuristicBase):
         try:
             return dt.fromtimestamp(value)
         except OSError:
-            logger.error(f'given value ({value}) is too large for timestamp')
+            logger.warning(f'given value ({value}) is too large for timestamp')
             return
 
     @staticmethod
@@ -72,7 +72,7 @@ class DateOriented(HeuristicBase):
             except ValueError:
                 continue
 
-        logger.error(f'unable to process string "{raw}" as a date[time]')
+        logger.warning(f'unable to process string "{raw}" as a date[time]')
         return parsed 
 
     @staticmethod
@@ -92,8 +92,8 @@ class DateOriented(HeuristicBase):
         failed_parsings = 0
         for item in values:
             if failed_parsings > DateOriented.FAILED_PARSINGS_LIMIT:
-                log.error('too much elements have failed to be converted into'
-                          + 'datetime objects, aborting...')
+                logger.info('too much elements have failed to be converted into'
+                            + ' datetime objects, aborting...')
                 return
 
             if underlying_type is int:
@@ -117,7 +117,7 @@ class DateOriented(HeuristicBase):
                         failed_parsings += 1
             else:
                 logger.info(f'provided type ({underlying_type.__name__}) cannot'
-                             'be transformed into temporal-like, aborting...')
+                             ' be transformed into temporal-like, aborting...')
                 return
 
         if failed_parsings:
@@ -129,6 +129,9 @@ class DateOriented(HeuristicBase):
     def _infer_temporal_statements(values):
         statements = []
         datetimes = DateOriented._get_temporal_sequence(values)
+        if not datetimes:
+            return []
+
         is_ordered = True
         precision = DateOriented.PRECISION_RATES[0]
         previous = None
