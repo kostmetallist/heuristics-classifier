@@ -15,12 +15,18 @@ class DateOriented(HeuristicBase):
 
     FAILED_PARSINGS_LIMIT = 5
     PATTERNS = [
-        '%Y %b %d',
-        '%Y %b %d %H:%M:%S',
-        '%Y %B %d',
-        '%Y %B %d %H:%M:%S',
         '%Y/%m/%d',
         '%Y/%m/%d %H:%M:%S',
+        '%Y/%m/%d:%H:%M:%S',
+        '%d/%m/%Y %H:%M:%S',
+        '%d-%m-%Y %H:%M',
+        '%d-%m-%Y %H:%M:%S',
+        '%Y %b %d',
+        '%Y %b %d %H:%M:%S',
+        '%Y %b %d:%H:%M:%S',
+        '%Y %B %d',
+        '%Y %B %d %H:%M:%S',
+        '%Y %B %d:%H:%M:%S',
         '%x',
     ]
     PRECISION_RATES = [
