@@ -1,0 +1,13 @@
+case Id,activity,timestamp
+69_4,Loan application received,63700795800
+69_4,Check application form completeness,63700797086
+69_4,Check credit history,63700797268
+69_4,Assess loan risk,63700797927
+69_4,Appraise property,63700799920
+69_4,Assess eligibility,63700800103
+69_4,Prepare acceptance pack,63700801015
+69_4,Check if home insurance quote is requested,63700859369
+69_4,Send home insurance quote,63700859892
+69_4,Verify repayment agreement,63700863372
+69_4,Approve application,63700863868
+69_4,Loan application approved,63700863868

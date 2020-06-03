@@ -16,14 +16,19 @@ until all the processing is done.
 ### Log data
 Event log files are supposed to be placed into `resource` catalog. They are 
 subdivided according to the format. Non-synthetic and non-sample logs are 
-gathered from open-source repositories. The following table depicts mapping 
+gathered from open-source repositories and are located under `correlated`, 
+`service_desk` and `weblog` directories. The following table depicts mapping 
 between event log file and its origin:
 
 | Repository  | Files  |
 |---|---|
-| [Correlated and uncorrelated CSV Event Logs Figshare page](https://figshare.com/articles/Event_Logs_CSV/11342063/1) | <ul><li>`1.csv`</li><li>`2.csv`</li><li>...</li><li>`9.csv`</li></ul> |
-| [Rabobank Group ICT Service Desk logs collection](https://data.4tu.nl/repository/uuid:c3e5d162-0cfd-4bb0-bd82-af5268819c35) | <ul><li>`detail_change.csv`</li><li>`detail_incident.csv`</li></ul> |
-| [Online Judge (RUET OJ) Kaggle Server Log Dataset](https://www.kaggle.com/shawon10/web-log-dataset/data?select=weblog.csv) | <ul><li>`weblog.csv`</li></ul> |
+| [Correlated and uncorrelated CSV Event Logs Figshare page](https://figshare.com/articles/Event_Logs_CSV/11342063/1) | <ul><li>`correlated/1.csv`</li><li>`correlated/2.csv`</li><li>...</li><li>`correlated/9.csv`</li></ul> |
+| [Rabobank Group ICT Service Desk logs collection](https://data.4tu.nl/repository/uuid:c3e5d162-0cfd-4bb0-bd82-af5268819c35) | <ul><li>`service_desk/detail_change.csv`</li><li>`service_desk/detail_incident.csv`</li></ul> |
+| [Online Judge (RUET OJ) Kaggle Server Log Dataset](https://www.kaggle.com/shawon10/web-log-dataset/data?select=weblog.csv) | <ul><li>`weblog/web_log.csv`</li></ul> |
+
+Note that apart from original log ones there are also somehow modified versions 
+of them like `web_log_refined.csv`. Such log files are free to use and created 
+for demonstrating analysis differences in comparison with originals.
 
 ### Building 
 Use either the simplified `go run` to directly execute a program or `go build` 
