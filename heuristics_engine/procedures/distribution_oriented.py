@@ -38,7 +38,8 @@ class DistributionOriented(HeuristicBase):
 
     def _get_fitting_distribution(self, values, bins=1000):
 
-        y, x = np.histogram(values, bins=bins, density=True)
+        y, x = np.histogram([val for val in values if val is not None], 
+                            bins=bins, density=True)
         x = (x + np.roll(x, -1))[:-1] / 2.0
         best_distribution = st.norm
         best_params = (0.0, 1.0)

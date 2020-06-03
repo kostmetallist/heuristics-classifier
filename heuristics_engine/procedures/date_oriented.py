@@ -18,6 +18,7 @@ class DateOriented(HeuristicBase):
         '%Y/%m/%d',
         '%Y/%m/%d %H:%M:%S',
         '%Y/%m/%d:%H:%M:%S',
+        '%d/%b/%Y:%H:%M:%S',
         '%d/%m/%Y %H:%M:%S',
         '%d-%m-%Y %H:%M',
         '%d-%m-%Y %H:%M:%S',
@@ -74,7 +75,7 @@ class DateOriented(HeuristicBase):
         for pattern in DateOriented.PATTERNS:
             try:
                 parsed = dt.strptime(raw, pattern)
-                break
+                return parsed
             except ValueError:
                 continue
 
@@ -97,6 +98,9 @@ class DateOriented(HeuristicBase):
                     + 'items into temporal sequence')
         failed_parsings = 0
         for item in values:
+            if item is None:
+                continue
+                
             if failed_parsings > DateOriented.FAILED_PARSINGS_LIMIT:
                 logger.info('too much elements have failed to be converted into'
                             + ' datetime objects, aborting...')
@@ -175,6 +179,7 @@ class DateOriented(HeuristicBase):
                     else:
                         break
                 if not precision:
+                    print(item)
                     logger.info('dates in a given temporal sequence are '
                               + 'not ordered consequentially')
                     is_ordered = False
