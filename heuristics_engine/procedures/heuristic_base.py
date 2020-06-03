@@ -21,6 +21,7 @@ class HeuristicBase(ABC):
     INTEGER_CARDINALITY_LIMIT = 5
     STRING_CARDINALITY_LIMIT = 5
     STEREOTYPE_RATIO_THRESHOLD = .7
+    CHECK_PERIODIC_PATTERNS = True
 
     class TrivialDomain(Enum):
         NULLABLE = auto()
@@ -175,17 +176,18 @@ class HeuristicBase(ABC):
                 if len(unique_entries) > self.STRING_CARDINALITY_LIMIT:
                     report_unique_entries = False
 
-        ref_sequence = ReferencedSequence(values)
-        ref_sequence.reduce_loops()
-        if ref_sequence.is_pseudocyclic():
-            if ref_sequence.is_cyclic():
-                statements.append(Statement('CYCLED VALUES'))
-            else:
-                ratio = ref_sequence.get_stereotype_ratio()
-                logger.info(f'detected stereotype ratio {ratio}')
-                if ratio > self.STEREOTYPE_RATIO_THRESHOLD:
-                    statements.append(Statement(
-                        'PSEUDO CYCLIC WITH STEREOTYPE RATIO', ratio))
+        if self.CHECK_PERIODIC_PATTERNS:
+            ref_sequence = ReferencedSequence(values)
+            ref_sequence.reduce_loops()
+            if ref_sequence.is_pseudocyclic():
+                if ref_sequence.is_cyclic():
+                    statements.append(Statement('CYCLED VALUES'))
+                else:
+                    ratio = ref_sequence.get_stereotype_ratio()
+                    logger.info(f'detected stereotype ratio {ratio}')
+                    if ratio > self.STEREOTYPE_RATIO_THRESHOLD:
+                        statements.append(Statement(
+                            'PSEUDO CYCLIC WITH STEREOTYPE RATIO', ratio))
 
         if null_found:
             statements.append(Statement('CONTAINS NULLS'))
@@ -261,7 +263,7 @@ class HeuristicBase(ABC):
         elif type_assignment == self.TrivialDomain.STRING:
             deduced = self.infer_statement_for_string(refined_values)
         else:
-            deduced = Statement('NO ASSESSMENT FOR TYPE-INCONSISTENT DATA')
+            deduced = [Statement('NO ASSESSMENT FOR TYPE-INCONSISTENT DATA')]
 
         return statements + (deduced if deduced 
                              else [Statement('NO SPECIFIC STATEMENTS')])

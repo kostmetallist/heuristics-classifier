@@ -29,6 +29,9 @@ class SequenceOriented(HeuristicBase):
             return value > 0
 
         for item in values:
+            if item is None:
+                continue
+
             if previous is not None:
                 if is_alternating and (sign(item) == sign(previous)):
                     is_alternating = False
@@ -73,6 +76,9 @@ class SequenceOriented(HeuristicBase):
         delta_at_beginning = None
         previous, previous_delta = None, None
         for item in values:
+            if item is None:
+                continue
+
             if previous is not None:
                 delta = abs(item-previous)
                 if previous_delta is not None:
